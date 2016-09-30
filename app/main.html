@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html ng-app="PartyGuard" lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <!--  <meta http-equiv="x-ua-compatible" content="ie=edge">  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>PartyGuard</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+ <link href="/lib/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/lib/css/bootstrap.min.css.map" rel="stylesheet">
+
+
+    <!-- Material Design Bootstrap -->
+    <link href="/lib/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Your custom styles  -->
+    <link href="/lib/css/style.css" rel="stylesheet">
+    <link href="/public/view/HostUser/style.css" rel="stylesheet">
+    <link href="/lib/css/bootstrap.min.css.map" rel="stylesheet">
+
+   <link href="/lib/css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Start your project here-->
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-dark orange">
+
+        <!-- Collapse button-->
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx2">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <div class="container">
+
+            <!--Collapse content-->
+            <div class="collapse navbar-toggleable-xs" id="collapseEx2">
+                <!--Navbar Brand-->
+                <a class="navbar-brand" href="/">PartyGuard</a>
+                <!--Links-->
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/ ">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/AboutUS">About US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/HowitWorks">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/faq">FAQs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ContactUs">Contact Us</a>
+                    </li>
+
+
+                </ul>
+                <!--Search form-->
+                <form class="form-inline" ng-controller="maincontroller">
+<!--                    <input class="form-control" type="text" placeholder="Search">-->
+
+                   <!-- <a class="navbar-brand" href="/Login">Login</a> -->
+                   <a class="navbar-brand" href="/Login" ng-show="isUserLoggedIn"> Logout </a>
+                   <a class="navbar-brand" href="/Login" ng-show="!isUserLoggedIn"> Login </a>
+                </form>
+
+            </div>
+
+            <!--/.Collapse content-->
+
+        </div>
+
+    </nav>
+    <!--/.Navbar-->
+</header>
+
+<main>
+
+  <div class="container" ng-view></div>
+
+</main>
+
+<footer class="page-footer grey center-on-small-only">
+
+<!--Footer Links-->
+<div class="container-fluid">
+    <div class="row">
+
+        <!--First column-->
+        <div class="col-md-6">
+            <h5 class="title">Contact us</h5>
+            <p>Contact PartyGuard.</p>
+        </div>
+        <!--/.First column-->
+
+        <!--Second column-->
+        <div class="col-md-6">
+            <h5 class="title">Related Links</h5>
+            <ul>
+                <li><a href="temp.html">About PartyGuard</a></li>
+                <li><a href="#!">Employment</a></li>
+                <li><a href="#!">Maps and Directions</a></li>
+                <li><a href="#!">Emergency Information</a></li>
+            </ul>
+        </div>
+        <!--/.Second column-->
+    </div>
+</div>
+<!--/.Footer Links-->
+
+<!--Copyright-->
+<div class="footer-copyright">
+    <div class="container-fluid">
+
+        <a> © 2016 PartyGuard. All rights reserved.</a>
+
+    </div>
+</div>
+<!--/.Copyright-->
+
+</footer>
+
+
+
+
+    <!-- /Start your project here-->
+
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="/lib/js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="/lib/js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/lib/js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/lib/js/mdb.min.js"></script>
+
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBqWF9WfR9pF23nK8Sd_MteauJraBCRpU&libraries=places&callback=initAutocomplete" async="defer"></script> -->
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-cookies.js"></script>
+
+  <!-- <script src="/scripts/userController.js"></script> -->
+  <!-- <script src="/modules/authentication/services.js"></script>
+ <script src="/modules/authentication/controller.js"></script> -->
+ <script src="/public/config/config.js"></script>
+   <script src="/public/controller/authentication/controller.js"></script>
+ <script src="/public/controller/authentication/services.js"></script>
+ <script src="/public/controller/authentication/Login.js"></script>
+ <script src="/public/controller/members.js"></script>
+ <script src="/public/controller/BasicUser.js"></script>
+ <script src="/public/controller/GuardUser.js"></script>
+ <script src="/public/controller/HostUser.js"></script>
+ <!-- <script src="/public/view/MasterUser/googlescript.js"></script> -->
+
+
+
+
+
+
+ <script>
+ $("#menu-toggle").click(function(e) {
+     e.preventDefault();
+     $("#wrapper").toggleClass("toggled");
+ });
+  $("#menu-toggle-2").click(function(e) {
+     e.preventDefault();
+     $("#wrapper").toggleClass("toggled-2");
+     $('#menu ul').hide();
+ });
+
+  function initMenu() {
+   $('#menu ul').hide();
+   $('#menu ul').children('.current').parent().show();
+   //$('#menu ul:first').show();
+   $('#menu li a').click(
+     function() {
+       var checkElement = $(this).next();
+       if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+         return false;
+         }
+       if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+         $('#menu ul:visible').slideUp('normal');
+         checkElement.slideDown('normal');
+         return false;
+         }
+       }
+     );
+   }
+ $(document).ready(function() {initMenu();});
+ </script>
+
+
+  <script>// <![CDATA[
+    $(document).ready(function(){
+        var from,to,subject,text;
+        $("#send_email").click(function(){
+            to=$("#to").val();
+              $("#message").text(to);
+            subject="PartyGuard Quote";
+            text="Welcome to PartyGuard";
+          //  $("#message").text("Sending E-mail...Please wait");
+            $http.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
+            if(data=="sent")
+            {
+                $("#message").empty().html("Please check inbox ");
+            }else {
+
+                  $("#message").empty().html("Error occured ");
+            }
+            //changed second time
+
+    });
+        });
+    });
+    </script>
+
+
+</body>
+</html>

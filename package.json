@@ -1,8 +1,12 @@
 {
   "name": "email-node",
   "version": "1.0.0",
-  "dependencies": {
-    "nodemailer": "0.7.1",
+  "devDependencies": {
+    "nodemailer": "latest",
     "express": "latest"
-  }
+  },
+    "scripts": {
+        "prestart": "npm install",
+        "start": "node server.js"
+    }
 }

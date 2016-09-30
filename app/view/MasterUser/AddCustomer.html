@@ -1,0 +1,178 @@
+
+ <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav ">
+                <li class="sidebar-brand">
+                    <a href="addCustomer.html">
+                        Add Customer
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">View Customers</a>
+                </li>
+                <li>
+                    <a href="#">Manage Subscriptions </a>
+                </li>
+
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+<!--                first row-->
+        <div class="row">
+                   <div class="col-md-12">
+                       <h1>Add Customer</h1>
+                   </div>
+        <!--First column-->
+        <div class="col-md-4">
+            <div class="md-form">
+                <input type="text" id="form41" class="form-control">
+                <label for="form41" class="">University</label>
+            </div>
+        </div>
+
+
+        <!--Second column-->
+        <div class="col-md-4">
+            <div class="md-form">
+                <input type="text" id="form51" class="form-control">
+                <label for="form51" class="">House Name</label>
+            </div>
+        </div>
+
+        <!--Third column-->
+        <div class="col-md-4">
+            <div class="md-form">
+                <input type="text" id="form61" class="form-control">
+                <label for="form61" class="">House Nickname</label>
+            </div>
+        </div>
+
+    </div>
+    <!--/.first row-->
+       <div class="row">
+        <!--First column-->
+
+          <!--First column-->
+        <div class="col-md-4">
+            <div id="locationField" class="md-form">
+            <input id="autocomplete" placeholder=""
+                   type="text" class="form-control" onfocusout="getMap()" ng-model="address"></input>
+            <label for="form71" class="">House Address</label>
+
+    </div>
+        </div>
+
+        <!--Second column-->
+        <div class="col-md-4">
+            <div class="md-form">
+            <!--Using google Embed api-->
+            <iframe
+            width="500"
+            height="200"
+             frameborder="0" style="border:0"
+             id ="myFrame"
+            <!--src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCBqWF9WfR9pF23nK8Sd_MteauJraBCRpU&q&q=Space+Needle,Seattle+WA" allowfullscreen>-->
+            </iframe>
+
+            </div>
+        </div>
+
+    </div>
+<!--    second row-->
+ <div class="row">
+
+        <!--First column-->
+        <div class="col-md-4">
+            <div class="md-form">
+                <input type="text" id="form41" class="form-control">
+                <label for="form41" class="">Chapter</label>
+            </div>
+        </div>
+
+        <!--Second column-->
+        <div class="col-md-4">
+            <div class="md-form">
+                <input type="text" id="form51" class="form-control">
+                <label for="form51" class="">User Name</label>
+            </div>
+        </div>
+
+        <!--Third column-->
+        <div class="col-md-4">
+            <div class="md-form">
+                <input type="text" id="form61" class="form-control">
+                <label for="form61" class="">Email</label>
+            </div>
+        </div>
+
+    </div>
+
+<!--Third row end-->
+ <a href="/AddAck" class="btn btn-warning">Create Account</a>
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBqWF9WfR9pF23nK8Sd_MteauJraBCRpU&libraries=places&callback=initAutocomplete" async="defer"></script>
+
+<script>
+function getMap(){
+    var comp = encodeURIComponent(document.getElementById("autocomplete").value);
+    if(comp !== ""){
+      document.getElementById("myFrame").src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCBqWF9WfR9pF23nK8Sd_MteauJraBCRpU&q="+comp;
+    }else {
+//    document.getElementById("myFrame").src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCBqWF9WfR9pF23nK8Sd_MteauJraBCRpU&q=Space+Needle,Seattle+WA";
+   }
+ }
+
+
+      // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+var placeSearch, autocomplete;
+
+
+function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
+      }
+
+
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+
+</script>
