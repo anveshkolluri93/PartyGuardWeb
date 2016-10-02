@@ -14,14 +14,14 @@ angular.config(function($routeProvider, $locationProvider) {
             controller: "FraternityController" })
           .when("/Hostnew", {
               templateUrl: "/public/view/HostUser/newCustomer.html",
-            controller: "HostUserController" })
+            controller: "HostnewController" })
       .when("/Hostprofile", {
                 templateUrl: "/public/view/HostUser/HostProfile.html",
-               controller: "HostUserController" })
+               controller: "HouseProfileController" })
 
        .when("/HouseLocation", {
                          templateUrl: "/public/view/HostUser/HouseLocation.html",
-                        controller: "HostUserController" })
+                        controller: "HouseLocationController" })
       .when("/Events", {
                 templateUrl: "/public/view/HostUser/Events.html",
                controller: "HostUserController" })

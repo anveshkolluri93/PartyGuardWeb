@@ -28,16 +28,15 @@
            <div class="container-fluid">
                <div class="row">
                    <div class="col-lg-12">
-                       <h1>SIGMA PHI EPSILON(SigEp)</h1>
+                       <h1 ng-model= "user.title"></h1>
                       <div class="col-md-3">
 
-                       <img src="https://s32.postimg.org/j39r4gait/Sigmapi.jpg" />
+                       <img ng-model= "user.img" src="" />
 
                        </div>
                        <div class="col-md-7">
-                           <h2><b>Missouri Lambda Chapter</b></h2>
-                       <h3>Northwest Missouri State University <br>
-                       509 W.9th St Maryville , MO 64468</h3>
+                           <h2 ng-model= "user.chapter"><b></b></h2>
+                       <h3 ng-model= "user.addr"></h3>
                        </div>
 
                    </div>
@@ -53,15 +52,15 @@
 
                            <tr>
                                <td><b>Username</b></td>
-                               <td>SigEpMoLambda</td>
+                               <td ng-model= "user.uname"></td>
                            </tr>
                            <tr>
                                <td><b>Customer ID</b></td>
-                               <td>000000001</td>
+                               <td ng-model= "user.custid"></td>
                            </tr>
                            <tr>
                                <td><b>Subscription Code</b></td>
-                               <td>123-456-789</td>
+                               <td ng-model= "user.subcode"></td>
                            </tr>
                        </table>
                    </div>
@@ -70,19 +69,19 @@
                        <table class="table">
                            <tr>
                                <td><b>Fisrt Name</b></td>
-                               <td>Abishai</td>
+                               <td ng-model= "user.fname"></td>
                            </tr>
                            <tr>
                                <td><b>Parise</b></td>
-                               <td>000000001</td>
+                               <td ng-model= "user.lname"></td>
                            </tr>
                            <tr>
                                <td><b>Email</b></td>
-                               <td>Abishai.Parise@gmail.com</td>
+                               <td ng-model= "user.email"></td>
                            </tr>
                            <tr>
                                <td><b>Phone Number</b></td>
-                               <td>925-549-1435</td>
+                               <td ng-model= "user.mbl"></td>
                            </tr>
                        </table>
                    </div>
