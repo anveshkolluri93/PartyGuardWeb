@@ -36,7 +36,8 @@
                        </div>
                        <div class="col-md-7">
                            <h2 ><b>{{users.chapter}}</b></h2>
-                       <h3 >{{users.addr}}</h3>
+                           <h3 ><b>{{users.univ}}</b></h3>
+                       <h3 id="autocomplete">{{users.addr}}</h3>
                        </div>
 
                    </div>
@@ -48,7 +49,7 @@
                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.8256802709057!2d-94.87993638506894!3d40.35340616741314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87eac54386ebbed5%3A0x914b276f4623ad9b!2s509+W+9th+St%2C+Maryville%2C+MO+64468!5e0!3m2!1sen!2sus!4v1468801815724" width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                    </div>
                      <div class="col-md-12">
-                       <table class="table">
+                       <table class="table" onload="getMap()">
                            <tr>
                                <td><b>Username</b></td>
                                <td >{{users.uname}}</td>
@@ -60,6 +61,10 @@
                            <tr>
                                <td><b>Subscription Code</b></td>
                                <td >{{users.subcode}}</td>
+                           </tr>
+                           <tr>
+                               <td><b>Guard User Code</b></td>
+                               <td >{{users.guardcode}}</td>
                            </tr>
 
                       <tr><td> <h4>Host User</h4></td>
@@ -92,3 +97,55 @@
 
    </div>
    <!-- /#wrapper -->
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBqWF9WfR9pF23nK8Sd_MteauJraBCRpU&libraries=places&callback=initAutocomplete" async="defer"></script>
+
+ <script>
+ function getMap(){
+   var comp = encodeURIComponent(document.getElementById("autocomplete").value);
+   if(comp !== ""){
+     document.getElementById("myFrame").src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCBqWF9WfR9pF23nK8Sd_MteauJraBCRpU&q="+comp;
+   }else {
+ //    document.getElementById("myFrame").src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCBqWF9WfR9pF23nK8Sd_MteauJraBCRpU&q=Space+Needle,Seattle+WA";
+  }
+ }
+
+
+     // This example displays an address form, using the autocomplete feature
+     // of the Google Places API to help users fill in the information.
+
+     // This example requires the Places library. Include the libraries=places
+     // parameter when you first load the API. For example:
+     // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+ var placeSearch, autocomplete;
+
+
+ function initAutocomplete() {
+       // Create the autocomplete object, restricting the search to geographical
+       // location types.
+       autocomplete = new google.maps.places.Autocomplete(
+           /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+           {types: ['geocode']});
+     }
+
+
+
+     // Bias the autocomplete object to the user's geographical location,
+     // as supplied by the browser's 'navigator.geolocation' object.
+     function geolocate() {
+       if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(function(position) {
+           var geolocation = {
+             lat: position.coords.latitude,
+             lng: position.coords.longitude
+           };
+           var circle = new google.maps.Circle({
+             center: geolocation,
+             radius: position.coords.accuracy
+           });
+           autocomplete.setBounds(circle.getBounds());
+         });
+       }
+     }
+
+ </script>
