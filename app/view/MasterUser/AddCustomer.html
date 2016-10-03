@@ -1,6 +1,6 @@
 
  <div id="wrapper">
-
+<form  novalidate class="simple-from">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav ">
@@ -33,7 +33,7 @@
         <!--First column-->
         <div class="col-md-4">
             <div class="md-form">
-                <input type="text" id="form41" class="form-control">
+                <input type="text" id="form41" class="form-control" ng-model="user.university">
                 <label for="form51" class="">University</label>
             </div>
         </div>
@@ -42,7 +42,7 @@
         <!--Second column-->
         <div class="col-md-4">
             <div class="md-form">
-                <input type="text" id="form51" class="form-control">
+                <input type="text" id="form51" class="form-control" ng-model="user.housename">
                 <label for="form51" class="">House Name</label>
             </div>
         </div>
@@ -50,7 +50,7 @@
         <!--Third column-->
         <div class="col-md-4">
             <div class="md-form">
-                <input type="text" id="form61" class="form-control">
+                <input type="text" id="form61" class="form-control" ng-model="user.nickname">
                 <label for="form61" class="">House Nickname</label>
             </div>
         </div>
@@ -64,7 +64,7 @@
         <div class="col-md-4">
             <div id="locationField" class="md-form">
             <input id="autocomplete" placeholder=""
-                   type="text" class="form-control" onfocusout="getMap()" ng-model="address"></input>
+                   type="text" class="form-control" onfocusout="getMap()" ng-model="user.address"></input>
             <label for="form71" class="">House Address</label>
 
     </div>
@@ -92,7 +92,7 @@
         <!--First column-->
         <div class="col-md-4">
             <div class="md-form">
-                <input type="text" id="form41" class="form-control">
+                <input type="text" id="form41" class="form-control" ng-model="user.chapter">
                 <label for="form41" class="">Chapter</label>
             </div>
         </div>
@@ -100,7 +100,7 @@
         <!--Second column-->
         <div class="col-md-4">
             <div class="md-form">
-                <input type="text" id="form51" class="form-control">
+                <input type="text" id="form51" class="form-control" ng-model="user.uname">
                 <label for="form51" class="">User Name</label>
             </div>
         </div>
@@ -108,7 +108,7 @@
         <!--Third column-->
         <div class="col-md-4">
             <div class="md-form">
-                <input type="text" id="form61" class="form-control">
+                <input type="text" id="form61" class="form-control" ng-model="user.email">
                 <label for="form61" class="">Email</label>
             </div>
         </div>
@@ -116,12 +116,15 @@
     </div>
 
 <!--Third row end-->
- <a href="/AddAck" class="btn btn-warning">Create Account</a>
+ <a href="/AddAck" class="btn btn-warning" ng-click="update(user)">Create Account</a>
+ <a href="/AddAck" class="btn btn-warning" ng-click="reset()">Reset</a>
 
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-
+</form>
+<pre>user = {{user | json}}</pre>
+  <pre>master = {{master | json}}</pre>
     </div>
     <!-- /#wrapper -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBqWF9WfR9pF23nK8Sd_MteauJraBCRpU&libraries=places&callback=initAutocomplete" async="defer"></script>
