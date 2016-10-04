@@ -90,7 +90,7 @@
 
 <main>
 
-  <div class="container" ng-view></div>
+  <div class="container-fluid" ng-view></div>
 
 </main>
 
@@ -177,6 +177,9 @@
  <script src="/public/controller/HouseLocation.js"></script>
  <script src="/public/controller/HouseProfile.js"></script>
  <script src="/public/controller/AddAck.js"></script>
+ <script src="/public/controller/default.js"></script>
+  <script src="/public/controller/Events.js"></script>
+  <script src="/public/controller/viewcustomer.js"></script>
 
  <!-- <script src="/public/view/MasterUser/googlescript.js"></script> -->
 
@@ -218,29 +221,7 @@
  </script>
 
 
-  <script>// <![CDATA[
-    $(document).ready(function(){
-        var from,to,subject,text;
-        $("#send_email").click(function(){
-            to=$("#to").val();
-              $("#message").text(to);
-            subject="PartyGuard Quote";
-            text="Welcome to PartyGuard";
-          //  $("#message").text("Sending E-mail...Please wait");
-            $http.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
-            if(data=="sent")
-            {
-                $("#message").empty().html("Please check inbox ");
-            }else {
 
-                  $("#message").empty().html("Error occured ");
-            }
-            //changed second time
-
-    });
-        });
-    });
-    </script>
 
 
 </body>

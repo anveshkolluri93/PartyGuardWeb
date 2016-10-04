@@ -1,5 +1,5 @@
 
-
+<div controller="DefaultCtrl">
     <!--Main layout-->
 
         <!--First row-->
@@ -83,20 +83,21 @@
                         <div class="card">
 
                             <div class="card-block">
+                              <form name="contactForm" ng-submit = "sendMail()">
                               <h4><Strong>Welcome to PartyGuard</strong></h4>
                                 <p>Interested in setting up PartyGuard for your house?</p>
                                 <p><strong>Request a quote below!</strong></p>
                                 <div class="md-form">
                                     <i class="fa fa-user prefix"></i>
-                                    <input type="text" id="form1" class="form-control">
+                                    <input type="text" id="form1" class="form-control" ng-model="cf.contactName" required>
                                     <label for="form1">Your name</label>
                                 </div>
                                 <div class="md-form">
                                     <i class="fa fa-envelope prefix"></i>
-                                    <input type="text" id="to" class="form-control">
+                                    <input type="text" id="to" class="form-control" ng-model="cf.contactEmail" required>
                                     <label for="form2">Your email</label>
                                 </div>
-                                <button id="send_email" class="btn btn-warning-outline">Submit</button>
+                                <button type="submit" id="send_email" class="btn btn-warning-outline">Submit</button>
                                 <span  id="message"></span>
 
                             </div>
@@ -169,7 +170,32 @@
 
     <!--Third columnn-->
 </div>
+
+</div>
 <!--/.Second row-->
         <!--/.Second row-->
 
     <!--/.Main layout-->
+    <!-- <script>// <![CDATA[
+      $(document).ready(function(){
+          var from,to,subject,text;
+          $("#send_email").click(function(){
+              to=$("#to").val();
+                $("#message").text(to);
+              subject="PartyGuard Quote";
+              text="Welcome to PartyGuard";
+             $("#message").text("Sending E-mail...Please wait");
+              $http.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
+              if(data=="sent")
+              {
+                  $("#message").empty().html("Please check inbox ");
+              }else {
+
+                    $("#message").empty().html("Error occured ");
+              }
+              //changed second time
+
+      });
+          });
+      });
+      </script> -->

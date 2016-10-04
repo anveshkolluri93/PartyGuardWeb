@@ -12,6 +12,9 @@ angular.config(function($routeProvider, $locationProvider) {
           .when("/AddAck", {
               templateUrl: "/public/view/MasterUser/AddAck.html",
             controller: "FraternityAckController" })
+            .when("/viewcustomer", {
+                templateUrl: "/public/view/MasterUser/viewCustomers.html",
+              controller: "ViewCustomerController" })
           .when("/Hostnew", {
               templateUrl: "/public/view/HostUser/newCustomer.html",
             controller: "HostnewController" })
@@ -24,7 +27,7 @@ angular.config(function($routeProvider, $locationProvider) {
                         controller: "HouseLocationController" })
       .when("/Events", {
                 templateUrl: "/public/view/HostUser/Events.html",
-               controller: "HostUserController" })
+               controller: "eventsController" })
        .when("/Members", {
                  templateUrl: "/public/view/HostUser/Members.html",
                 controller: "membersController" })
@@ -47,7 +50,8 @@ angular.config(function($routeProvider, $locationProvider) {
                       templateUrl: "/public/view/Navbar/Howitworks.html",
                       controller: "LoginController" })
          .when("/", {
-                templateUrl: "/public/view/default/default.html" })
+                templateUrl: "/public/view/default/default.html",
+              controller: "DefaultCtrl"  })
         .otherwise({
             templateUrl: "/public/view/default/default.html",
             controller: "DefaultCtrl" });

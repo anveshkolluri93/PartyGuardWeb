@@ -2,24 +2,22 @@
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-             <ul class="sidebar-nav ">
-                <li >
-                    <a href="Hostprofile.html">
-                        Profile
-                    </a>
-                </li>
+          <ul class="sidebar-nav ">
+              <li >
+                  <a href="/AddCustomer">
+                      Add Customer
+                  </a>
+              </li>
 
-                <li>
-                    <a href="Host Location.html">House Location</a>
-                </li>
-                <li class="sidebar-brand">
-                    <a href="AssignGuards.html">Assign Guards </a>
-                </li>
-                <li>
-                    <a href="Members.html">Members</a>
-                </li>
+              <li class="sidebar-brand">
+                  <a href="/viewcustomer">View Customers</a>
+              </li>
+              <li>
+                  <a href="#">Manage Subscriptions </a>
+              </li>
 
-            </ul>
+
+          </ul>
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -28,11 +26,11 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                       <h1>PartyGuard Team</h1>
+                       <h1>Customers List</h1>
                    </div>
 
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-4">
                       <div class="md-form">
                     <i class="fa fa-beer prefix"></i>
@@ -49,7 +47,7 @@
                     </div>
                    </div>
 
-                </div>
+                </div> -->
 
                 <div class="row">
                     <div class="col-md-12">
@@ -59,16 +57,24 @@
                    <table class="table table-striped">
 
                             <thead>
+                                <!-- <tr>
+                                <th><b>Fraternity Name</b></th>
+                                <th><b>User Name</b></th>
+                                <th><b>Customer ID</b></th>
+                                <th><b>Action</b></th>
+                                </tr> -->
                                 <tr>
-                                <th><b>Profile Image</b></th>
-                                <th><b>Last Name</b></th>
-                                <th><b>First Name</b></th>
-                                <th><b>Alerts On/Off</b></th>
-                                </tr>
+                <th></th>
+                <th><b>Fraternity Name</b></th>
+                <th><b>User Name</b></th>
+                <th><b>Customer ID</b></th>
+                <th>Delete</th>
+            </tr>
+
 
                             </thead>
                             <tbody>
-                                <tr ng-repeat="member in members">
+                                <!-- <tr ng-repeat="member in members">
                                     <td>
                                         <img src="{{member.image}}" class="img-fluid img-circle center-block" alt="" width="100" height="100">
                                     </td>
@@ -81,7 +87,25 @@
                                     <td>
                                         <input name="group2" type="radio" id="radio1">
                                     </td>
-                                </tr>
+
+                                </tr> -->
+                                <tr ng-repeat="member in members">
+                <td scope="row">
+                    <!-- <img src="https://s32.postimg.org/j39r4gait/Sigmapi.jpg" alt="" class="img-fluid" > -->
+                      <img src="{{member.image}}" class="img-fluid img-circle center-block" alt="" width="100" height="100">
+                </td>
+                <td>
+                    <h5><strong>{{member.fratName}}</strong></h5>
+
+                </td>
+                <td>{{member.ChapterName}}</td>
+              <td>{{member.Custid}}</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Remove item">X
+                    </button>
+                </td>
+            </tr>
+
                             </tbody>
 
 

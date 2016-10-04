@@ -54,12 +54,12 @@ app.use("/", function(req, res, next){
 // server.get('/index',function(req,res){
 //
 // });
-app.get('/send',function(req,res){
+app.use('/send',function(req,res){
     console.log("Request received");
     var mailOptions={
-        to : req.query.to,
-        subject : req.query.subject,
-        text : req.query.text
+        to : req.query.conactEmail,
+        subject : req.query.Subject,
+        text : req.query.contactMsg
     }
     console.log(mailOptions);
     smtpTransport.sendMail(mailOptions, function(error, response){
