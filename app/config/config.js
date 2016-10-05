@@ -42,7 +42,7 @@ angular.config(function($routeProvider, $locationProvider) {
                         controller: "LoginController" })
       .when("/ContactUs", {
                         templateUrl: "/public/view/Navbar/ContactUs.html",
-                        controller: "LoginController" })
+                        controller: "ContactusController" })
         .when("/faq", {
                       templateUrl: "/public/view/Navbar/faq.html",
                       controller: "LoginController" })
