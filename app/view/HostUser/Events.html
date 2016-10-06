@@ -36,21 +36,29 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <div class="md-form">
                     <i class="fa fa-beer prefix"></i>
                     <input type="text" id="form2" class="form-control">
                     <label for="form2">Event Name</label>
                     </div>
                    </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <div class="md-form">
-                    <i class="fa fa-calendar prefix"></i>
-                    <input type="text" id="form2" class="form-control" >
-                    <label for="form2">Event Date</label>
+                    <!-- <i class="fa fa-calendar prefix"></i> -->
+                    <input type="date" id="form2" class="form-control" >
+                    <!-- <label for="form2">Event Date</label> -->
 
                     </div>
                    </div>
+                   <div class="col-md-3">
+                     <div class="md-form">
+                   <!-- <i class="fa fa-calendar prefix"></i> -->
+                   <input type="time" id="form2" class="form-control" >
+                   <!-- <label for="form2">Event Date</label> -->
+
+                   </div>
+                  </div>
 
                 </div>
 
@@ -82,7 +90,7 @@
                                         {{member.firstName}}
                                     </td>
                                     <td>
-                                        <input name="group2" type="radio" id="radio1">
+                                        <input name="group2" type="checkbox" id="radio1">
                                     </td>
                                 </tr>
                             </tbody>
