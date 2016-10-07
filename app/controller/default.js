@@ -21,11 +21,14 @@ function ($scope, $http, $window) {
           });
         }
 
-        // $scope.reset = function() {
-        //   $scope.user = angular.copy($scope.master);
-        // };
-        //
-        // $scope.reset();
-
-
   }]);
+  // angular.factory('DefaultCtrl',['$http',function($http){
+  //   console.log("success");
+  //    return {
+  //      postEmail: function(emailData,callback){
+  //
+  //
+  //        $http.post("/send", emailData).success(callback);
+  //      }
+  //    }
+  // }]);
