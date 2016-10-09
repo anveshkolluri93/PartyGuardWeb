@@ -13,7 +13,7 @@ angular.config(function($routeProvider, $locationProvider) {
               templateUrl: "/public/view/MasterUser/AddAck.html",
             controller: "FraternityAckController" })
             .when("/viewcustomer", {
-                templateUrl: "/public/view/MasterUser/viewCustomers.html",
+                templateUrl: "/public/view/MasterUser/ViewCustomers.html",
               controller: "ViewCustomerController" })
           .when("/Hostnew", {
               templateUrl: "/public/view/HostUser/newCustomer.html",
