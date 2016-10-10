@@ -14,9 +14,10 @@
        <div class="col-md-4">
            <div class="md-form">
                <i class="fa fa-user prefix"></i>
-               <input type="text" id="form41" ng-model="username" class="form-control">
-               <label for="form41" class="">Username</label>
+               <input type="text" id="form41" ng-model="username" placeholder="Enter you Username" class="form-control" required>
+               <!-- <label for="form41" class="">Username</label> -->
            </div>
+
        </div>
 
        <!--Second column-->
@@ -40,8 +41,8 @@
        <div class="col-md-4">
            <div class="md-form">
                <i class="fa fa-lock prefix"></i>
-               <input type="password" id="form41" ng-model="password" class="form-control">
-               <label for="form41" class="">Password</label>
+               <input type="password" id="form41" ng-model="password" placeholder="Enter you Password" class="form-control" required>
+               <!-- <label for="form41" class="">Password</label> -->
            </div>
        </div>
 
@@ -62,7 +63,7 @@
 
    <div class="col-md-10">
        <button type="submit"   class="btn btn-warning-outline">Login</button>
-       <a href="GuardUserRegistration.html" class="btn btn-warning">Register as Guard</a>
+       <a href="/GuardUserRegistration" class="btn btn-warning">Register as Guard</a>
    </div>
    <div class="col-md-4">
 
@@ -84,7 +85,7 @@
    <div class="col-md-6">
    <div class="modal-footer">
        <div class="options">
-           <p>Not a member? <a href="#">Sign Up</a></p>
+           <p>Want to register as Guard? <a href="/GuardUserRegistration">Sign Up</a></p>
            <p>Forgot <a href="#">Password?</a></p>
        </div>
    </div>
