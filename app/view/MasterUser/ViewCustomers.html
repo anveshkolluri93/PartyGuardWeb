@@ -3,6 +3,9 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
           <ul class="sidebar-nav ">
+            <li>
+              <a href="/Dashboard">Dashboard</a>
+            </li>
               <li >
                   <a href="/AddCustomer">
                       Add Customer
@@ -12,9 +15,7 @@
               <li class="sidebar-brand">
                   <a href="/viewcustomer">View Customers</a>
               </li>
-              <li>
-                  <a href="#">Manage Subscriptions </a>
-              </li>
+
 
 
           </ul>
@@ -68,7 +69,7 @@
                 <th><b>Fraternity Name</b></th>
                 <th><b>User Name</b></th>
                 <th><b>Customer ID</b></th>
-                <th>Delete</th>
+                <th>Action</th>
             </tr>
 
 
@@ -101,8 +102,11 @@
                 <td>{{member.ChapterName}}</td>
               <td>{{member.Custid}}</td>
                 <td>
-                    <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Remove item">X
+                    <button type="button" class="btn btn-sm btn-warning" data-toggle="tooltip" data-placement="top" title="Suspend item">Suspend
                     </button>
+                    <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Activate item">Activate
+                    </button>
+
                 </td>
             </tr>
 

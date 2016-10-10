@@ -6,6 +6,9 @@ angular.config(function($routeProvider, $locationProvider) {
         .when("/Login", {
             templateUrl: "/public/view/Navbar/Login.html",
             controller: "LoginController" })
+      .when("/Dashboard", {
+                templateUrl: "/public/view/MasterUser/Dashboard.html",
+              controller: "DashboardController" })
         .when("/AddCustomer", {
             templateUrl: "/public/view/MasterUser/AddCustomer.html",
           controller: "FraternityController" })
@@ -13,7 +16,7 @@ angular.config(function($routeProvider, $locationProvider) {
               templateUrl: "/public/view/MasterUser/AddAck.html",
             controller: "FraternityAckController" })
             .when("/viewcustomer", {
-                templateUrl: "/public/view/MasterUser/viewCustomers.html",
+                templateUrl: "/public/view/MasterUser/ViewCustomers.html",
               controller: "ViewCustomerController" })
           .when("/Hostnew", {
               templateUrl: "/public/view/HostUser/newCustomer.html",
@@ -21,7 +24,9 @@ angular.config(function($routeProvider, $locationProvider) {
       .when("/Hostprofile", {
                 templateUrl: "/public/view/HostUser/HostProfile.html",
                controller: "HouseProfileController" })
-
+               .when("/EditEvents", {
+                         templateUrl: "/public/view/HostUser/EditEvents.html",
+                        controller: "EditEventsController" })
        .when("/HouseLocation", {
                          templateUrl: "/public/view/HostUser/HouseLocation.html",
                         controller: "HouseLocationController" })
@@ -34,6 +39,9 @@ angular.config(function($routeProvider, $locationProvider) {
         .when("/Guard", {
                 templateUrl: "/public/view/GuardUser/GuardProfile.html",
               controller: "GuardUserController" })
+        .when("/GuardUserRegistration", {
+                      templateUrl: "/public/view/GuardUser/GuardRegistration.html",
+                    controller: "GuardRegistration" })
         .when("/Basic", {
                   templateUrl: "/public/view/BasicUser/BasicProfile.html",
                 controller: "BasicUserController" })
@@ -42,7 +50,7 @@ angular.config(function($routeProvider, $locationProvider) {
                         controller: "LoginController" })
       .when("/ContactUs", {
                         templateUrl: "/public/view/Navbar/ContactUs.html",
-                        controller: "LoginController" })
+                        controller: "ContactusController" })
         .when("/faq", {
                       templateUrl: "/public/view/Navbar/faq.html",
                       controller: "LoginController" })

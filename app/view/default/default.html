@@ -81,7 +81,7 @@
              <div class="col-md-4">
             <div class="widget-wrapper">
                         <div class="card">
-
+                            <form>
                             <div class="card-block">
                               <form name="contactForm" ng-submit = "sendMail()">
                               <h4><Strong>Welcome to PartyGuard</strong></h4>
@@ -89,18 +89,19 @@
                                 <p><strong>Request a quote below!</strong></p>
                                 <div class="md-form">
                                     <i class="fa fa-user prefix"></i>
-                                    <input type="text" id="form1" class="form-control" ng-model="cf.contactName" required>
-                                    <label for="form1">Your name</label>
+                                    <input type="text" id="form1" class="form-control" placeholder="Enter you name" ng-model="cf.contactName" required>
+                                    <!-- <label for="form1">Your name</label> -->
                                 </div>
                                 <div class="md-form">
                                     <i class="fa fa-envelope prefix"></i>
-                                    <input type="text" id="to" class="form-control" ng-model="cf.contactEmail" required>
-                                    <label for="form2">Your email</label>
+                                    <input type="email" id="to" class="form-control" placeholder="Enter you Email" ng-model="cf.contactEmail" required>
+                                    <!-- <label for="form2">Your email</label> -->
                                 </div>
                                 <button type="submit" id="send_email" class="btn btn-warning-outline">Submit</button>
                                 <span  id="message"></span>
 
                             </div>
+                          </form>
               </div>
             </div>
         </div>

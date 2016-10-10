@@ -1,0 +1,70 @@
+<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+             <ul class="sidebar-nav ">
+                <li >
+                    <a href="Hostprofile.html">
+                        Profile
+                    </a>
+                </li>
+
+                <li>
+                  <a href="/HouseLocation">House Location</a>
+                </li>
+                <li>
+                    <a href="/Events">Create Event</a>
+                </li>
+                <li class="sidebar-brand">
+                    <a href="/EditEvents">View/Edit Events</a>
+                </li>
+                <li>
+                      <a href="/Members">Members</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" ng-controller="EditEventsController">
+            <div class="container-fluid">
+                 <!--Page heading-->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="h1-responsive">View/Edit Events
+                        <small class="text-muted"></small>
+                    </h1>
+                </div>
+            </div>
+            <!--/.Page heading-->
+            <hr>
+            <!--/.Content-->
+            <div id="page-content-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Event Name</th>
+                    <th>Event Date</th>
+                    <th>Event Time</th>
+                    <th>Modify Event</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="event in events">
+                      <td>{{event.EventName}}</td>
+                      <td>{{event.Date}}</td>
+                      <td>{{event.time}}</td>
+                      <td><a href="Edit">Edit</td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+
+            <hr>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->

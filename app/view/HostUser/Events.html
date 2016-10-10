@@ -10,13 +10,16 @@
                 </li>
 
                 <li>
-                    <a href="Host Location.html">House Location</a>
+                  <a href="/HouseLocation">House Location</a>
                 </li>
                 <li class="sidebar-brand">
-                    <a href="AssignGuards.html">Assign Guards </a>
+                      <a href="/Events">Create Event</a>
                 </li>
                 <li>
-                    <a href="Members.html">Members</a>
+                      <a href="/EditEvents">View/Edit Events</a>
+                </li>
+                <li>
+                      <a href="/Members">Members</a>
                 </li>
 
             </ul>
@@ -33,21 +36,29 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <div class="md-form">
                     <i class="fa fa-beer prefix"></i>
-                    <input type="text" id="form2" class="form-control">
-                    <label for="form2">Event Name</label>
+                    <input type="text" id="form2" placeholder="Enter event Name"class="form-control">
+                    <!-- <label for="form2">Event Name</label> -->
                     </div>
                    </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <div class="md-form">
                     <i class="fa fa-calendar prefix"></i>
-                    <input type="text" id="form2" class="form-control" >
-                    <label for="form2">Event Date</label>
+                    <input type="date" id="form2" placeholder="Enter Date" class="form-control" >
+                    <!-- <label for="form2">Event Date</label> -->
 
                     </div>
                    </div>
+                   <div class="col-md-3">
+                     <div class="md-form">
+                   <i class="fa fa-clock-o prefix"></i>
+                   <input type="time" id="form2" placeholder="Enter Time" class="form-control" >
+                   <!-- <label for="form2">Event Date</label> -->
+
+                   </div>
+                  </div>
 
                 </div>
 
@@ -79,7 +90,7 @@
                                         {{member.firstName}}
                                     </td>
                                     <td>
-                                        <input name="group2" type="radio" id="radio1">
+                                        <input name="group2" type="checkbox" id="radio1">
                                     </td>
                                 </tr>
                             </tbody>
