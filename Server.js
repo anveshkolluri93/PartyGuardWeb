@@ -4,7 +4,16 @@ var port = 3000;
 var express = require("express");
 var nodemailer = require("nodemailer");
 var app = express();
+// load aws sdk
 
+// load aws sdk
+// var aws = require("aws-sdk");
+//
+// // load aws config
+// aws.config.loadFromPath('config.json');
+//
+// // load AWS SES
+// var ses = new aws.SES({apiVersion: '2010-12-01'});
   app.use(express.static(__dirname ));
 
 
