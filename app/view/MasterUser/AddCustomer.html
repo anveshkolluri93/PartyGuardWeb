@@ -34,8 +34,8 @@
         <!--First column-->
         <div class="col-md-4">
             <div class="md-form">
-                <input type="text" id="form41" class="form-control" ng-model="user.university">
-                <label for="form51" class="">University</label>
+                <input type="text" id="form41" class="form-control" placeholder="Select University" ng-model="user.university">
+                <!-- <label for="form51" class="">University</label> -->
             </div>
         </div>
 
@@ -43,18 +43,19 @@
         <!--Second column-->
         <div class="col-md-4">
             <div class="md-form">
-                <input type="text" id="form51" class="form-control" ng-model="user.housename">
-                <label for="form51" class="">House Name</label>
+                <input type="text" id="form51" class="form-control" placeholder="Enter House Name" ng-model="user.housename">
+                <!-- <label for="form51" class="">House Name</label> -->
             </div>
         </div>
 
         <!--Third column-->
         <div class="col-md-4">
             <div class="md-form">
-                <input type="text" id="form61" class="form-control" ng-model="user.nickname">
-                <label for="form61" class="">House Nickname</label>
+                <input type="text" id="form61" class="form-control" placeholder="Enter Nickname" ng-model="user.nickname">
+                <!-- <label for="form61" class="">House Nickname</label> -->
             </div>
         </div>
+
 
     </div>
     <!--/.first row-->
@@ -65,7 +66,7 @@
         <div class="col-md-4">
             <div id="locationField" class="md-form">
             <input id="autocomplete" placeholder=""
-                   type="text" class="form-control" onfocusout="getMap()" ng-model="user.address"></input>
+                   type="text" class="form-control" onfocusout="getMap()" placeholder="Enter Address" ng-model="user.address"></input>
             <label for="form71" class="">House Address</label>
 
     </div>
@@ -91,26 +92,32 @@
  <div class="row">
 
         <!--First column-->
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="md-form">
-                <input type="text" id="form41" class="form-control" ng-model="user.chapter">
-                <label for="form41" class="">Chapter</label>
+                <input type="text" id="form41" class="form-control" placeholder="Enter Chapter" ng-model="user.chapter">
+                <!-- <label for="form41" class="">Chapter</label> -->
             </div>
         </div>
 
         <!--Second column-->
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="md-form">
-                <input type="text" id="form51" class="form-control" ng-model="user.uname">
-                <label for="form51" class="">User Name</label>
+                <input type="text" id="form51" class="form-control" placeholder="Enter Username" ng-model="user.uname">
+                <!-- <label for="form51" class="">User Name</label> -->
             </div>
         </div>
 
         <!--Third column-->
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="md-form">
-                <input type="text" id="form61" class="form-control" ng-model="user.email">
-                <label for="form61" class="">Email</label>
+                <input type="email" id="form61" class="form-control" placeholder="Enter Email" ng-model="user.email">
+                <!-- <label for="form61" class="">Email</label> -->
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="md-form">
+                <input type="number" id="form61" class="form-control" placeholder="Enter Mobile Number" ng-model="user.mbl">
+                <!-- <label for="form61" class="">Mbl #</label> -->
             </div>
         </div>
 
