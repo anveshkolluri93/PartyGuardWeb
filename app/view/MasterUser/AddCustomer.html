@@ -1,6 +1,6 @@
 
  <div id="wrapper">
-<form  novalidate class="simple-from">
+
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav ">
@@ -25,6 +25,7 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
+          <form   class="simple-from" ng-submit="update(user)">
             <div class="container-fluid">
 <!--                first row-->
         <div class="row">
@@ -33,17 +34,28 @@
                    </div>
         <!--First column-->
         <div class="col-md-4">
-            <div class="md-form">
-                <input type="text" id="form41" class="form-control" placeholder="Select University" ng-model="user.university">
-                <!-- <label for="form51" class="">University</label> -->
-            </div>
+
+  <div class="dropdown">
+  <!-- <i class="fa fa-key prefix"></i> -->
+    <div class="md-form">
+   <!-- <label for="exampleSelect1">University</label> -->
+
+<select ng-model="user.selectedUniversity">
+
+<option value="">Select University</option>
+      <option ng-repeat="x in university" value="{{x.name}}" >{{x.name}}</option>
+</select>
+ </div>
+</div>
+
         </div>
 
 
         <!--Second column-->
         <div class="col-md-4">
             <div class="md-form">
-                <input type="text" id="form51" class="form-control" placeholder="Enter House Name" ng-model="user.housename">
+              <i class="fa fa-home prefix"></i>
+                <input type="text" id="form51" class="form-control" placeholder="Enter House Name" ng-model="user.housename" required/>
                 <!-- <label for="form51" class="">House Name</label> -->
             </div>
         </div>
@@ -51,7 +63,8 @@
         <!--Third column-->
         <div class="col-md-4">
             <div class="md-form">
-                <input type="text" id="form61" class="form-control" placeholder="Enter Nickname" ng-model="user.nickname">
+                <i class="fa fa-user prefix"></i>
+                <input type="text" id="form61" class="form-control" placeholder="Enter Nickname" ng-model="user.nickname" required/>
                 <!-- <label for="form61" class="">House Nickname</label> -->
             </div>
         </div>
@@ -65,8 +78,9 @@
           <!--First column-->
         <div class="col-md-4">
             <div id="locationField" class="md-form">
+                <i class="fa fa-home prefix"></i>
             <input id="autocomplete" placeholder=""
-                   type="text" class="form-control" onfocusout="getMap()" placeholder="Enter Address" ng-model="user.address"></input>
+                   type="text" class="form-control" onfocusout="getMap()" placeholder="Enter Address" ng-model="user.address" required></input>
             <label for="form71" class="">House Address</label>
 
     </div>
@@ -94,7 +108,8 @@
         <!--First column-->
         <div class="col-md-3">
             <div class="md-form">
-                <input type="text" id="form41" class="form-control" placeholder="Enter Chapter" ng-model="user.chapter">
+              <i class="fa fa-home prefix"></i>
+                <input type="text" id="form41" class="form-control" placeholder="Enter Chapter" ng-model="user.chapter" required>
                 <!-- <label for="form41" class="">Chapter</label> -->
             </div>
         </div>
@@ -102,7 +117,8 @@
         <!--Second column-->
         <div class="col-md-3">
             <div class="md-form">
-                <input type="text" id="form51" class="form-control" placeholder="Enter Username" ng-model="user.uname">
+              <i class="fa fa-user prefix"></i>
+                <input type="text" id="form51" class="form-control" placeholder="Enter Username" ng-model="user.uname" required>
                 <!-- <label for="form51" class="">User Name</label> -->
             </div>
         </div>
@@ -110,13 +126,15 @@
         <!--Third column-->
         <div class="col-md-3">
             <div class="md-form">
-                <input type="email" id="form61" class="form-control" placeholder="Enter Email" ng-model="user.email">
+              <i class="fa fa-envelope prefix"></i>
+                <input type="email" id="form61" class="form-control" placeholder="Enter Email" ng-model="user.email" required>
                 <!-- <label for="form61" class="">Email</label> -->
             </div>
         </div>
         <div class="col-md-3">
             <div class="md-form">
-                <input type="number" id="form61" class="form-control" placeholder="Enter Mobile Number" ng-model="user.mbl">
+              <i class="fa fa-phone prefix"></i>
+                <input type="number" id="form61" class="form-control" placeholder="Enter Mobile Number" ng-model="user.mbl" required>
                 <!-- <label for="form61" class="">Mbl #</label> -->
             </div>
         </div>
@@ -124,24 +142,28 @@
     </div>
 
 <!--Third row end-->
- <a href="/AddAck" class="btn btn-warning" ng-click="update(user)">Create Account</a>
- <a href="/AddAck" class="btn btn-warning" ng-click="reset()">Reset</a>
+ <!-- <a  class="btn btn-warning-outline" ng-click="update(user)">Create Account</a> -->
+ <button type= "submit" class="btn btn-warning-outline" >Create Account</button>
+ <a  class="btn btn-warning-outline" ng-click="reset()">Reset</a>
 
             </div>
         </div>
         <!-- /#page-content-wrapper -->
 </form>
-<pre>user = {{user | json}}</pre>
-  <pre>master = {{master | json}}</pre>
+<!-- <pre>user = {{user | json}}</pre>
+  <pre>master = {{master | json}}</pre> -->
     </div>
     <!-- /#wrapper -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBqWF9WfR9pF23nK8Sd_MteauJraBCRpU&libraries=places&callback=initAutocomplete" async="defer"></script>
 
 <script>
 function getMap(){
+
     var comp = encodeURIComponent(document.getElementById("autocomplete").value);
+
     if(comp !== ""){
       document.getElementById("myFrame").src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCBqWF9WfR9pF23nK8Sd_MteauJraBCRpU&q="+comp;
+      var scope = angular.element(document.getElementById('autocomplete')).scope();
     }else {
 //    document.getElementById("myFrame").src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCBqWF9WfR9pF23nK8Sd_MteauJraBCRpU&q=Space+Needle,Seattle+WA";
    }

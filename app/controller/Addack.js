@@ -1,4 +1,4 @@
-angular.controller("FraternityAckController", ['$scope', '$rootScope', '$location',
+angular.controller("FraternityAckController", ['$scope','$rootScope', '$location',
 function ($scope, $rootScope, $location) {
 
   // $scope.master = {};
@@ -20,7 +20,8 @@ var users = {
   "subcode": "123-456-789",
   "guardcode": "123-456-789",
 };
-
-$scope.users = users;
+// console.log($rootScope.master);
+//  $scope.users = myService.getJson();
+ $scope.users = users;
 
 }]);

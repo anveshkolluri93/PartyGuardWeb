@@ -7,7 +7,7 @@
                 <a href="/Dashboard">Dashboard</a>
               </li>
                 <li class="sidebar-brand">
-                    <a href="addCustomer.html">
+                    <a href="/AddCustomer">
                         Add Customer
                     </a>
                 </li>
@@ -30,32 +30,32 @@
                        <h1>Customer Details</h1>
                    </div>
              </div>
-                <div class="col-lg-12">
+                <div class="col-md-12">
                      <table class="table table-responsive">
                             <tr>
                                 <td><b>University</b></td>
-                                <td>{{users.univ}}</td>
+                                <td>{{master.selectedUniversity}}</td>
                             </tr>
                             <tr>
                                 <td><b>House Name</b></td>
-                                <td>{{users.hname}}</td>
+                                <td>{{master.housename}}</td>
                             </tr>
                             <tr>
                                 <td><b>House Nickname</b></td>
-                                <td>{{users.hnickname}}</td>
+                                <td>{{master.nickname}}</td>
                             </tr>
                             <tr>
                                 <td><b>House Location</b></td>
-                                <td id="autocomplete">{{users.addr}} </td>
+                                <td id="autocomplete">{{master.address}} </td>
                               <!-- <td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.8256802709057!2d-94.87993638506894!3d40.35340616741314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87eac54386ebbed5%3A0x914b276f4623ad9b!2s509+W+9th+St%2C+Maryville%2C+MO+64468!5e0!3m2!1sen!2sus!4v1468801815724" width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></td> -->
                             </tr>
                             <tr>
                                 <td><b>Chapter</b></td>
-                                <td >{{users.chapter}}</td>
+                                <td >{{master.chapter}}</td>
                             </tr>
                             <tr>
                                 <td ><b>UserName</b></td>
-                                <td >{{users.uname}}</td>
+                                <td >{{master.uname}}</td>
                             </tr>
                             <tr>
                                 <td><b>Temp Pass</b></td>
