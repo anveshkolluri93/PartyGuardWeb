@@ -2,9 +2,24 @@ angular.controller("HouseLocationController", ['$scope', '$rootScope', '$locatio
 function ($scope, $rootScope, $location) {
 
   $scope.master = {};
-
+  $scope.showSuccessAlert = false;
         $scope.update = function(user) {
+          
+            $scope.showSuccessAlert = true;
+              $scope.successTextAlert = "Your request has been submitted.";
           $scope.master = angular.copy(user);
+
+
+
+        };
+
+        $scope.reset = function() {
+alert("inside");
+          $scope.user = null;
+        };
+
+        $scope.switchBool = function (value) {
+            $scope[value] = !$scope[value];
         };
 
         // $scope.reset = function() {
