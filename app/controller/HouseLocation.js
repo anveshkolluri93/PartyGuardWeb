@@ -4,7 +4,7 @@ function ($scope, $rootScope, $location) {
   $scope.master = {};
   $scope.showSuccessAlert = false;
         $scope.update = function(user) {
-          
+
             $scope.showSuccessAlert = true;
               $scope.successTextAlert = "Your request has been submitted.";
           $scope.master = angular.copy(user);
@@ -14,7 +14,7 @@ function ($scope, $rootScope, $location) {
         };
 
         $scope.reset = function() {
-alert("inside");
+       alert("inside");
           $scope.user = null;
         };
 
