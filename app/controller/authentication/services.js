@@ -4,7 +4,6 @@ angular.factory('AuthenticationService',
         var service = {};
 
         service.Login = function (username, password, callback) {
-
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
             $timeout(function () {
@@ -43,6 +42,27 @@ angular.factory('AuthenticationService',
             //    .success(function (response) {
             //        callback(response);
             //    });
+
+            $http.post('http://partyguardservices20160912122440.azurewebsites.net/token', { username: username, password: password, grant_type: password })
+                .success(function (response) {
+                  alert("success");
+                    // login successful if there's a token in the response
+                    if (response.token) {
+                        alert("tolen");
+                        // store username and token in local storage to keep user logged in between page refreshes
+                        $localStorage.currentUser = { username: username, token: response.token };
+
+                        // add jwt token to auth header for all requests made by the $http service
+                        $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
+
+                        // execute callback with true to indicate successful login
+                        callback(true);
+                    } else {
+                      alert(" no tolen");
+                        // execute callback with false to indicate failed login
+                        callback(false);
+                    }
+                });
 
         };
 

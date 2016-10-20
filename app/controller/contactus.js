@@ -4,7 +4,7 @@ function ($scope, $rootScope, $location) {
   $scope.master = {};
 
         $scope.update = function(user) {
-          $scope.master = angular.copy(user);
+          // $scope.master = angular.copy(user);
         };
 
         // $scope.reset = function() {

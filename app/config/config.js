@@ -1,4 +1,4 @@
-var angular = angular.module("PartyGuard", [  'ngRoute',
+var angular = angular.module('PartyGuard', [ 'ngRoute',
   'ngCookies']);
 
 angular.config(function($routeProvider, $locationProvider) {
@@ -14,7 +14,7 @@ angular.config(function($routeProvider, $locationProvider) {
           controller: "FraternityController" })
           .when("/AddAck", {
               templateUrl: "/public/view/MasterUser/AddAck.html",
-            controller: "FraternityAckController" })
+            controller: "AckController" })
             .when("/viewcustomer", {
                 templateUrl: "/public/view/MasterUser/ViewCustomers.html",
               controller: "ViewCustomerController" })
