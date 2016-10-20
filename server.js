@@ -84,6 +84,6 @@ app.use('/send',function(req,res){
 
 /*--------------------Routing Over----------------------------*/
 
-app.listen(3000,function(){
-    console.log("Node server initialized. Server's port:"+port);
-});
+// app.listen(3000,function(){
+//     console.log("Node server initialized. Server's port:"+port);
+// });
