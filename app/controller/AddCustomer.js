@@ -21,6 +21,12 @@ function ($scope, $rootScope, $location) {
                   $location.path('/AddAck');
               };
 
+              $scope.reset = function() {
+                alert("inside");
+                $scope.user = null;
+              };
+
+
 console.log("hi again");
   console.log("hi"+JSON.stringify($rootScope.master));
       //  $http({
