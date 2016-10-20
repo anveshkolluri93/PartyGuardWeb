@@ -1,4 +1,5 @@
-var angular = angular.module('PartyGuard', [ 'ngRoute','ngCookies']);
+var angular = angular.module('PartyGuard', [ 'ngRoute',
+  'ngCookies']);
 
 angular.config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -20,13 +21,9 @@ angular.config(function($routeProvider, $locationProvider) {
           .when("/Hostnew", {
               templateUrl: "/public/view/HostUser/newCustomer.html",
             controller: "HostnewController" })
-
       .when("/Hostprofile", {
                 templateUrl: "/public/view/HostUser/HostProfile.html",
                controller: "HouseProfileController" })
-               .when("/Forgotpassword", {
-                         templateUrl: "/public/view/Navbar/ForgotPassword.html",
-                        controller: "ForgotPasswordController" })
                .when("/EditEvents", {
                          templateUrl: "/public/view/HostUser/EditEvents.html",
                         controller: "EditEventsController" })
