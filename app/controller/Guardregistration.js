@@ -6,9 +6,16 @@ function ($scope, $rootScope, $location) {
         $scope.update = function(user) {
 
             $scope.showSuccessAlert = true;
-              $scope.successTextAlert = "Registration Succesful.Click ";
-          $scope.master = angular.copy(user);
+            $scope.successTextAlert = "Registration Succesful.Click ";
+            $scope.master = angular.copy(user);
 
+           //Api call
+            $http.post('/api/authenticate', user)
+               .success(function (response) {
+                 $scope.showSuccessAlert = true;
+                 $scope.successTextAlert = "Registration Succesful.Click ";
+                   callback(response);
+               });
 
 
         };
