@@ -1,4 +1,4 @@
-angular.controller("FraternityAckController", ['$scope','$rootScope', '$location',
+angular.controller("AckController", ['$scope','$rootScope', '$location',
 function ($scope, $rootScope, $location) {
 
   // $scope.master = {};
