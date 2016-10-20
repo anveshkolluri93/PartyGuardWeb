@@ -1,0 +1,90 @@
+<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav ">
+                <li class="sidebar-brand">
+                    <a href="memberHP.html">
+                        Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">Change Password</a>
+                </li>
+
+
+
+            </ul>
+        </div>
+        <div class="row">
+
+
+        <!--First column-->
+        <div> <h1>Edit the basic details</h1></div>
+
+
+        <div class="col-md-4">
+
+            <img src="https://s31.postimg.org/fmj85epp7/13689795_1135058619871332_857743586_n.jpg" width="180" height="200" />
+            <i class="fa fa-edit prefix"></i>
+         </div>
+
+        <div class="col-md-4">
+            <div class="md-form">
+
+                <i class="fa fa-user prefix"></i>
+                <input type="text" id="form41" ng-model="basicuserdetails.Fullname" class="form-control" required>
+
+                <label for="form41" class="">Fullname</label>
+            </div>
+        </div>
+
+        <!--Second column-->
+        <div class="col-md-4">
+            <div class="md-form">
+
+                <input type="text" id="form51" ng-readonly="basicuserdetails.Fraternityname" class="form-control" required>
+                <label>Fraternityname {{basicuserdetails.Fraternityname}}</label>
+            </div>
+        </div>
+
+        <!--Third column-->
+        <div class="col-md-4">
+            <div class="md-form">
+              <i class="fa fa-envelope prefix"></i>
+                <input type="text" id="form61" ng-model="basicuserdetails.Email" class="form-control" required>
+                <label for="form61" class="">Email</label>
+            </div>
+        </div>
+
+        <div>
+          <div class="col-md-4">
+              <div class="md-form">
+                  <i class="fa fa-phone prefix " ></i>
+                  <input type="number" id="form41" ng-model="basicuserdetails.Phonenumber" class="form-control" required>
+                  <label for="form41" class="">Phone number</label>
+              </div>
+          </div>
+         <a href="/Basic" class="btn btn-warning" onclick="update(basicuserdetails)">Save Changes</a>
+  </div>
+
+
+
+      </div>
+      <!--/.first row-->
+
+      <!--    second row-->
+      <div class="row">
+
+        <!--First column-->
+
+<div> </div>
+
+
+</form>
+      <pre>form = {{basicuserdetails | json}}</pre>
+        <pre>master = {{master | json}}</pre>
+
+      </div>
+    </div>
