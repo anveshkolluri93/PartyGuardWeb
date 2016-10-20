@@ -1,4 +1,4 @@
-var angular = angular.module('PartyGuard', [  'ngRoute',
+var angular = angular.module('PartyGuard', [ 'ngRoute',
   'ngCookies']);
 
 angular.config(function($routeProvider, $locationProvider) {
@@ -70,3 +70,12 @@ angular.config(function($routeProvider, $locationProvider) {
   requireBase: false
 });
 });
+
+angular.controller("maincontroller", ['$scope',
+function ($scope) {
+
+
+
+    $scope.isUserLoggedIn = false;
+
+}]);
