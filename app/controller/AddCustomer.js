@@ -2,7 +2,7 @@ angular.controller("FraternityController", ['$scope', '$rootScope', '$location',
 function ($scope, $rootScope, $location) {
 
         $rootScope.master = {};
-      
+
       //  $rootScope.address= null;
 
               $scope.update = function(user) {
@@ -12,12 +12,12 @@ function ($scope, $rootScope, $location) {
                 $rootScope.master.address = document.getElementById('autocomplete').value;
                 console.log("hey"+JSON.stringify(user.address));
                 console.log("hi"+JSON.stringify($rootScope.master.address));
-                var currentList = $rootScope.custlist;
-                console.log("finally"+JSON.stringify(currentList));
-                var newList = currentList.concat($rootScope.master);
-                console.log("new"+JSON.stringify(newList));
-                $rootScope.custlist = newList;
-                  console.log("finally"+JSON.stringify($rootScope.custlist));
+                // var currentList = $rootScope.custlist;
+                // console.log("finally"+JSON.stringify(currentList));
+                // var newList = currentList.concat($rootScope.master);
+                // console.log("new"+JSON.stringify(newList));
+                // $rootScope.custlist = newList;
+                //   console.log("finally"+JSON.stringify($rootScope.custlist));
                   $location.path('/AddAck');
               };
 
