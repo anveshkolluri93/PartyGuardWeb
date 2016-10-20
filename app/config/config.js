@@ -24,6 +24,9 @@ angular.config(function($routeProvider, $locationProvider) {
       .when("/Hostprofile", {
                 templateUrl: "/public/view/HostUser/HostProfile.html",
                controller: "HouseProfileController" })
+               .when("/HouseProfileEdit", {
+                         templateUrl: "/public/view/HostUser/HouseProfileEdit.html",
+                        controller: "HouseProfileEditController" })
                .when("/EditEvents", {
                          templateUrl: "/public/view/HostUser/EditEvents.html",
                         controller: "EditEventsController" })
