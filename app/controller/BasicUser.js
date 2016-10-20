@@ -5,6 +5,16 @@ function ($scope, $rootScope, $location) {
 
                 // $location.path('/AddAck');
                  $rootScope.isUserLoggedIn = false;
+                 $scope.master = {};
 
-
-}]);
+                       $scope.update = function(basicuserdetails) {
+                         $scope.master = angular.copy(basicuserdetails);
+                       };
+var basicuserdetails =
+ { Fullname:"",
+ Fraternityname:"Aplha Phi",
+ Email:"Spandanav@gmail.com",
+ Phonenumber:"" };
+ $scope.basicuserdetails = basicuserdetails;
+}
+]);
