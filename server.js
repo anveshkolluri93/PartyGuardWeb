@@ -87,3 +87,8 @@ app.use('/send',function(req,res){
 // app.listen(3000,function(){
 //     console.log("Node server initialized. Server's port:"+port);
 // });
+
+var server = app.listen(process.env.PORT || 8080, function () {
+    var port = server.address().port;
+    console.log("App now running on port", port);
+  });
