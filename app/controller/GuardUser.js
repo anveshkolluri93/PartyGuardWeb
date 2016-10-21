@@ -13,19 +13,25 @@ function ($scope, $rootScope, $location) {
   //                        $location.path('/Guard');
   //                        console.log("hi"+JSON.stringify($rootScope.newdata));
   //                      };
-// if($rootscope.newdata == null)
-// {
-//   alert("inside");
+
+if($rootScope.newdata == null){
 var guardetails =
- { Fullname:"myname",
+ {
+ Fullname:"myname",
  Fraternityname:"isa",
  Email:"big@big.com",
- Phonenumber:"98567" };
+ Phonenumber:"98567"
+ };
  $scope.guardetails = guardetails;
 
+$rootScope.newdata = $scope.guardetails;
+// $scope.guardetails = $rootScope.newdata;
+}
+else{
+  $scope.guardetails = $rootScope.newdata;
 }
 }
-// else {
-//
-// }
+
+
+
 ]);
