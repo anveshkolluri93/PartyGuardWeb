@@ -51,12 +51,16 @@ angular.config(function($routeProvider, $locationProvider) {
                     .when("/Basic", {
                                             templateUrl: "/public/view/BasicUser/BasicProfile.html",
                                           controller: "BasicUserController" })
-                                          .when("/Basicpass", {
+                .when("/Basicpass", {
                                                     templateUrl: "/public/view/BasicUser/password.html",
                                                   controller: "BasicUserController" })
+<<<<<<< HEAD
 
 
-                                          .when("/BasicUserEdit", {
+                                          
+=======
+            .when("/BasicUserEdit", {
+>>>>>>> 03adb2ffec7498049199f906619bc32574747dbe
                                                     templateUrl: "/public/view/BasicUser/BasicUserEdit.html",
                                                    controller: "BasicUserEditController" })
         .when("/AboutUS", {
