@@ -15,10 +15,10 @@ function ($scope, $rootScope, $location) {
 
 
 var basicuserdetails =
- { Fullname:"full",
+ { Fullname:"Spanny",
  Fraternityname:"Aplha Phi",
- Email:"Spandanav@gmail.com",
- Phonenumber:"007" };
+ Email:"Spanny@gmail.com",
+ Phonenumber:"8765432908" };
  $scope.basicuserdetails = basicuserdetails;
 
  $rootScope.newdata = $scope.basicuserdetails;

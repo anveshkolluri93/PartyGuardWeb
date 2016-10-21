@@ -39,10 +39,10 @@ angular.config(function($routeProvider, $locationProvider) {
        .when("/Members", {
                  templateUrl: "/public/view/HostUser/Members.html",
                 controller: "membersController" })
-                .when("/Guard", {
+      .when("/Guard", {
                       templateUrl: "/public/view/GuardUser/GuardProfile.html",
                     controller: "GuardUserController" })
-                    .when("/GuardUserEdit", {
+        .when("/GuardUserEdit", {
                               templateUrl: "/public/view/GuardUser/GuardUserEdit.html",
                              controller: "GuardUserEditController" })
         .when("/GuardUserRegistration", {
@@ -54,6 +54,8 @@ angular.config(function($routeProvider, $locationProvider) {
                                           .when("/Basicpass", {
                                                     templateUrl: "/public/view/BasicUser/password.html",
                                                   controller: "BasicUserController" })
+
+
                                           .when("/BasicUserEdit", {
                                                     templateUrl: "/public/view/BasicUser/BasicUserEdit.html",
                                                    controller: "BasicUserEditController" })

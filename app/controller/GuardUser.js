@@ -17,10 +17,10 @@ function ($scope, $rootScope, $location) {
 if($rootScope.newdata == null){
 var guardetails =
  {
- Fullname:"myname",
+ Fullname:"abishai",
  Fraternityname:"isa",
- Email:"big@big.com",
- Phonenumber:"98567"
+ Email:"abishai@gmail.com",
+ Phonenumber:"9856745678"
  };
  $scope.guardetails = guardetails;
 
