@@ -6,21 +6,25 @@ function ($scope, $http, $window) {
 //        then(function(response) {
 //            $scope.greeting = response.data;
 //        });
-        $scope.sendMail = function(){
+        $scope.sendMail = function(user){
             // $window.alert("Helyoo!");
-          var data = ({
-                   contactName : $scope.contactName,
-                   contactEmail : $scope.contactEmail,
-                   contactMsg : "Hello",
-                   Subject : "PartyGuard"
-
-               });
-          $window.alert("Helloo!");
-          $http.post("http://localhost:3000/send", data)
+          // $window.alert($scope.contactName);
+          //   var name = $scope.contactName;
+          //   var email = $scope.contactEmail;
+          //   var msg = "Hello";
+          //   var sub = "PartyGuard";
+          // // var data = ({
+          // //          contactName : $scope.contactName,
+          // //          contactEmail : $scope.contactEmail,
+          // //          contactMsg : "Hello",
+          // //          Subject : "PartyGuard"
+          // //      });
+          // $window.alert("Helloo!");
+          var data = $scope.user;
+          console.log(JSON.stringify(data));
+          $http.post("http://localhost:8080/send", data)
           .success(function (data, status, headers, config) {
             console.log("success");
-            console.log(data);
-
           })
           .error(function (data, status, header, config) {
           });
