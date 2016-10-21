@@ -10,11 +10,21 @@ function ($scope, $rootScope, $location) {
                        $scope.update = function(basicuserdetails) {
                          $scope.master = angular.copy(basicuserdetails);
                        };
+
+  if($rootScope.newdata == null)    {
+
+
 var basicuserdetails =
- { Fullname:"",
+ { Fullname:"full",
  Fraternityname:"Aplha Phi",
  Email:"Spandanav@gmail.com",
- Phonenumber:"" };
+ Phonenumber:"007" };
  $scope.basicuserdetails = basicuserdetails;
+
+ $rootScope.newdata = $scope.basicuserdetails;
+}
+else {
+  $scope.basicuserdetails =  $rootScope.newdata;
+}
 }
 ]);
