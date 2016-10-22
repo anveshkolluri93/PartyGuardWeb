@@ -1,5 +1,5 @@
 angular.controller("BasicUserController", ['$scope', '$rootScope', '$location',
-function ($scope, $rootScope, $location , $window) {
+function ($scope, $rootScope, $location ) {
 
     // reset login status
 
@@ -12,16 +12,12 @@ function ($scope, $rootScope, $location , $window) {
                        };
 
 //alert
-
-$scope.displaymsg = function ()
-    {
-        $window.alert("hi");
-    }
+  $scope.submit = function(){
+    alert('Password has changed Successfully');
+  }
 
 
-
-
-
+  //data sharing
   if($rootScope.newdata == null)    {
 
 
