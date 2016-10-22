@@ -28,10 +28,10 @@ var basicuserdetails =
  Phonenumber:"8765432908" };
  $scope.basicuserdetails = basicuserdetails;
 
- $rootScope.newdata = $scope.basicuserdetails;
+ $rootScope.newuser = $scope.basicuserdetails;
 }
 else {
-  $scope.basicuserdetails =  $rootScope.newdata;
+  $scope.basicuserdetails =  $rootScope.newuser;
 }
 }
 ]);
