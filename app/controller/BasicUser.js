@@ -1,5 +1,5 @@
 angular.controller("BasicUserController", ['$scope', '$rootScope', '$location',
-function ($scope, $rootScope, $location) {
+function ($scope, $rootScope, $location , $window) {
 
     // reset login status
 
@@ -10,6 +10,17 @@ function ($scope, $rootScope, $location) {
                        $scope.update = function(basicuserdetails) {
                          $scope.master = angular.copy(basicuserdetails);
                        };
+
+//alert
+
+$scope.displaymsg = function ()
+    {
+        $window.alert("hi");
+    }
+
+
+
+
 
   if($rootScope.newdata == null)    {
 

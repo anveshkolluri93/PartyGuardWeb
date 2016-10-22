@@ -18,8 +18,72 @@
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
+        <form   class="simple-from" ng-submit="update(user)">
+      <div class="row">
 
-        <div id="page-content-wrapper">
+
+      <!--First column-->
+      <div> <h1>Edit the basic details</h1></div>
+
+
+      <div class="col-md-4">
+
+          <img src="https://s14.postimg.org/ix27apndt/female.jpg" width="180" height="200" />
+
+       </div>
+
+      <div class="col-md-4">
+          <div class="md-form">
+
+              <i class="fa fa-user prefix"></i>
+              <input type="text" id="form41"  class="form-control" value="{{basicuserdetails.Fullname}}" ng-readonly="true">
+          </div>
+      </div>
+
+      <!--Second column-->
+      <div class="col-md-4">
+          <div class="md-form">
+
+              <input type="text" id="form51"  class="form-control" value="{{basicuserdetails.Fraternityname}}" ng-readonly="true">
+
+          </div>
+      </div>
+
+      <!--Third column-->
+      <div class="col-md-4">
+          <div class="md-form">
+            <i class="fa fa-envelope prefix"></i>
+              <input type="text" id="form61"  class="form-control" value="{{basicuserdetails.Email}}" ng-readonly="true">
+
+          </div>
+      </div>
+
+      <div>
+        <div class="col-md-4">
+            <div class="md-form">
+                <i class="fa fa-phone prefix " ></i>
+                <input type="text" id="form41"  class="form-control" value="{{basicuserdetails.Phonenumber}}" ng-readonly="true">
+
+            </div>
+        </div>
+    <button      <i class="fa fa-edit prefix"></i>    <a href="/BasicUserEdit">Edit</a> </button>
+      </div>
+
+
+
+      </div>
+      <!--/.first row-->
+
+      <!--    second row-->
+      <div class="row">
+
+      <!--First column-->
+
+      <div> </div>
+
+
+      </form>
+        <!-- <div id="page-content-wrapper">
             <div class="container-fluid">
  <div class="row">
                     <div class="col-lg-12">
@@ -53,7 +117,7 @@
 
                                                   </tr>
                                                 </div>
-                                                </table>
+                                                </table> -->
                         <!-- <div class="col-md-8">
                           <div>
                           Fullname : {{basicuserdetails.Fullname}} </div>
@@ -62,7 +126,7 @@
                       <div>   Email:{{basicuserdetails.Email}}</div>
                       <div>
                         Phonenumber:{{basicuserdetails.Phonenumber}}
-
+<img src="https://s14.postimg.org/ix27apndt/female.jpg" width="180" height="200" />
                         </div>
 
                     </div> -->
@@ -71,10 +135,10 @@
                 </div>
 
 
-            </div>
-        </div>
+            <!-- </div>
+        </div> -->
         <!-- /#page-content-wrapper -->
 
-    </div>
+    <!-- </div> -->
     <!-- /#wrapper -->
-  </div>
+  <!-- </div> -->
