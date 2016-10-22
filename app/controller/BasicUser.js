@@ -5,11 +5,11 @@ function ($scope, $rootScope, $location ) {
 
                 // $location.path('/AddAck');
                  $rootScope.isUserLoggedIn = false;
-                 $scope.master = {};
 
-                       $scope.update = function(basicuserdetails) {
-                         $scope.master = angular.copy(basicuserdetails);
-                       };
+
+                      //  $scope.update = function(basicuserdetails) {
+                      //    $scope.newdata = angular.copy(basicuserdetails);
+                      //  };
 
 //alert
   $scope.submit = function(){
@@ -18,7 +18,7 @@ function ($scope, $rootScope, $location ) {
 
 
   //data sharing
-  if($rootScope.newdata == null)    {
+  if($rootScope.newuser == null)    {
 
 
 var basicuserdetails =

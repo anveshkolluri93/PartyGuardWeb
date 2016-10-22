@@ -5,11 +5,11 @@ function ($scope, $rootScope, $location) {
 
                 // $location.path('/AddAck');
               //   $rootScope.isUserLoggedIn = false;
-$scope.newuser = $rootScope.newdata;
+$scope.use = $rootScope.newuser;
 
-                       $scope.update = function(newuser) {
+                       $scope.update = function(use) {
 
-                        $rootScope.newdata = $scope.newuser;
+                        $rootScope.newuser = $scope.use;
                          $location.path('/Basic');
                          console.log("hi"+JSON.stringify($rootScope.newdata));
                        };
