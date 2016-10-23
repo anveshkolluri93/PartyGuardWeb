@@ -14,7 +14,7 @@ function ($scope, $rootScope, $location) {
         };
 
         $scope.reset = function() {
-       alert("inside");
+    //   alert("inside");
           $scope.user = null;
         };
 

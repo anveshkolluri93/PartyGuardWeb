@@ -31,4 +31,11 @@ function ($scope, $rootScope, $location) {
      }
    }
 
+   $scope.showSuccessAlert = false;
+
+   $scope.display = function(showSuccessAlertFlag){
+     $scope.showSuccessAlert = true;
+     $scope.successTextAlert = "Your Event has been successfully created !!";
+   }
+
 }]);
