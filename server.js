@@ -66,9 +66,9 @@ app.use("/", function(req, res, next){
 app.use('/send',function(req,res){
     console.log("Request received");
     var mailOptions={
-        to : req.query.conactEmail,
-        subject : req.query.Subject,
-        text : req.query.contactMsg
+        to : req.query.email,
+        subject : req.query.sub,
+        text : req.query.msg
     }
     console.log(mailOptions);
     smtpTransport.sendMail(mailOptions, function(error, response){

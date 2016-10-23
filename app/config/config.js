@@ -39,26 +39,28 @@ angular.config(function($routeProvider, $locationProvider) {
        .when("/Members", {
                  templateUrl: "/public/view/HostUser/Members.html",
                 controller: "membersController" })
-                .when("/Guard", {
+      .when("/Guard", {
                       templateUrl: "/public/view/GuardUser/GuardProfile.html",
                     controller: "GuardUserController" })
-                    .when("/GuardUserEdit", {
+        .when("/GuardUserEdit", {
                               templateUrl: "/public/view/GuardUser/GuardUserEdit.html",
                              controller: "GuardUserEditController" })
+
+         .when("/Guardpass", {
+                     templateUrl: "/public/view/GuardUser/password.html",
+                     controller: "GuardUserController" })
         .when("/GuardUserRegistration", {
                       templateUrl: "/public/view/GuardUser/GuardRegistration.html",
                     controller: "GuardRegistration" })
                     .when("/Basic", {
                                             templateUrl: "/public/view/BasicUser/BasicProfile.html",
                                           controller: "BasicUserController" })
-                                          .when("/Basicpass", {
+                .when("/Basicpass", {
                                                     templateUrl: "/public/view/BasicUser/password.html",
                                                   controller: "BasicUserController" })
-
-
-                                          .when("/BasicUserEdit", {
+            .when("/BasicUserEdit", {
                                                     templateUrl: "/public/view/BasicUser/BasicUserEdit.html",
-                                                   controller: "BasicUserController" })
+                                                   controller: "BasicUserEditController" })
         .when("/AboutUS", {
                           templateUrl: "/public/view/Navbar/Aboutus.html",
                         controller: "LoginController" })

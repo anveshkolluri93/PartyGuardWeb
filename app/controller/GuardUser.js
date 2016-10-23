@@ -6,26 +6,31 @@ function ($scope, $rootScope, $location) {
                 // $location.path('/AddAck');
                  $rootScope.isUserLoggedIn = false;
 
-  // $rootScope.newdata = {};
-  //                      $scope.update = function(user) {
-  //
-  //                       $rootScope.newdata = $scope.user;
-  //                        $location.path('/Guard');
-  //                        console.log("hi"+JSON.stringify($rootScope.newdata));
-  //                      };
-// if($rootscope.newdata == null)
-// {
-//   alert("inside");
+
+  //alert
+    $scope.submit = function(){
+      alert('Password has changed Successfully');
+    }
+
+
+if($rootScope.newdata == null){
 var guardetails =
- { Fullname:"myname",
+ {
+ Fullname:"abishai",
  Fraternityname:"isa",
- Email:"big@big.com",
- Phonenumber:"98567" };
+ Email:"abishai@gmail.com",
+ Phonenumber:"9856745678"
+ };
  $scope.guardetails = guardetails;
 
+$rootScope.newdata = $scope.guardetails;
+// $scope.guardetails = $rootScope.newdata;
+}
+else{
+  $scope.guardetails = $rootScope.newdata;
 }
 }
-// else {
-//
-// }
+
+
+
 ]);

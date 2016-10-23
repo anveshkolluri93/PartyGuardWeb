@@ -10,7 +10,7 @@
                 </li>
 
                 <li>
-                    <a href="#">Change Password</a>
+                    <a href="/Guardpass">Change Password</a>
                 </li>
                 <li>
                     <a href="#">Events</a>
@@ -20,7 +20,66 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
+        <form name="newform" >
+
+
+          <div class="row">
+
+
+          <!--First column-->
+          <div> <h1>Welcome {{guardetails.Fullname}} !!!</h1></div>
+
+
+          <div class="col-md-4">
+
+              <img src="https://s9.postimg.org/amh9hv08v/maleavatar.png" width="180" height="200" />
+
+           </div>
+
+          <div class="col-md-4">
+              <div class="md-form">
+
+                  <i class="fa fa-user prefix"></i>
+                  <input type="text" id="form41" value = "{{guardetails.Fullname}}" class="form-control" ng-readonly="true" >
+              </div>
+          </div>
+
+          <!--Second column-->
+          <div class="col-md-4">
+              <div class="md-form">
+
+                  <input type="text" id="form51" value = "{{guardetails.Fraternityname}}" class="form-control" ng-readonly="true"  >
+
+              </div>
+          </div>
+
+          <!--Third column-->
+          <div class="col-md-4">
+              <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                  <input type="email" id="form61" value = "{{guardetails.Email}}" class="form-control" ng-readonly="true"  >
+
+              </div>
+          </div>
+
+
+
+          <div>
+            <div class="col-md-4">
+                <div class="md-form">
+                    <i class="fa fa-phone prefix " ></i>
+                    <input type="text" id="form41" value = "{{guardetails.Phonenumber}}" class="form-control" ng-readonly="true"  >
+
+                </div>
+            </div>
+
+        <button      <i class="fa fa-edit prefix"></i>    <a href="/GuardUserEdit">Edit</a> </button>
+    </div>
+
+
+
+        </div>
+        <!-- <div id="page-content-wrapper">
             <div class="container-fluid">
  <div class="row">
                     <div class="col-lg-12">
@@ -33,27 +92,48 @@
                            <img src="https://s9.postimg.org/amh9hv08v/maleavatar.png" width="180" height="200" />
                            <i class="fa fa-edit prefix"></i>
                         </div>
-                        <div class="col-md-8">
-                          <div>
-                         Fullname :abishai</div>
-                         <div>
-                         Fraternityname:alphapi </div>
-                      <div>   Email:abishaiparaise@gmail.com</div>
-                      <div>
+<div class="col-md-8">
+                        <table class="table table-responsive">
 
-                        Phonenumber:7876543678
-<!-- <label ng-model="guardetails.Phonenumber" > </label> -->
+                          <tr>
+
+              <label for="form-41" >   <i class="fa fa-user prefix"> </i><td class="col-md-4">   Fullname :{{guardetails.Fullname}} </td></label>
+
+
+                        <label for="form-41" >    <td class="col-md-4">   Fraternityname:{{guardetails.Fraternityname}} </td></label>
+
+                          </tr>
+</div>
+
+<div class="col-md-4">
+                          <tr>
+                        <label for="form-41">    <td class="col-md-4" >   Email:{{guardetails.Email}} </td></label>
+                        <label for="form-41">    <td class="col-md-4">    Phonenumber:{{guardetails.Phonenumber}}
+ </td></label>
+
+                          </tr>
+                        </div>
+                        </table>
+                        <!-- <div class="col-md-8">
+                          <div>
+                         Fullname :{{guardetails.Fullname}}</div>
+                         <div>
+                         Fraternityname:{{guardetails.Fraternityname}} </div>
+                      <div>   Email:{{guardetails.Email}}</div>
+                      <div>
+                        Phonenumber:{{guardetails.Phonenumber}}
+
                         </div>
 
-                    </div>
+                    </div> -->
 
-
+  </form>
                 </div>
 
 
-            </div>
-        </div>
+
         <!-- /#page-content-wrapper -->
 
-    </div>
+
+
     <!-- /#wrapper -->

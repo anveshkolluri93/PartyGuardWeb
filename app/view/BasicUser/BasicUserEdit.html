@@ -1,11 +1,10 @@
 <div id="wrapper">
 
-
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav ">
                 <li class="sidebar-brand">
-                    <a href="guardHP.html">
+                    <a href="memberHP.html">
                         Profile
                     </a>
                 </li>
@@ -13,23 +12,21 @@
                 <li>
                     <a href="#">Change Password</a>
                 </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
+
             </ul>
         </div>
 
-          <form   class="simple-from" ng-submit="update(user)">
+          <form   class="simple-from" ng-submit="update(use)">
         <div class="row">
 
 
         <!--First column-->
-        <div> <h1>Edit the Guard details</h1></div>
+        <div> <h1>Edit the basic details</h1></div>
 
 
         <div class="col-md-4">
 
-            <img src="https://s32.postimg.org/bubza536t/image.jpg" width="180" height="200" />
+            <img src="https://s31.postimg.org/fmj85epp7/13689795_1135058619871332_857743586_n.jpg" width="180" height="200" />
 
          </div>
 
@@ -37,7 +34,9 @@
             <div class="md-form">
 
                 <i class="fa fa-user prefix"></i>
-                <input type="text" id="form41" ng-model="user.Fullname" class="form-control" placeholder="Fullname"required>
+                <input type="text" id="form41" ng-model="use.Fullname" class="form-control" placeholder="Fullname" required>
+
+
             </div>
         </div>
 
@@ -45,7 +44,7 @@
         <div class="col-md-4">
             <div class="md-form">
 
-                <input type="text" id="form51" ng-model="user.Fraternityname" class="form-control" placeholder="Fraternityname" required>
+                <input type="text" id="form51" ng-model="use.Fraternityname" class="form-control" placeholder="Fraternityname" required>
 
             </div>
         </div>
@@ -54,23 +53,20 @@
         <div class="col-md-4">
             <div class="md-form">
               <i class="fa fa-envelope prefix"></i>
-                <input type="email" id="form61" ng-model="user.Email" class="form-control" placeholder="Email" required>
+                <input type="text" id="form61" ng-model="use.Email" class="form-control" placeholder="Email" required>
 
             </div>
         </div>
-
-
 
         <div>
           <div class="col-md-4">
               <div class="md-form">
                   <i class="fa fa-phone prefix " ></i>
-                  <input type="text" id="form41" ng-model="user.Phonenumber" class="form-control" placeholder="Phone number" required>
+                  <input type="text" id="form41" ng-model="use.Phonenumber" class="form-control" placeholder="Phone number" required>
 
               </div>
           </div>
-
-      <button type= "submit"   <a href="/Guard" class="btn btn-warning" >Save Changes</a> </button>
+      <button type="submit"   <a href="/Basic" class="btn btn-warning">Save Changes</a> </button>
   </div>
 
 
@@ -87,10 +83,8 @@
 
 
 </form>
-
-      <pre>user = {{user | json}}</pre>
+      <pre>form = {{newuser | json}}</pre>
         <pre>master = {{master | json}}</pre>
 
       </div>
-
-</div>
+    </div>
