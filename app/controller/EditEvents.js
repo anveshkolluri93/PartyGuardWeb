@@ -4,13 +4,10 @@ function ($scope, $rootScope, $location) {
                 // $location.path('/HostProfile');
  $scope.isUserLoggedIn = true;
                  var events =[
-   {"EventName":"Srichaitanya", "Date":"10/04/2016", "time":"10:00 P.M"},
-   {"EventName":"Srichaitanya", "Date":"10/04/2016", "time":"10:00 P.M"},
-   {"EventName":"Srichaitanya", "Date":"10/04/2016", "time":"10:00 P.M"},
-   {"EventName":"Srichaitanya", "Date":"10/04/2016", "time":"10:00 P.M"},
-   {"EventName":"Srichaitanya", "Date":"10/04/2016", "time":"10:00 P.M"},
-   {"EventName":"Srichaitanya", "Date":"10/04/2016", "time":"10:00 P.M"},
-   {"EventName":"Srichaitanya", "Date":"10/04/2016", "time":"10:00 P.M"}
+   {"EventName":"Friday Fun", "Date":"10/28/2016", "time":"08:00 P.M"},
+   {"EventName":"Halloween Party", "Date":"11/04/2016", "time":"08:00 P.M"},
+   {"EventName":"Casino Day", "Date":"11/11/2016", "time":"10:00 P.M"},
+   {"EventName":"Hippies", "Date":"11/18/2016", "time":"10:00 P.M"}
  ];
    $scope.events = events;
 }]);
