@@ -28,6 +28,7 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
+           <form   class="simple-from" >
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -39,14 +40,14 @@
                     <div class="col-md-3">
                       <div class="md-form">
                     <i class="fa fa-beer prefix"></i>
-                    <input type="text" id="form2" placeholder="Enter event Name"class="form-control">
+                    <input type="text" id="form2" placeholder="Enter event Name"class="form-control" ng-model = "user.eventname">
                     <!-- <label for="form2">Event Name</label> -->
                     </div>
                    </div>
                     <div class="col-md-3">
                       <div class="md-form">
                     <i class="fa fa-calendar prefix"></i>
-                    <input type="date" id="form2" placeholder="Enter Date" class="form-control" >
+                    <input type="date" id="form2" placeholder="Enter Date" class="form-control" ng-model = "user.eventdate">
                     <!-- <label for="form2">Event Date</label> -->
 
                     </div>
@@ -54,7 +55,7 @@
                    <div class="col-md-3">
                      <div class="md-form">
                    <i class="fa fa-clock-o prefix"></i>
-                   <input type="time" id="form2" placeholder="Enter Time" class="form-control" >
+                   <input type="time" id="form2" placeholder="Enter Time" class="form-control" ng-model = "user.eventtime">
                    <!-- <label for="form2">Event Date</label> -->
 
                    </div>
@@ -90,22 +91,18 @@
                                         {{member.firstName}}
                                     </td>
                                     <td>
-                                        <input name="group2" type="checkbox" id="radio1">
+                                        <input name="group2" type="checkbox" id="checkbox1" ng-model="selected" ng-checked="exist(member)"
+                                        ng-click="toggleSelection(member)">
                                     </td>
+
                                 </tr>
                             </tbody>
-
-
-
-
-
-
-
-
                    </table>
-                        <a href="#" class="btn btn-warning">Save</a>
+
+                      <button type= "submit" class="btn btn-warning-outline">Submit</button>
                     </div>
                 </div>
+              </form>
             </div>
         </div>
         <!-- /#page-content-wrapper -->

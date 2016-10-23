@@ -13,6 +13,22 @@ function ($scope, $rootScope, $location) {
 ];
    $scope.members = members;
 
+   $scope.selected =[];
+   $scope.final = [];
 
+   $scope.exist = function(item){
+     return $scope.selected.indexOf(item) > -1;
+    console.log($scope.selected.indexOf(item));
+   }
+   //
+   $scope.toggleSelection = function(item){
+     var idx = $scope.selected.indexOf(item);
+     if(idx > -1){
+       $scope.selected.splice(idx,1);
+
+     }else{
+       $scope.selected.push(item);
+     }
+   }
 
 }]);
