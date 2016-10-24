@@ -74,7 +74,8 @@
                                 <td>{{users.guardcode}}</td>
                             </tr>
                      </table>
-                    <a href="#" class="btn btn-warning" >Send Information</a>
+                    <a href="#" class="btn btn-warning" type= "submit" ng-click="display(showSuccessAlert)">Send Information</a>
+                    <div class="alert alert-success" role="alert" ng-show="showSuccessAlert"><h4>{{successTextAlert}}</h4></div>
                 </div>
             </div>
         </div>

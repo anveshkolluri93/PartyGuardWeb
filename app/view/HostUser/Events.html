@@ -40,14 +40,14 @@
                     <div class="col-md-3">
                       <div class="md-form">
                     <i class="fa fa-beer prefix"></i>
-                    <input type="text" id="form2" placeholder="Enter event Name"class="form-control" ng-model = "user.eventname">
+                    <input type="text" id="form2" placeholder="Enter event Name"class="form-control" ng-model = "user.eventname" required>
                     <!-- <label for="form2">Event Name</label> -->
                     </div>
                    </div>
                     <div class="col-md-3">
                       <div class="md-form">
                     <i class="fa fa-calendar prefix"></i>
-                    <input type="date" id="form2" placeholder="Enter Date" class="form-control" ng-model = "user.eventdate">
+                    <input type="date" id="form2" placeholder="Enter Date" class="form-control" ng-model = "user.eventdate" required>
                     <!-- <label for="form2">Event Date</label> -->
 
                     </div>
@@ -55,7 +55,7 @@
                    <div class="col-md-3">
                      <div class="md-form">
                    <i class="fa fa-clock-o prefix"></i>
-                   <input type="time" id="form2" placeholder="Enter Time" class="form-control" ng-model = "user.eventtime">
+                   <input type="time" id="form2" placeholder="Enter Time" class="form-control" ng-model = "user.eventtime" required>
                    <!-- <label for="form2">Event Date</label> -->
 
                    </div>
@@ -82,7 +82,7 @@
                             <tbody>
                                 <tr ng-repeat="member in members">
                                     <td>
-                                        <img src="{{member.image}}" class="img-fluid img-circle center-block" alt="" width="100" height="100">
+                                        <img src="{{member.image}}" class="img-fluid img-circle center-block" alt="" height="100" width="100">
                                     </td>
                                     <td>
                                         {{member.lastName}}

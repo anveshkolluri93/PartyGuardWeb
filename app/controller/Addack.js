@@ -24,4 +24,11 @@ var users = {
 //  $scope.users = myService.getJson();
  $scope.users = users;
 
+ $scope.showSuccessAlert = false;
+
+ $scope.display = function(showSuccessAlertFlag){
+   $scope.showSuccessAlert = true;
+   $scope.successTextAlert = "Account details have been successfully sent to the customer !!";
+ }
+
 }]);
