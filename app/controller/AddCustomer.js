@@ -1,5 +1,5 @@
-angular.controller("FraternityController", ['$scope', '$rootScope', '$location',
-function ($scope, $rootScope, $location) {
+angular.controller("FraternityController", ['$scope', '$http','$rootScope', '$location',
+function ($scope, $http, $rootScope, $location) {
 
         $rootScope.master = {};
 
@@ -31,11 +31,18 @@ console.log("hi again");
   console.log("hi"+JSON.stringify($rootScope.master));
       //  $http({
       //      method: 'GET',
-      //      url: '/Admin/GetTestAccounts',
+      //      url: 'http://partyguardservices20161025060016.azurewebsites.net/api/UniversityModels',
       //      data: { applicationId: 3 }
       //  }).success(function (result) {
-      //  $scope.university = result;
+      //    console.log("hey" + result);
+      // // $scope.university = result;
       // });
+
+      $http.get("http://partyguardservices20161025060016.azurewebsites.net/api/UniversityModels")
+            .then(function(response){
+          console.log("hey" + response);
+          console.log("hey" + response.data);
+            $scope.related = response.data; });
 
 
       $scope.university=[
