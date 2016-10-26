@@ -38,7 +38,7 @@ console.log("hi again");
       // // $scope.university = result;
       // });
 
-      $http.get("http://partyguardservices20161025060016.azurewebsites.net/api/UniversityModels")
+      $http.get("https://partyguardservices20161025060016.azurewebsites.net/api/UniversityModels")
             .then(function(response){
           console.log("hey" + response);
           console.log("hey" + response.data);
