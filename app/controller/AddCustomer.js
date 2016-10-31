@@ -1,5 +1,5 @@
-angular.controller("FraternityController", ['$scope', '$http','$rootScope', '$location',
-function ($scope, $http, $rootScope, $location) {
+angular.controller("FraternityController", ['$scope','$http', '$rootScope', '$location',
+function ($scope,$http, $rootScope, $location) {
 
         $rootScope.master = {};
 
@@ -29,29 +29,23 @@ function ($scope, $http, $rootScope, $location) {
 
 console.log("hi again");
   console.log("hi"+JSON.stringify($rootScope.master));
-      //  $http({
-      //      method: 'GET',
-      //      url: 'http://partyguardservices20161025060016.azurewebsites.net/api/UniversityModels',
-      //      data: { applicationId: 3 }
-      //  }).success(function (result) {
-      //    console.log("hey" + result);
-      // // $scope.university = result;
-      // });
 
-      $http.get("https://partyguardservices20161025060016.azurewebsites.net/api/UniversityModels")
+      $http.get("http://partyguardservices20161025060016.azurewebsites.net/api/UniversityModels")
             .then(function(response){
-          console.log("hey" + response);
-          console.log("hey" + response.data);
-            $scope.related = response.data; });
+          console.log("hey" + JSON.stringify(response));
+          console.log("hey" + JSON.stringify(response.data));
+            $scope.university = response.data;
 
+          });
 
-      $scope.university=[
-    {univId : 1, name : "Northwest Missouri State University" },
-    {univId : 2, name : "University of Central Missouri"},
-    {univId : 3, name : "University of Missouri Kansas City"},
-    {univId : 4, name : "MidWestern Missouri State University"}
-];
- $scope.selectedCountry =  $scope.university[1].univId.toString();
+//       $scope.university=[
+//     {univId : 1, univeristyName : "Northwest Missouri State University" },
+//     {univId : 2, univeristyName : "University of Central Missouri"},
+//     {univId : 3, univeristyName : "University of Missouri Kansas City"},
+//     {univId : 4, univeristyName : "MidWestern Missouri State University"}
+// ];
+
+ //$scope.selectedCountry =  $scope.university[1].univId.toString();
 
           // $scope.reset = function() {
           //   $scope.user = angular.copy($scope.master);

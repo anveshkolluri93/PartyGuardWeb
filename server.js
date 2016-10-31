@@ -16,7 +16,19 @@ var app = express();
 // var ses = new aws.SES({apiVersion: '2010-12-01'});
   app.use(express.static(__dirname ));
 
-
+  // app.use("http://partyguardservices20161025060016.azurewebsites.net/*", function(req, res, next) {
+  //   res.header("Access-Control-Allow-Origin", "*");
+  //   res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+  //   res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+  //   return next();
+  // });
+  //
+  // app.use("http://partyguardservices20161025060016.azurewebsites.net/*", function(req, res, next) {
+  //   if (req.method.toLowerCase() !== "options") {
+  //     return next();
+  //   }
+  //   return res.send(204);
+  // });
 				// set the static files location /public/img will be /img for users
 
 // app.use(express.static(__dirname + '/lib'));

@@ -63,13 +63,16 @@
        <button type="submit"   class="btn btn-warning-outline">Login</button>
        <a href="/GuardUserRegistration" class="btn btn-warning">Register as Guard</a>
    </div>
-   <div class="col-md-4">
 
-   </div>
+
+
 
 </div>
 <div class="row">
-
+  <div class="col-md-8">
+  <div class="alert alert-success" role="alert" ng-show="showSuccessAlert">
+<button type="button" class="close" data-ng-click="switchBool('showSuccessAlert')">×</button> <strong>Incorrect Login! </strong> {{successTextAlert}}</div>
+</div>
 
 
 </div>

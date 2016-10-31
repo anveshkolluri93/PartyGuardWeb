@@ -6,34 +6,34 @@ angular.factory('AuthenticationService',
         service.Login = function (username, password, callback) {
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
-            $timeout(function () {
-              if(username === 'admin'){
-                var response = { success: username === 'admin' && password === 'admin'};
-                if (!response.success) {
-                    response.message = 'Username or password is incorrect';
-                }
-                callback(response);
-              }else if(username === 'host'){
-                var response = { success: username === 'host' && password === 'host'};
-                if (!response.success) {
-                    response.message = 'Username or password is incorrect';
-                }
-                callback(response);
-              }else if(username === 'guard'){
-                var response = { success: username === 'guard' && password === 'guard'};
-                if (!response.success) {
-                    response.message = 'Username or password is incorrect';
-                }
-                callback(response);
-              }else {
-                var response = { success: username === 'basic' && password === 'basic'};
-                if (!response.success) {
-                    response.message = 'Username or password is incorrect';
-                }
-                callback(response);
-              }
-
-            }, 1000);
+            // $timeout(function () {
+            //   if(username === 'admin'){
+            //     var response = { success: username === 'admin' && password === 'admin'};
+            //     if (!response.success) {
+            //         response.message = 'Username or password is incorrect';
+            //     }
+            //     callback(response);
+              //   }else if(username === 'host'){
+            //     var response = { success: username === 'host' && password === 'host'};
+            //     if (!response.success) {
+            //         response.message = 'Username or password is incorrect';
+            //     }
+            //     callback(response);
+            //   }else if(username === 'guard'){
+            //     var response = { success: username === 'guard' && password === 'guard'};
+            //     if (!response.success) {
+            //         response.message = 'Username or password is incorrect';
+            //     }
+            //     callback(response);
+            //   }else {
+            //     var response = { success: username === 'basic' && password === 'basic'};
+            //     if (!response.success) {
+            //         response.message = 'Username or password is incorrect';
+            //     }
+            //     callback(response);
+            //   }
+            //
+            // }, 1000);
 
 
             /* Use this for real authentication
@@ -42,27 +42,76 @@ angular.factory('AuthenticationService',
             //    .success(function (response) {
             //        callback(response);
             //    });
+            var req = "username="+username+"&password="+password+"&grant_type=password";
+            var token = "";
+            var userType = "";
 
-            $http.post('http://partyguardservices20160912122440.azurewebsites.net/token', { username: username, password: password, grant_type: password })
-                .success(function (response) {
-                  alert("success");
-                    // login successful if there's a token in the response
-                    if (response.token) {
-                        alert("tolen");
-                        // store username and token in local storage to keep user logged in between page refreshes
-                        $localStorage.currentUser = { username: username, token: response.token };
+            console.log("hello"+req);
+            $http({
+                  method: 'POST',
+                  url: 'http://partyguardservices20161025060016.azurewebsites.net/token',
+                  data: req,
+                  headers: {
+                  'Content-Type': 'text/plain'
+                  }}).then(function(result) {
+                   console.log(result.data.access_token);
+                    token = result.data.access_token
+                    var auth = "Bearer "+token;
+                    console.log("Authorization"+auth)
+                    $http({
+                          method: 'GET',
+                          url: 'http://partyguardservices20161025060016.azurewebsites.net/API/Account/UserInfo',
+                          headers: {
+                          'Authorization': auth
+                          }}).then(function(result) {
+                          // console.log(result.data.UserType);
+                              userType = result.data.UserType;
+                              //var response = { success: type === userType};
+                              console.log(result.data);
+                              //console.log(response.access_token);
+                                         // store username and token in local storage to keep user logged in between page refreshes
+                          //    $localStorage.currentUser = { username: username, token: token };
 
-                        // add jwt token to auth header for all requests made by the $http service
-                        $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
+                                         // add jwt token to auth header for all requests made by the $http service
+                             $http.defaults.headers.common.Authorization = 'Bearer ' +token;
+                              callback(userType);
+                          }, function(error) {
+                          console.log(error);
+                          });
+                  //  callback(response);
+                  }, function(error) {
+                  console.log("shit"+error);
+                    callback(userType);
+                  });
 
-                        // execute callback with true to indicate successful login
-                        callback(true);
-                    } else {
-                      alert(" no tolen");
-                        // execute callback with false to indicate failed login
-                        callback(false);
-                    }
-                });
+
+            // $http.post({
+            //       method: 'POST',
+            //       url: 'http://partyguardservices20161025060016.azurewebsites.net/token',
+            //       data: req,
+            //       headers: {
+            //       'Content-Type': 'text/plain'
+            //       }})
+            //     .success(function (response) {
+            //
+            //       console.log(response);
+            //         // login successful if there's a token in the response
+            //         if (response.access_token) {
+            //             console.log(response.access_token);
+            //             // store username and token in local storage to keep user logged in between page refreshes
+            //             $localStorage.currentUser = { username: username, token: response.access_token };
+            //
+            //             // add jwt token to auth header for all requests made by the $http service
+            //             $http.defaults.headers.common.Authorization = 'Bearer ' + response.access_token;
+            //
+            //             // execute callback with true to indicate successful login
+            //             callback(true);
+            //         } else {
+            //           alert(" no toKen");
+            //             // execute callback with false to indicate failed login
+            //             callback(false);
+            //         }
+            //     });
 
         };
 
