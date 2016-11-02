@@ -10,7 +10,7 @@ var uname = $rootScope.uname;
 var finalresult = [];
 $http({
       method: 'GET',
-      url: 'http://partyguardservices20161025060016.azurewebsites.net/FraternityList',
+      url: 'https://partyguardservices20161025060016.azurewebsites.net/FraternityList',
       headers: {
       'Authorization': auth
       }}).then(function(result) {
