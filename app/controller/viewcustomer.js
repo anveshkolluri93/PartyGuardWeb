@@ -18,9 +18,14 @@ function ($scope, $rootScope, $location, $http) {
   var auth = $rootScope.Author;
   var uname = $rootScope.uname;
   var finalresult = [];
+  $rootScope.selectedItem = {};
 //   $scope.$watch('toggle', function(){
 //     console.log("toggle");
 //   $scope.toggleText = $scope.toggle ? 'Active' : 'Suspend';
+
+          $scope.IsHidden = true;
+          $scope.IsShown = true;
+
 // });
   $http({
         method: 'GET',
@@ -131,6 +136,53 @@ function ($scope, $rootScope, $location, $http) {
         }, function(error) {
         console.log(error);
         });
+
+        $scope.ShowHide = function (index) {
+            //If DIV is hidden it will be visible and vice versa.
+            console.log("index is "+index);
+            $scope.IsHidden = $scope.IsHidden ? false : true;
+            $scope.IsShown = $scope.IsShown ? false : true;
+            $rootScope.selectedItem = $scope.members[index];
+            if($rootScope.selectedItem.paymentStatus === "Active"){
+              console.log("heyy am active");
+
+            $scope.activeClass = 'btn btn-success disabled';
+            $scope.suspendClass = 'btn btn-warning ';
+            $scope.activity = false ;
+            $scope.buttonClass = 'btn btn-warning';
+            $scope.active = "Activated";
+            $scope.suspend = "Suspend"
+          }else {
+              console.log("heyy am suspended");
+          //  $scope.suspend = true;
+          $scope.activeClass = 'btn btn-success';
+          $scope.suspendClass = 'btn btn-warning disabled';
+        $scope.activity = true ;
+          $scope.buttonClass = 'btn btn-success';
+            $scope.active = "Activate";
+            $scope.suspend = "Suspended"
+          }
+            console.log($rootScope.selectedItem);
+
+        }
+
+        $scope.displayTable = function(){
+          $scope.IsHidden = true;
+          $scope.IsShown = true;
+
+        }
+        $scope.activate = function (){
+            $scope.active = "Activate";
+          $scope.activeClass = 'btn btn-success ';
+          $scope.suspendClass = 'btn btn-warning disabled';
+          $scope.suspend = "Suspended"
+        }
+        $scope.suspended = function (){
+          $scope.activeClass = 'btn btn-success  disabled';
+          $scope.active = "Activated";
+          $scope.suspendClass = 'btn btn-warning';
+          $scope.suspend = "Suspend"
+        }
 
         $scope.delete_task = function(index) {
         console.log("index is "+index);

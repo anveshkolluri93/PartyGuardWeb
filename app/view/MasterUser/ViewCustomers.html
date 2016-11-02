@@ -24,7 +24,7 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <div class="container-fluid">
+            <div class="container-fluid" ng-show = "IsShown">
                 <div class="row">
                     <div class="col-md-12">
                        <h1>Customers List</h1>
@@ -68,7 +68,7 @@
                 <th>Customer ID</th>
                 <th><b>Fraternity Name</b></th>
                 <th><b>ChapterName</b></th>
-                <th><b>Subscription Code</b></th>
+                <th><b>Subscription Status</b></th>
                 <th>Action</th>
             </tr>
 
@@ -101,12 +101,13 @@
 
                 </td>
                 <td>{{member.chapter}}</td>
-              <td>{{member.subscripCode}}</td>
+              <td>{{member.paymentStatus}}</td>
                 <td>
 
                     <!-- <button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Activate item">Activate
                     </button> -->
-                       <button ng-disabled="but.disabled" ng-click="delete_task($index)" class="btn btn-success btn-xs">{{but.status ? but.status : 'Actviate'}}</button>
+                       <!-- <button ng-disabled="but.disabled" ng-click="delete_task($index)" class="btn btn-success btn-xs">{{but.status ? but.status : 'Actviate'}}</button> -->
+                        <button class="btn btn-success btn-xs" value="Edit Subscription" ng-click="ShowHide($index)">Edit Subscription</button>
                     <!-- <button type="button" class="btn btn-sm btn-success" ng-click="toggle = !toggle">{{toggleText}}</button> -->
 
                 </td>
@@ -115,15 +116,74 @@
                             </tbody>
 
 
-
-
-
-
-
-
                    </table>
                         <!-- <a href="#" class="btn btn-warning">Save</a> -->
                     </div>
+                </div>
+                <!-- customer list end -->
+                <!-- customer details -->
+                <div ng-hide = "IsHidden">
+                  <div class="container-fluid" ng-init="suspend=true">
+                   <div class="row">
+                         <div class="col-md-12">
+                             <h1>Customer Details</h1>
+                         </div>
+                   </div>
+                      <div class="col-md-12">
+                           <table class="table table-responsive">
+                                  <tr>
+                                      <td><b>University</b></td>
+                                      <td>{{selectedItem.UniversityModel.univeristyName}}</td>
+                                  </tr>
+                                  <tr>
+                                      <td><b>House Name</b></td>
+                                      <td>{{selectedItem.fraternityName}}</td>
+                                  </tr>
+                                  <tr>
+                                      <td><b>House Nickname</b></td>
+                                      <td>{{selectedItem.nickName}}</td>
+                                  </tr>
+
+                                  <tr>
+                                      <td><b>Chapter</b></td>
+                                      <td >{{selectedItem.chapter}}</td>
+                                  </tr>
+
+                                  <tr>
+                                      <td><b>Customer ID</b></td>
+                                      <td>{{selectedItem.fraternityID}}</td>
+                                  </tr>
+                                  <tr>
+                                      <td><b>Subscription Code</b></td>
+                                      <td>{{selectedItem.subscripCode}}</td>
+                                  </tr>
+                                  <tr>
+                                      <td><b>Guard User Code</b></td>
+                                      <td>{{selectedItem.guardCode}}</td>
+                                  </tr>
+                                  <tr>
+                                      <td><b>Subscription status</b></td>
+                                      <td>{{selectedItem.paymentStatus}}</td>
+                                  </tr>
+                                  <tr>
+                                      <td><b>Start Date</b></td>
+                                      <td>11/01/2016</td>
+                                  </tr>
+                                  <tr>
+                                      <td><b>Expiry Date</b></td>
+                                      <td>11/01/2017</td>
+                                  </tr>
+                           </table>
+                          <a href="#" class="btn btn-success" type= "submit" ng-click="suspended()" ng-class="activeClass" ng-model="active">{{active}}</a>
+                          <a href="#" class="btn btn-warning" type= "submit" ng-click="activate()" ng-class="suspendClass" ng-model="suspend">{{suspend}}</a>
+                          <a href="#" class="btn btn-primary" type= "submit" ng-click="displayTable()" >Go back</a>
+                          <!-- <button ng-class="buttonClass" ng-click='activity = !activity'><span>{{activity ? 'Activate' : 'Suspend'}}</span></button> -->
+
+
+                          <div class="alert alert-success" role="alert" ng-show="showSuccessAlert"><h4>{{successTextAlert}}</h4></div>
+                      </div>
+                  </div>
+                  <!-- end view -->
                 </div>
             </div>
         </div>
