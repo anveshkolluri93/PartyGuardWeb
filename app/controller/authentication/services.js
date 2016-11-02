@@ -2,7 +2,8 @@ angular.factory('AuthenticationService',
     ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout',
     function (Base64, $http, $cookieStore, $rootScope, $timeout) {
         var service = {};
-
+       $rootScope.Author = "";
+       $rootScope.uname = "";
         service.Login = function (username, password, callback) {
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
@@ -57,7 +58,11 @@ angular.factory('AuthenticationService',
                    console.log(result.data.access_token);
                     token = result.data.access_token
                     var auth = "Bearer "+token;
+
+                    $rootScope.Author = auth;
+                    $rootScope.uname = username;
                     console.log("Authorization"+auth)
+                    console.log("Authorization"+$rootScope.Author);
                     $http({
                           method: 'GET',
                           url: 'http://partyguardservices20161025060016.azurewebsites.net/API/Account/UserInfo',
@@ -70,7 +75,7 @@ angular.factory('AuthenticationService',
                               console.log(result.data);
                               //console.log(response.access_token);
                                          // store username and token in local storage to keep user logged in between page refreshes
-                          //    $localStorage.currentUser = { username: username, token: token };
+                        //  $localStorage.currentUser = { username: username, token: token };
 
                                          // add jwt token to auth header for all requests made by the $http service
                              $http.defaults.headers.common.Authorization = 'Bearer ' +token;
