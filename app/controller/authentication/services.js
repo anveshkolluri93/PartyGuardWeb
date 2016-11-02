@@ -50,7 +50,7 @@ angular.factory('AuthenticationService',
             console.log("hello"+req);
             $http({
                   method: 'POST',
-                  url: 'http://partyguardservices20161025060016.azurewebsites.net/token',
+                  url: 'https://partyguardservices20161025060016.azurewebsites.net/token',
                   data: req,
                   headers: {
                   'Content-Type': 'text/plain'
@@ -65,7 +65,7 @@ angular.factory('AuthenticationService',
                     console.log("Authorization"+$rootScope.Author);
                     $http({
                           method: 'GET',
-                          url: 'http://partyguardservices20161025060016.azurewebsites.net/API/Account/UserInfo',
+                          url: 'https://partyguardservices20161025060016.azurewebsites.net/API/Account/UserInfo',
                           headers: {
                           'Authorization': auth
                           }}).then(function(result) {
