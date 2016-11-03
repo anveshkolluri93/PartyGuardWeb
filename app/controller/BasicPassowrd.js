@@ -28,13 +28,14 @@ if($rootScope.test.NewPassword === $rootScope.test.ConfirmPassword) {
 //         }
 
  $location.path('/Login');
-
+alert('Password changed succesfully')
 }
 else {
 
 
   $location.path('/Basicpass');
-  console.log("Passwords not matching");
+  alert('Passwords not matching');
+
 }
 }
 //api call
