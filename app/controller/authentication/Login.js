@@ -1,7 +1,7 @@
 angular.controller("LoginController", ['$scope', '$rootScope', '$location', 'AuthenticationService',
 function ($scope, $rootScope, $location, AuthenticationService) {
 
-
+   $rootScope.loginValue = 'Login';
     // reset login status
     AuthenticationService.ClearCredentials();
 
