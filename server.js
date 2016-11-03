@@ -15,17 +15,7 @@ var app = express();
 // // load AWS SES
 // var ses = new aws.SES({apiVersion: '2010-12-01'});
 
-app.get('/dowork',function(res,req){
-    console.log("request received");
-    console.log(req.params);
-  // var mailOptions={
-  //     to : req.query.contactEmail,
-  //     subject : req.query.contactName,
-  //     text : "hi"
-  // }
-  // console.log(JSON.stringify(mailOptions));
-  // /... code to do your work .../
-});
+
   app.use(express.static(__dirname ));
 
   // app.use("http://partyguardservices20161025060016.azurewebsites.net/*", function(req, res, next) {
@@ -54,6 +44,18 @@ var smtpTransport = nodemailer.createTransport("SMTP",{
         user: "spandanavelaga06@gmail.com",
         pass: "raja1993"
     }
+});
+
+app.get('/dowork',function(res,req){
+    console.log("request received finally");
+    console.log(res.query);
+    var mailOptions={
+        to : res.query.contactEmail,
+        subject : res.query.contactName,
+        text : "hi"
+    }
+    console.log(JSON.stringify(mailOptions));
+
 });
 /*------------------SMTP Over-----------------------------*/
 // for all public requests try to use /app folder
@@ -88,10 +90,10 @@ app.use("/", function(req, res, next){
 //
 // });
 app.get('/send',function(req,res){
-    console.log("Request received");
+  console.log("Mail Request received");
     var mailOptions={
-        to : req.query.contactEmail,
-        subject : req.query.contactName,
+        to : res.query.contactEmail,
+        subject : res.query.contactName,
         text : "hi"
     }
     console.log(JSON.stringify(mailOptions));

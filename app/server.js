@@ -62,9 +62,17 @@ app.use("/", function(req, res, next){
 // });
 // server.get('/index',function(req,res){
 //
+
 // });
+
+app.get('/dowork',function(req,res){
+console.log("Request received finally");
+  console.log("request is "+(req.query);
+
+});
+
 app.use('/send',function(req,res){
-    console.log("Request received");
+  //  console.log("Request received");
     var mailOptions={
         to : req.query.conactEmail,
         subject : req.query.Subject,
