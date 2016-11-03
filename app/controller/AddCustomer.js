@@ -1,11 +1,17 @@
 angular.controller("FraternityController", ['$scope','$http', '$rootScope', '$location',
 function ($scope,$http, $rootScope, $location) {
   $rootScope.loginValue = "Logout";
+    $rootScope.isMaster = false;
+    $rootScope.isHost = true;
+    $rootScope.isGuard = true;
+    $rootScope.isBasic = true;
+
           $rootScope.master = {};
           $rootScope.locationjson = {};
           $rootScope.userRequest = {};
           $rootScope.userResponse = {};
           $rootScope.hostRegistration = {};
+
           var finalrequest = {};
       //  $rootScope.address= null;
 

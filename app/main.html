@@ -68,6 +68,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact Us</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Dashboard" ng-show = "!isMaster" ng-model="homepage">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Hostprofile" ng-show = "!isHost" ng-model="homepage">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Guard" ng-show = "!isGuard" ng-model="homepage">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Basic" ng-show = "!isBasic" ng-model="homepage">Profile</a>
+                    </li>
 
 
                 </ul>

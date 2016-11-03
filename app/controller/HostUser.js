@@ -2,8 +2,11 @@ angular.controller("HostUserController", ['$scope', '$rootScope', '$location',
 function ($scope, $rootScope, $location) {
 
     // reset login status
-
-
+    $rootScope.loginValue = 'Logout';
+    $rootScope.isMaster = true;
+    $rootScope.isHost = false;
+    $rootScope.isGuard = true;
+    $rootScope.isBasic = true;
 
 
                 // $location.path('/HostProfile');

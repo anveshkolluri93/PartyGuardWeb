@@ -101,5 +101,9 @@ function ($rootScope) {
 
     $rootScope.isUserLoggedIn = false;
     $rootScope.loginValue = "Login";
+    $rootScope.isMaster = true;
+    $rootScope.isHost = true;
+    $rootScope.isGuard = true;
+    $rootScope.isBasic = true;
 
 }]);
