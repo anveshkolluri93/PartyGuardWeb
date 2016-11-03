@@ -55,6 +55,16 @@ app.get('/dowork',function(res,req){
         text : "hi"
     }
     console.log(JSON.stringify(mailOptions));
+    smtpTransport.sendMail(mailOptions, function(error, response){
+     if(error){
+            console.log(error);
+        req.send("error");
+     }else{
+            console.log("Message sent: " + response.message);
+        req.send("sent");
+         }
+});
+
 
 });
 /*------------------SMTP Over-----------------------------*/

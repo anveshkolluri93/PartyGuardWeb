@@ -2,7 +2,7 @@
   "name": "email-node",
   "version": "1.0.0",
   "devDependencies": {
-    "nodemailer": "latest",
+    "nodemailer": "v0.7.1",
     "express": "latest"
   },
     "scripts": {
