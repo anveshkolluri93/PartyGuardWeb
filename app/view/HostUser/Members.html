@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="h1-responsive">Members
-                        <small class="text-muted"></small>
+                        <!-- <small class="text-muted"></small> -->
                     </h1>
                 </div>
             </div>
@@ -41,47 +41,35 @@
             <hr>
 
             <!--First row-->
-             <div class="container">
+             <!-- <div class="container"> -->
              <div class="row" >
                  <!--First column-->
-                 <div class="col-md-4 col-sm-6 col-lg-3" ng-repeat="member in members">
+                 <div class="col-md-6 col-sm-12 col-lg-4" ng-repeat="member in members">
                      <!--Card-->
-                     <div class="card">
+                     <div class="card" >
 
                          <!--Card image-->
-                         <div class="view overlay hm-white-slight">
-                             <img src="{{member.image}}"   alt="" width="200" height="200">
-                             <a href="#!">
-                                 <div class="mask"></div>
-                             </a>
-                         </div>
-                         <!--/.Card image-->
+                             <img src="{{member.image}}"   alt="{{member.firstName}}">
+                             <div class="card-block">
+                               <i class="fa fa-edit prefix"></i>
+                                <h4 class ="card-title">Name: {{member.firstName}}</h4>
+                                <p class="card-text">email: {{member.email}}<br>
+                                                     Phone: {{member.phone}}<br>
+                                                     Age  : {{member.age}}<br>
+                                                     </p>
+                           </div>
 
 
-                         <!--/.Card content-->
-                         <i class="fa fa-edit prefix"></i>
-                         <table>
-         <tr>
-             <td> <h4> Name: {{member.firstName +" "+ member.lastName}}</h4></td>
-         </tr>
-          <tr>
-             <td> Email: {{member.email}} </td>
-         </tr>
-          <tr>
-             <td> Phone: {{member.phone}} </td>
-         </tr>
-         <tr>
-             <td>Age: {{member.age}} </td>
-         </tr>
-     </table>
- <a href="#!" class="btn btn-warning">Delete</a>
+
                      </div>
+
                      <!--/.Card-->
                  </div>
                  <!--/.First column-->
 
              </div>
-             </div> <!-- container-->
+             <!-- </div>  -->
+             <!-- container-->
              <!--/.First row-->
              <hr>
             <!--Pagination-->
