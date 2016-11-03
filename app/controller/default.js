@@ -16,52 +16,25 @@ function ($scope, $http, $window, $rootScope) {
 //        url: 'http://localhost:8080/dowork',
 //        params: {term: 'abishai'},
 //        headers: {
-//        'Content-Type': 'application/json'
+//        'Content-Type': 'application/json' https://partyguard.herokuapp.com/ http://localhost:8080/dowork
 //        }
 //    });
         $scope.sendMail = function(user){
-            // $window.alert("Helyoo!");
-          // $window.alert($scope.contactName);
-          //   var name = $scope.contactName;
-          //   var email = $scope.contactEmail;
-          //   var msg = "Hello";
-          //   var sub = "PartyGuard";
-          // // var data = ({
-          // //          contactName : $scope.contactName,
-          // //          contactEmail : $scope.contactEmail,
-          // //          contactMsg : "Hello",
-          // //          Subject : "PartyGuard"
-          // //      });
-          // $window.alert("Helloo!");
+
 
 
           var data = $scope.user;
           console.log(JSON.stringify(data));
           $http({method: 'GET',
-                 url: 'http://localhost:8080/dowork',
+                 url: 'https://partyguard.herokuapp.com/dowork',
                  params: data,
                  headers: {
                  'Content-Type': 'application/json'
                  }
              });
-          // $http.get("http://localhost:8080/send", data)
-          // .success(function (data, status, headers, config) {
-          //   console.log("success");
-          // })
-          // .error(function (data, status, header, config) {
-          // });
+
 
 
         }
 
   }]);
-  // angular.factory('DefaultCtrl',['$http',function($http){
-  //   console.log("success");
-  //    return {
-  //      postEmail: function(emailData,callback){
-  //
-  //
-  //        $http.post("/send", emailData).success(callback);
-  //      }
-  //    }
-  // }]);
