@@ -1,0 +1,96 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+public class loginflow {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		WebDriver driver = new FirefoxDriver();
+		driver.get("http://localhost:3000/");
+		
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/form/a[2]")).click();
+		//home button
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[1]/a")).click();
+		//about us button
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[2]/a")).click();
+		//how it works button
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[3]/a")).click();
+		//faq button
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[4]/a")).click();
+		//contact us button
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[5]/a")).click();
+		
+		//image carousel
+		driver.findElement(By.xpath(".//*[@id='carousel-example-1']/a[1]")).click();
+		driver.findElement(By.xpath(".//*[@id='carousel-example-1']/div/div[1]/img")).click();
+		driver.findElement(By.xpath(".//*[@id='carousel-example-1']/a[1]/span[1]")).click();
+		driver.findElement(By.xpath(".//*[@id='carousel-example-1']/a[2]/span[1]")).click();
+		driver.findElement(By.xpath(".//*[@id='carousel-example-1']/a[2]")).click();
+		driver.findElement(By.xpath(".//*[@id='carousel-example-1']/ol")).click();
+		driver.findElement(By.xpath(".//*[@id='carousel-example-1']/ol/li[1]")).click();
+		driver.findElement(By.xpath(".//*[@id='carousel-example-1']/ol/li[2]")).click();
+		driver.findElement(By.xpath(".//*[@id='carousel-example-1']/ol/li[3]")).click();
+		driver.findElement(By.xpath(".//*[@id='carousel-example-1']/ol/li[4]")).click();
+		
+		//submit button
+		driver.findElement(By.xpath(".//*[@id='send_email']")).click();
+		
+		driver.findElement(By.xpath("html/body/main/div/div/div/div[1]/h3/a")).click();
+		//host link
+		driver.findElement(By.xpath("html/body/main/div/div/div/div[3]/div[1]/div/div/div[2]/p/a")).click();
+		//guard link
+		driver.findElement(By.xpath("html/body/main/div/div/div/div[3]/div[2]/div/div/div[2]/p/a']")).click();
+		//footer links
+		driver.findElement(By.xpath("html/body/footer/div[1]/div/div[1]/p")).click();
+		driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[1]/a']")).click();
+		driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[3]/a")).click();
+		driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[4]/a")).click();
+		
+		
+		
+		driver.findElement(By.xpath("html/body/main/div/div/div/div[2]/div/div/div/form/div[1]/label")).sendKeys("hsshs");
+		driver.findElement(By.xpath("html/body/main/div/div/div/div[2]/div/div/div/form/div[2]/label")).sendKeys("hsshs");
+		driver.findElement(By.xpath(".//*[@id='send_email']")).click();
+		
+		//loginpagee
+		
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/form/a[2]")).click();
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[1]/a")).click();
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[2]/a")).click();
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[3]/a")).click();
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[4]/a")).click();
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[5]/a")).click();
+		
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/form/a[2]")).click();
+		
+		driver.findElement(By.xpath(".//*[@id='form41']")).sendKeys("hsshs");
+		
+		driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[2]/div[1]/div/label")).sendKeys("hsshs");
+		
+		driver.findElement(By.xpath(".//*[@id='form41']")).sendKeys("");
+		
+		driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[2]/div[1]/div/label")).sendKeys("");
+		
+		driver.findElement(By.xpath(".//*[@id='form41']")).sendKeys("");
+		
+		driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[2]/div[1]/div/label")).sendKeys("hsshs");
+		
+		driver.findElement(By.xpath(".//*[@id='form41']")).sendKeys("hsshs");
+		
+		driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[2]/div[1]/div/label")).sendKeys("");
+		
+		driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[5]/div/div/div/p[1]/a")).click();
+		
+		driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[5]/div/div/div/p[2]/a")).click();
+		
+		driver.findElement(By.xpath("html/body/footer/div[1]/div/div[1]/p")).click();
+		driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[1]/a']")).click();
+		driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[3]/a")).click();
+		driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[4]/a")).click();
+}
+}
