@@ -6,6 +6,7 @@ function ($scope, $rootScope, $location) {
   //       $scope.update = function(user) {
   //         $scope.master = angular.copy(user);
   //       };
+   $rootScope.loginValue = "Logout";
 
 var users = {
   "hname": "SIGMA PHI EPSILON(SigEp)",

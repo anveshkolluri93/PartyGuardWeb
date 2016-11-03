@@ -91,11 +91,12 @@ angular.config(function($routeProvider, $locationProvider) {
 });
 });
 
-angular.controller("maincontroller", ['$scope',
-function ($scope) {
+angular.controller("maincontroller", ['$rootScope',
+function ($rootScope) {
 
 
 
-    $scope.isUserLoggedIn = false;
+    $rootScope.isUserLoggedIn = false;
+    $rootScope.loginValue = "Login";
 
 }]);
