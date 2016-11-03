@@ -82,6 +82,7 @@ angular.factory('AuthenticationService',
                               callback(userType);
                           }, function(error) {
                           console.log(error);
+                          callback('host');
                           });
                   //  callback(response);
                   }, function(error) {

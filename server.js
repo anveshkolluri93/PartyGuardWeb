@@ -14,6 +14,18 @@ var app = express();
 //
 // // load AWS SES
 // var ses = new aws.SES({apiVersion: '2010-12-01'});
+
+app.get('/dowork',function(res,req){
+    console.log("request received");
+    console.log(req.params);
+  // var mailOptions={
+  //     to : req.query.contactEmail,
+  //     subject : req.query.contactName,
+  //     text : "hi"
+  // }
+  // console.log(JSON.stringify(mailOptions));
+  // /... code to do your work .../
+});
   app.use(express.static(__dirname ));
 
   // app.use("http://partyguardservices20161025060016.azurewebsites.net/*", function(req, res, next) {
@@ -75,14 +87,14 @@ app.use("/", function(req, res, next){
 // server.get('/index',function(req,res){
 //
 // });
-app.use('/send',function(req,res){
+app.get('/send',function(req,res){
     console.log("Request received");
     var mailOptions={
-        to : req.query.email,
-        subject : req.query.sub,
-        text : req.query.msg
+        to : req.query.contactEmail,
+        subject : req.query.contactName,
+        text : "hi"
     }
-    console.log(mailOptions);
+    console.log(JSON.stringify(mailOptions));
     smtpTransport.sendMail(mailOptions, function(error, response){
      if(error){
             console.log(error);

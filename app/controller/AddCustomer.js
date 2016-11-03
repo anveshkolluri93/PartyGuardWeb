@@ -1,10 +1,11 @@
 angular.controller("FraternityController", ['$scope','$http', '$rootScope', '$location',
 function ($scope,$http, $rootScope, $location) {
-
+  $rootScope.loginValue = "Logout";
           $rootScope.master = {};
           $rootScope.locationjson = {};
           $rootScope.userRequest = {};
           $rootScope.userResponse = {};
+          $rootScope.hostRegistration = {};
           var finalrequest = {};
       //  $rootScope.address= null;
 
@@ -26,6 +27,9 @@ function ($scope,$http, $rootScope, $location) {
                       $rootScope.userRequest['universityId'] = user.universityId;
                       $rootScope.userRequest['locationid'] = "10";
                   $rootScope.userRequest['LocationModel'] = $rootScope.locationjson;
+
+
+
 
                          finalrequest = $rootScope.userRequest;
                      console.log("finally"+JSON.stringify( $rootScope.locationjson));
@@ -53,7 +57,35 @@ function ($scope,$http, $rootScope, $location) {
                           //var response = { success: type === userType};
                           console.log("success"+JSON.stringify(result.data));
                             $rootScope.userResponse = result.data;
+                            var subcode = result.data.subscripCode;
+                            var temppass = result.data.tempPass;
+
+
+                            //registration
+                                 $rootScope.hostRegistration['Email'] = user.email;
+                                $rootScope.hostRegistration['tempPassword'] = temppass;
+                                $rootScope.hostRegistration['firstName'] = user.fraternityName;
+                                $rootScope.hostRegistration['lastName'] = user.fraternityName;
+                                $rootScope.hostRegistration['age'] = '22';
+                                $rootScope.hostRegistration['userType'] = 'host';
+                                $rootScope.hostRegistration['hostUserCode'] = 'subcode';
+                                $rootScope.hostRegistration['PhoneNumber'] = user.mbl;
+                                var registerHost = $rootScope.hostRegistration;
                               console.log("reposne"+JSON.stringify($rootScope.userResponse));
+                                console.log("host reposne"+JSON.stringify($rootScope.hostRegistration));
+                                //host registration
+                                $http({
+                                      method: 'POST',
+                                      url: 'https://partyguardservices20161025060016.azurewebsites.net/api/Account/Register',
+                                      data: registerHost,
+                                      headers: {
+                                        'Content-Type': 'application/json'
+                                      }}).then(function(result) {
+                                         console.log("host reg done");
+                                         console.log(result);
+                                      }, function(error) {
+                                      console.log(error);
+                                      });
                           //console.log(response.access_token);
                                      // store username and token in local storage to keep user logged in between page refreshes
                       //    $localStorage.currentUser = { username: username, token: token };

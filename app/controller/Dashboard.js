@@ -2,7 +2,14 @@ angular.controller("DashboardController", ['$scope', '$rootScope', '$location', 
 function ($scope, $rootScope, $location, $http, $filter) {
 
                 // $location.path('/HostProfile');
- $scope.isUserLoggedIn = true;
+// if($scope.isUserLoggedIn === true){
+//  $scope.loginValue = 'Logout';
+//   console.log($scope.loginValue);
+//  }
+
+   $rootScope.loginValue = "Logout";
+
+ //$scope.isUserLoggedOut
 console.log($http.defaults.headers.common.Authorization);
 console.log("author "+$rootScope.Author);
 var auth = $rootScope.Author;
