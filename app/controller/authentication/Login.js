@@ -14,11 +14,11 @@ function ($scope, $rootScope, $location, AuthenticationService) {
                 console.log("response are"+ response);
                 AuthenticationService.SetCredentials($scope.username, $scope.password);
               if(response === 'basic') {
-                $location.path('/Hostprofile');
+                $location.path('/Dashboard');
                   // $location.path('/Basic');
 
               }else if(response === 'host'){
-                $location.path('/Hostnew');
+                $location.path('/Hostprofile');
                 $rootScope.isUserLoggedIn = true;
               }else if(response === 'guard'){
                 $location.path('/Guard');
