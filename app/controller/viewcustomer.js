@@ -5,6 +5,10 @@ function ($scope, $rootScope, $location, $http) {
  //$scope.isUserLoggedIn = true;
 
   $rootScope.loginValue = "Logout";
+    $rootScope.isMaster = false;
+    $rootScope.isHost = true;
+    $rootScope.isGuard = true;
+    $rootScope.isBasic = true;
 //                  var members =[
 // {"image":"https://s32.postimg.org/j39r4gait/Sigmapi.jpgg", "fratName":"Pi Sigma Epsilon", "ChapterName":"Pi Sig E", "Custid":"12345"},
 // {"image":"https://s18.postimg.org/b5foym8ix/download.png", "fratName":"Alpha Epsilon Pi", "ChapterName":"A E Pi", "Custid":"23451"},

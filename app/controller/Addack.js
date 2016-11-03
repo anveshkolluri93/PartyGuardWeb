@@ -7,6 +7,10 @@ function ($scope, $rootScope, $location) {
   //         $scope.master = angular.copy(user);
   //       };
    $rootScope.loginValue = "Logout";
+     $rootScope.isMaster = false;
+     $rootScope.isHost = true;
+     $rootScope.isGuard = true;
+     $rootScope.isBasic = true;
 
 var users = {
   "hname": "SIGMA PHI EPSILON(SigEp)",

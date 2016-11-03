@@ -2,6 +2,10 @@ angular.controller("eventsController", ['$scope', '$rootScope', '$location',
 function ($scope, $rootScope, $location) {
 
 $rootScope.loginValue = "Logout";
+$rootScope.isMaster = true;
+$rootScope.isHost = false;
+$rootScope.isGuard = true;
+$rootScope.isBasic = true;
                 // $location.path('/HostProfile');
  //$scope.isUserLoggedIn = true;
                  var members =[

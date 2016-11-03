@@ -8,6 +8,10 @@ function ($scope, $rootScope, $location, $http, $filter) {
 //  }
 
    $rootScope.loginValue = "Logout";
+     $rootScope.isMaster = false;
+     $rootScope.isHost = true;
+     $rootScope.isGuard = true;
+     $rootScope.isBasic = true;
 
  //$scope.isUserLoggedOut
 console.log($http.defaults.headers.common.Authorization);

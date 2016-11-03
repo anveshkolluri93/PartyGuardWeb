@@ -14,19 +14,19 @@ function ($scope, $rootScope, $location, AuthenticationService) {
                 console.log("response are"+ response);
                 AuthenticationService.SetCredentials($scope.username, $scope.password);
               if(response === 'basic') {
-                $location.path('/Dashboard');
-                  // $location.path('/Basic');
+              //  $location.path('/Dashboard');
+                  $location.path('/Hostprofile');
 
               }else if(response === 'host'){
                 $location.path('/Hostprofile');
-                $rootScope.isUserLoggedIn = true;
+
               }else if(response === 'guard'){
                 $location.path('/Guard');
-                $rootScope.isUserLoggedIn = true;
+
               }else{
-                $location.path('/AddCustomer');
+                $location.path('/Dashboard');
               console.log("in admin");
-                $rootScope.isUserLoggedIn = true;
+
               }
 
             } else {
