@@ -32,35 +32,42 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                       <h1>PartyGuard Team</h1>
+                       <h1>Create an Event !!!</h1>
                    </div>
 
                 </div>
-                <div class="row">
-                    <div class="col-md-3">
+                <br>
+                <div class="row " >
+                    <div class="col-md-3 col-lg-6">
                       <div class="md-form">
                     <i class="fa fa-beer prefix"></i>
-                    <input type="text" id="form2" placeholder="Enter event Name"class="form-control" ng-model = "user.eventname" required>
+                    <input type="text" id="form2" placeholder="Enter event Name"class="form-control " ng-model = "user.eventname" required>
                     <!-- <label for="form2">Event Name</label> -->
                     </div>
                    </div>
-                    <div class="col-md-3">
-                      <div class="md-form">
-                    <i class="fa fa-calendar prefix"></i>
-                    <input type="date" id="form2" placeholder="Enter Date" class="form-control" ng-model = "user.eventdate" required>
-                    <!-- <label for="form2">Event Date</label> -->
 
-                    </div>
-                   </div>
-                   <div class="col-md-3">
-                     <div class="md-form">
-                   <i class="fa fa-clock-o prefix"></i>
-                   <input type="time" id="form2" placeholder="Enter Time" class="form-control" ng-model = "user.eventtime" required>
-                   <!-- <label for="form2">Event Date</label> -->
 
-                   </div>
+
+                </div>
+                <div class="row">
+                  <div class="col-md-3 col-lg-6">
+                    <div class="md-form">
+                  <i class="fa fa-calendar prefix"></i>
+                  <input type="date" id="form2" placeholder="Enter Date" class="form-control" ng-model = "user.eventdate" required>
+                  <!-- <label for="form2">Event Date</label> -->
+
                   </div>
+                 </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 col-lg-6">
+                    <div class="md-form">
+                  <i class="fa fa-clock-o prefix"></i>
+                  <input type="time" id="form2" placeholder="Enter Time" class="form-control" ng-model = "user.eventtime" required>
+                  <!-- <label for="form2">Event Date</label> -->
 
+                  </div>
+                 </div>
                 </div>
 
                 <div class="row">
@@ -99,7 +106,9 @@
                             </tbody>
                    </table>
 
-                      <button type= "submit" class="btn btn-warning-outline" ng-click="display(showSuccessAlert)">Submit</button>
+
+                      <!-- <button type= "submit" class="btn btn-warning-outline" ng-click="display(showSuccessAlert)">Submit</button> -->
+                      <a href="/EventConfirmation" class="btn btn-warning-outline" ng-click="display(showSuccessAlert)">Submit</a>
                       <a href="#" class="btn btn-warning-outline">Reset</a>
                       <div class="alert alert-success" role="alert" ng-show="showSuccessAlert"><h4>{{successTextAlert}}</h4></div>
                     </div>

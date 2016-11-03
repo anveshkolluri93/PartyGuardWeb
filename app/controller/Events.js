@@ -1,6 +1,7 @@
 angular.controller("eventsController", ['$scope', '$rootScope', '$location',
 function ($scope, $rootScope, $location) {
 
+$rootScope.loginValue = "Logout";
                 // $location.path('/HostProfile');
  $scope.isUserLoggedIn = true;
                  var members =[
@@ -20,7 +21,7 @@ function ($scope, $rootScope, $location) {
      return $scope.selected.indexOf(item) > -1;
     console.log($scope.selected.indexOf(item));
    }
-   //
+
    $scope.toggleSelection = function(item){
      var idx = $scope.selected.indexOf(item);
      if(idx > -1){
@@ -31,11 +32,16 @@ function ($scope, $rootScope, $location) {
      }
    }
 
-   $scope.showSuccessAlert = false;
+
+  // $scope.showSuccessAlert = false;
 
    $scope.display = function(showSuccessAlertFlag){
-     $scope.showSuccessAlert = true;
-     $scope.successTextAlert = "Your Event has been successfully created !!";
+    $scope.user['selectedMembers'] = $scope.selected;
+    $rootScope.eventCreated = $scope.user;
+
+  //   $scope.showSuccessAlert = true;
+    // $scope.successTextAlert = "Your Event has been successfully created !!";
    }
+
 
 }]);

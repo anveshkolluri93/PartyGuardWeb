@@ -2,7 +2,7 @@ angular.controller("EditEventsController", ['$scope', '$rootScope', '$location',
 function ($scope, $rootScope, $location) {
 
                 // $location.path('/HostProfile');
- $scope.isUserLoggedIn = true;
+$rootScope.loginValue = "Logout";
                  var events =[
    {"EventName":"Friday Fun", "Date":"10/28/2016", "time":"08:00 P.M"},
    {"EventName":"Halloween Party", "Date":"11/04/2016", "time":"08:00 P.M"},

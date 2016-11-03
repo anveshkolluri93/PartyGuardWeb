@@ -1,6 +1,6 @@
 angular.controller("HouseLocationController", ['$scope', '$rootScope', '$location',
 function ($scope, $rootScope, $location) {
-
+$rootScope.loginValue = "Logout";
   $scope.master = {};
   $scope.showSuccessAlert = false;
         $scope.update = function(user) {

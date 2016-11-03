@@ -1,0 +1,68 @@
+<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+             <ul class="sidebar-nav ">
+                <li >
+                    <a href="/HostProfile">
+                        Profile
+                    </a>
+                </li>
+
+                <li>
+                  <a href="/HouseLocation">House Location</a>
+                </li>
+                <li class="sidebar-brand">
+                      <a href="/Events">Create Event</a>
+                </li>
+                <li>
+                      <a href="/EditEvents">View/Edit Events</a>
+                </li>
+                <li>
+                      <a href="/Members">Members</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" >
+            <div class="container-fluid">
+              <h1> Confirm Event Details </h1>
+              <br>
+                <div class="row">
+                        <table class="table" >
+                            <tr>
+                                <td><b>Event Name</b></td>
+                                <td >{{event.eventname}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Event Date</b></td>
+                                <td >{{event.eventdate | date: "MM-dd-yyyy"}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Event Time</b></td>
+                                <td >{{event.eventtime | date: "HH:mm"}}</td>
+                            </tr>
+                            <tr><td><strong><h5>Assigned Guards</h5></strong></td></tr>
+                            <tr ng-repeat="guard in assignedGuards">
+                              <td>{{guard.firstName}}</td>
+                            </tr>
+                            <br>
+                            <tr>
+                              <td><a href="#" class="btn btn-warning" ng-click="display(showSuccessAlert)">Confirm</a></td>
+                              <td><a href="#" class="btn btn-warning">Cancel</a></td>
+                            </tr>
+<tr>
+  <div class="alert alert-success" role="alert" ng-show="showSuccessAlert"><h4>{{successTextAlert}}</h4></div>
+</tr>
+                        </table>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    <!-- /#wrapper -->

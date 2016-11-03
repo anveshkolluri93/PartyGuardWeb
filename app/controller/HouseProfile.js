@@ -1,6 +1,6 @@
 angular.controller("HouseProfileController", ['$scope', '$rootScope', '$location',
 function ($scope, $rootScope, $location) {
-
+$rootScope.loginValue = "Logout";
 //  $rootScope.master = {};
 
 
