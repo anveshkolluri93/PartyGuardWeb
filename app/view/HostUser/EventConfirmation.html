@@ -43,11 +43,12 @@
                             </tr>
                             <tr>
                                 <td><b>Event Time</b></td>
-                                <td >{{event.eventtime | date: "HH:mm"}}</td>
+                                <td >{{event.eventtime | date: "HH:mm:ss"}}</td>
                             </tr>
-                            <tr><td><h4>Assigned Guards</h4></td></tr>
+                            <tr><td><h6><strong>Guards</strong></h6></td></tr>
                             <tr ng-repeat="guard in assignedGuards">
-                              <td>{{guard.firstName}}</td>
+                              <td><img src="{{guard.image}}" class="img-fluid img-circle center-block" alt="" height="100" width="100"></td>
+                              <td>{{guard.firstName}}  {{guard.lastName}}</td>
                             </tr>
                             <br>
                             <tr>

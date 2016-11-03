@@ -8,12 +8,12 @@ $rootScope.isBasic = true;
                 // $location.path('/HostProfile');
  $scope.isUserLoggedIn = true;
                  var members =[
-   {"image":"https://s16.postimg.org/5uentozzl/11896082_600953573377726_856321715054221983_n.jpg", "firstName":"Srichaitanya", "lastName":"Peddinti", "email":"peddintisrichaitanya@gmail.com", "phone":"6184391808", "age":"25"},
-   {"image":"https://s9.postimg.org/dzb9gf3q3/13256283_10204726631844259_1061219333279314640_n.jpg", "firstName":"Lokesh Reddy", "lastName":"Pothapu", "email":"lokeshreddy.p@gmail.com", "phone":"6184391808", "age":"24"},
-  {"image":"https://s18.postimg.org/mur9bwjxx/13411981_10154855134513265_4188131048765198276_o.jpg", "firstName":"Abishai", "lastName":"Parise", "email":"abishaiparise@gmail.com", "phone":"6184391808", "age":"25"},
-  {"image":"https://s12.postimg.org/pap4hz2hl/13528571_1137806456261626_7331896690535876532_o.jpg", "firstName":"Nihita", "lastName":"Bhimireddy", "email":"nihitabhimireddy@gmail.com", "phone":"6184391808", "age":"24"},
-  {"image":"https://s10.postimg.org/okp2hg6kl/14344296_1186119868098540_2947086008923536253_n.jpg", "firstName":"Spandana", "lastName":"Velaga", "email":"spandanavelaga@gmail.com", "phone":"6184391808", "age":"24"},
-   {"image":"https://s11.postimg.org/510y6jiz3/13765940_10206914773922204_8431267488655394864_o.jpg","firstName":"Jacob", "lastName":"Stansbury","email":"peddintisrichaitanya@gmail.com", "phone":"6184391808", "age":"23"}
+   {"image":"https://s18.postimg.org/zcgklkqbt/1421296_323487294457690_682764613_o_640x401.jpg", "firstName":"Srichaitanya", "lastName":"Peddinti", "email":"peddintisrichaitanya@gmail.com", "phone":"6184391808", "age":"25"},
+   {"image":"https://s11.postimg.org/s2n8ksggj/11224756_10203199692231723_7411357595581364253_o.jpg", "firstName":"Lokesh Reddy", "lastName":"Pothapu", "email":"lokeshreddy.p@gmail.com", "phone":"6184391808", "age":"24"},
+  {"image":"https://s21.postimg.org/jqir5bgxz/10620030_10153379421618265_8349315650679533942_o.jpg", "firstName":"Abishai", "lastName":"Parise", "email":"abishaiparise@gmail.com", "phone":"6184391808", "age":"25"},
+  {"image":"https://s15.postimg.org/cyfzd5gx7/13528571_1137806456261626_7331896690535876532_o.jpg", "firstName":"Nihita", "lastName":"Bhimireddy", "email":"nihitabhimireddy@gmail.com", "phone":"6184391808", "age":"24"},
+  {"image":"https://s16.postimg.org/4pgvq79n9/14344296_1186119868098540_2947086008923536253_n.jpg", "firstName":"Spandana", "lastName":"Velaga", "email":"spandanavelaga@gmail.com", "phone":"6184391808", "age":"24"},
+   {"image":"https://s22.postimg.org/jwn4oo6kx/12513993_937898552966797_3549313969414062671_o.jpg","firstName":"Gopi", "lastName":"Cherupally","email":"gopicherupally@gmail.com", "phone":"6184391808", "age":"23"}
 ];
    $scope.members = members;
 
