@@ -2,6 +2,7 @@ angular.controller("GuardRegistration", ['$scope', '$rootScope', '$location','$h
 function ($scope, $rootScope, $location, $http) {
 
   $scope.master = {};
+  $scope.guardreg = {};
   $scope.showSuccessAlert = false;
         $scope.update = function(user) {
 
@@ -9,7 +10,20 @@ function ($scope, $rootScope, $location, $http) {
             // $scope.successTextAlert = "Registration Succesful.Click ";
             $scope.master = $scope.user;
             $scope.user['userType'] = "guard";
-             console.log("hey"+JSON.stringify($scope.user));
+
+
+              $scope.guardreg['Email'] = user.Email;
+              $scope.guardreg['Password'] = user.Password;
+              $scope.guardreg['firstName'] = user.firstName;
+              $scope.guardreg['lastName'] = user.lastName;
+              $scope.guardreg['userType'] = user.userType;
+              $scope.guardreg['age'] = user.age;
+              $scope.guardreg['imgUrl'] = "guardimage";
+              $scope.guardreg['guardUserCode'] = user.guardUserCode;
+              $scope.guardreg['PhoneNumber'] = user.PhoneNumber;
+
+              var guardUser = $scope.guardreg;
+               console.log("hey"+JSON.stringify(guardUser ));
            //Api call
             // $http.post('/api/authenticate', user)
             //    .success(function (response) {
@@ -22,7 +36,7 @@ function ($scope, $rootScope, $location, $http) {
                $http({
                      method: 'POST',
                      url: 'https://partyguardservices20161025060016.azurewebsites.net/api/Account/Register',
-                     data: user,
+                     data: guardUser,
                      headers: {
                        'Content-Type': 'application/json'
                      }}).then(function(result) {
@@ -39,10 +53,10 @@ function ($scope, $rootScope, $location, $http) {
 
                                     // add jwt token to auth header for all requests made by the $http service
                        //  $http.defaults.headers.common.Authorization = 'Bearer ' +token;
-                       callback("success");
+                      // callback("success");
                      }, function(error) {
                        $scope.showSuccessAlert = true;
-                       $scope.successTextAlert = "Registration failed. ";
+                       $scope.successTextAlert = "Registration failed. Click";
                      console.log(error);
                      });
 

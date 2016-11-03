@@ -1,5 +1,5 @@
-angular.controller("AckController", ['$scope','$rootScope', '$location',
-function ($scope, $rootScope, $location) {
+angular.controller("AckController", ['$scope','$rootScope', '$location', '$http',
+function ($scope, $rootScope, $location, $http) {
 
   // $scope.master = {};
   //
@@ -31,9 +31,31 @@ var users = {
 
  $scope.showSuccessAlert = false;
 
+
  $scope.display = function(showSuccessAlertFlag){
+   var temp = $rootScope.hostRegistration.Email;
+    var mail = $rootScope.userResponse;
+
+    var data = {};
+    data['Email'] = temp;
+    data['accountDetails'] = mail;
+
+     console.log("mail data"+data);
+   //var data = $scope.user;
+   console.log(JSON.stringify(data));
+   $http({method: 'GET',
+          url: 'http://localhost:8080/domail',
+          params: data,
+          headers: {
+          'Content-Type': 'application/json'
+          }
+      });
    $scope.showSuccessAlert = true;
    $scope.successTextAlert = "Account details have been successfully sent to the customer !!";
  }
+
+
+
+
 
 }]);

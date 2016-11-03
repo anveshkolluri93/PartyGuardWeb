@@ -37,12 +37,14 @@ var app = express();
 /*
     Here we are configuring our SMTP Server details.
     STMP is mail server which is responsible for sending and recieving email.
+    user: "spandanavelaga06@gmail.com",
+    pass: "raja1993"
 */
 var smtpTransport = nodemailer.createTransport("SMTP",{
     service: "Gmail",
     auth: {
-        user: "spandanavelaga06@gmail.com",
-        pass: "raja1993"
+        user: "partyguard.nwmsu@gmail.com",
+        pass: "Partyguard2016"
     }
 });
 
@@ -51,8 +53,29 @@ app.get('/dowork',function(res,req){
     console.log(res.query);
     var mailOptions={
         to : res.query.contactEmail,
-        subject : res.query.contactName,
-        text : "hi"
+        subject : 'PartyGuard Quote',
+        text : "Hi "+res.query.contactName
+    }
+    console.log(JSON.stringify(mailOptions));
+    smtpTransport.sendMail(mailOptions, function(error, response){
+     if(error){
+            console.log(error);
+        req.send("error");
+     }else{
+            console.log("Message sent: " + response.message);
+        req.send("sent");
+         }
+});
+
+
+});
+app.get('/domail',function(res,req){
+    console.log("mail request received finally");
+    console.log(res.query);
+    var mailOptions={
+        to : res.query.Email,
+        subject : 'PartyGuard Account Details',
+        text : "Hi \n "+res.query.accountDetails
     }
     console.log(JSON.stringify(mailOptions));
     smtpTransport.sendMail(mailOptions, function(error, response){

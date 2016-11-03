@@ -26,14 +26,14 @@ function ($scope, $http, $window, $rootScope) {
           var data = $scope.user;
           console.log(JSON.stringify(data));
           $http({method: 'GET',
-                 url: 'https://partyguard.herokuapp.com/dowork',
+                 url: 'http://localhost:8080/dowork',
                  params: data,
                  headers: {
                  'Content-Type': 'application/json'
                  }
              });
 
-
+             $scope.msg="Check your inbox.";
 
         }
 
