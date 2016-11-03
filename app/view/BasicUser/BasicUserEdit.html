@@ -4,19 +4,24 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav ">
                 <li class="sidebar-brand">
-                    <a href="memberHP.html">
+                    <a href="/Basic">
                         Profile
                     </a>
                 </li>
 
                 <li>
-                    <a href="#">Change Password</a>
+                    <a href="/Basicpass">Change Password</a>
                 </li>
 
             </ul>
         </div>
 
-          <form   class="simple-from" ng-submit="update(use)">
+          <!-- <form   class="simple-from" ng-submit="update(use)"> -->
+  <!-- //ng-submit="update(rootlocaldetails)" -->
+              <!-- <form   class="simple-from" ng-submit="submit()"> -->
+
+<form   class="simple-from"  >
+
         <div class="row">
 
 
@@ -34,7 +39,7 @@
             <div class="md-form">
 
                 <i class="fa fa-user prefix"></i>
-                <input type="text" id="form41" ng-model="use.Fullname" class="form-control" placeholder="Fullname" required>
+                <input type="text" id="form41" ng-model="rootlocaldetails.FirstName" class="form-control" placeholder="FirstName" required>
 
 
             </div>
@@ -43,8 +48,8 @@
         <!--Second column-->
         <div class="col-md-4">
             <div class="md-form">
-
-                <input type="text" id="form51" ng-model="use.Fraternityname" class="form-control" placeholder="Fraternityname" required>
+                <i class="fa fa-user prefix"></i>
+                <input type="text" id="form51" ng-model="rootlocaldetails.LastName" class="form-control" placeholder="LastName" required>
 
             </div>
         </div>
@@ -53,7 +58,7 @@
         <div class="col-md-4">
             <div class="md-form">
               <i class="fa fa-envelope prefix"></i>
-                <input type="text" id="form61" ng-model="use.Email" class="form-control" placeholder="Email" required>
+                <input type="text" id="form61" ng-model="rootlocaldetails.Email" class="form-control" placeholder="Email" required>
 
             </div>
         </div>
@@ -62,11 +67,14 @@
           <div class="col-md-4">
               <div class="md-form">
                   <i class="fa fa-phone prefix " ></i>
-                  <input type="text" id="form41" ng-model="use.Phonenumber" class="form-control" placeholder="Phone number" required>
+                  <input type="text" id="form41" ng-model="rootlocaldetails.PhoneNumber" class="form-control" placeholder="PhoneNumber" required>
 
               </div>
           </div>
-      <button type="submit"   <a href="/Basic" class="btn btn-warning">Save Changes</a> </button>
+
+
+
+    <a href="/Basic"><input type="submit" class="btn btn-warning" name="simple-from"  value="Submit!"> </a>
   </div>
 
 

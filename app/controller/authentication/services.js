@@ -4,6 +4,7 @@ angular.factory('AuthenticationService',
         var service = {};
        $rootScope.Author = "";
        $rootScope.uname = "";
+        $rootScope.udetails = "";
         service.Login = function (username, password, callback) {
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
@@ -73,6 +74,7 @@ angular.factory('AuthenticationService',
                               userType = result.data.UserType;
                               //var response = { success: type === userType};
                               console.log(result.data);
+                              $rootScope.udetails = result.data;
                               //console.log(response.access_token);
                                          // store username and token in local storage to keep user logged in between page refreshes
                         //  $localStorage.currentUser = { username: username, token: token };
