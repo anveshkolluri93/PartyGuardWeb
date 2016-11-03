@@ -21,7 +21,7 @@ function ($scope, $rootScope, $location, $http) {
                //API call
                $http({
                      method: 'POST',
-                     url: 'http://partyguardservices20161025060016.azurewebsites.net/api/Account/Register',
+                     url: 'https://partyguardservices20161025060016.azurewebsites.net/api/Account/Register',
                      data: user,
                      headers: {
                        'Content-Type': 'application/json'

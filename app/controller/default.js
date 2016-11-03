@@ -11,6 +11,14 @@ function ($scope, $http, $window, $rootScope) {
 //  //console.log("success ..yay"+data);
 // });
 //        });
+
+// $http({method: 'GET',
+//        url: 'http://localhost:8080/dowork',
+//        params: {term: 'abishai'},
+//        headers: {
+//        'Content-Type': 'application/json'
+//        }
+//    });
         $scope.sendMail = function(user){
             // $window.alert("Helyoo!");
           // $window.alert($scope.contactName);
@@ -28,13 +36,22 @@ function ($scope, $http, $window, $rootScope) {
 
 
           var data = $scope.user;
-          //console.log(JSON.stringify(data));
-          $http.get("http://localhost:8080/dowork", data)
-          .success(function (data, status, headers, config) {
-            console.log("success");
-          })
-          .error(function (data, status, header, config) {
-          });
+          console.log(JSON.stringify(data));
+          $http({method: 'GET',
+                 url: 'http://localhost:8080/dowork',
+                 params: data,
+                 headers: {
+                 'Content-Type': 'application/json'
+                 }
+             });
+          // $http.get("http://localhost:8080/send", data)
+          // .success(function (data, status, headers, config) {
+          //   console.log("success");
+          // })
+          // .error(function (data, status, header, config) {
+          // });
+
+
         }
 
   }]);

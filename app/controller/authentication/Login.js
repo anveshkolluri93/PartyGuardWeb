@@ -14,8 +14,8 @@ function ($scope, $rootScope, $location, AuthenticationService) {
                 console.log("response are"+ response);
                 AuthenticationService.SetCredentials($scope.username, $scope.password);
               if(response === 'basic') {
-              //  $location.path('/Dashboard');
-                  $location.path('/Hostprofile');
+               $location.path('/Basic');
+            //  $location.path('/Hostprofile');
 
               }else if(response === 'host'){
                 $location.path('/Hostprofile');
