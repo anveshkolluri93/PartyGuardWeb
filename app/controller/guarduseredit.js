@@ -1,6 +1,12 @@
 angular.controller("GuardUserEditController", ['$scope', '$rootScope', '$location',
 function ($scope, $rootScope, $location) {
 
+
+  $rootScope.loginValue = "Logout";
+  $rootScope.isMaster = true;
+  $rootScope.isHost = true;
+  $rootScope.isGuard = false;
+  $rootScope.isBasic = true;
     // reset login status
 
                 // $location.path('/AddAck');

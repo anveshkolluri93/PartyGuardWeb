@@ -18,6 +18,8 @@ console.log($http.defaults.headers.common.Authorization);
 console.log("author "+$rootScope.Author);
 var auth = $rootScope.Author;
 var uname = $rootScope.uname;
+var fullname = $rootScope.udetails.FirstName;
+console.log("fullname"+ fullname);
 var finalresult = [];
 $rootScope.selectedItem = {};
 
@@ -45,6 +47,7 @@ $http({
 
            $scope.gap = 5;
            $scope.usercount = finalresult.length;
+           $scope.fullname = fullname;
            $scope.filteredItems = [];
            $scope.groupedItems = [];
            $scope.itemsPerPage = 25;

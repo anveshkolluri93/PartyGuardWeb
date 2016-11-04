@@ -35,18 +35,19 @@
         <!--First column-->
         <div class="col-md-4">
 
-  <div class="dropdown">
   <!-- <i class="fa fa-key prefix"></i> -->
     <div class="md-form">
    <!-- <label for="exampleSelect1">University</label> -->
-<br>
-<select ng-model="user.universityId">
 
+   <!-- <i class="fa fa-home prefix"></i> -->
+&nbsp;&nbsp;&nbsp;
+ <br>
+<select ng-model="user.universityId" >
 <option value="">Select University</option>
       <option ng-repeat="x in university" value="{{x.universityID}}" >{{x.univeristyName}}</option>
 </select>
  </div>
-</div>
+
 
         </div>
 
@@ -146,7 +147,7 @@
 
     </div>
 <div class = "row">
-    <label for="happy"><strong>Payment Status</strong></label>
+    <label for="happy"><strong>Payment Status: </strong></label>
 
   <!-- <label for="happy" class="col-sm-4 col-md-4 control-label text-right">Are you happy ?</label> -->
   <div id="radioBtn" class="btn-group">
@@ -156,7 +157,7 @@
    <label><input type="radio" name="test" ng-model="user.radioValue" value="2"/> Not Paid</label> -->
 
         <label> <input type="radio" name="test" ng-model="user.paymentStatus" value="Active"/> Paid </label>
-          <label><input type="radio" name="test" ng-model="user.paymentStatus" value="Suspended"/>not Paid </label>
+          &nbsp;&nbsp;<label><input type="radio" name="test" ng-model="user.paymentStatus" value="Suspended"/>not Paid </label>
 
 
   </div>

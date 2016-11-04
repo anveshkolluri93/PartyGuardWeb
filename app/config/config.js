@@ -51,8 +51,8 @@ angular.config(function($routeProvider, $locationProvider) {
                 templateUrl: "/public/view/GuardUser/GuardUserEdit.html",
                 controller: "GuardUserEditController" })
             .when("/Guardpass", {
-                templateUrl: "/public/view/GuardUser/password.html",
-                controller: "GuardUserController" })
+                templateUrl: "/public/view/GuardUser/guardpassword.html",
+                controller: "GuardUserPassController" })
             .when("/GuardUserRegistration", {
                 templateUrl: "/public/view/GuardUser/GuardRegistration.html",
                 controller: "GuardRegistration" })
@@ -105,5 +105,16 @@ function ($rootScope) {
     $rootScope.isHost = true;
     $rootScope.isGuard = true;
     $rootScope.isBasic = true;
+//
+//     if($rootScope.udetails.UserType == "basic"){
+//         $rootScope.isBasic = false;
+//     }else if (rootScope.udetails.userType == "host"){
+// $rootScope.isHost = host;
+//     }else if(rootScope.udetails.userType == "guard"){
+//   $rootScope.isGuard = false;
+//     }else {
+// $rootScope.isMaster = false;
+//     }
+
 
 }]);
