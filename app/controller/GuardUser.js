@@ -4,26 +4,35 @@ function ($scope, $rootScope, $location) {
     // reset login status
 
                 // $location.path('/AddAck');
-                 $rootScope.isUserLoggedIn = false;
-
+                // $rootScope.isUserLoggedIn = false;
+                $rootScope.loginValue = "Logout";
+                  $rootScope.isMaster = true;
+                  $rootScope.isHost = true;
+                  $rootScope.isGuard = false;
+                  $rootScope.isBasic = true;
 
   //alert
     $scope.submit = function(){
       alert('Password has changed Successfully');
     }
 
+    $scope.editform = function(){
+      $location.path("/GuardUserEdit");
+    }
 
-if($rootScope.newdata == null){
-var guardetails =
- {
- Fullname:"abishai",
- Fraternityname:"isa",
- Email:"abishai@gmail.com",
- Phonenumber:"9856745678"
- };
+//populating dataLoading
+
+var guardetails = $rootScope.udetails;
+
  $scope.guardetails = guardetails;
 
-$rootScope.newdata = $scope.guardetails;
+
+if($rootScope.newdata == null){
+var guardetails = $rootScope.udetails;
+
+ $scope.guardetails = guardetails;
+
+//$rootScope.newdata = $scope.guardetails;
 // $scope.guardetails = $rootScope.newdata;
 }
 else{

@@ -5,12 +5,16 @@ function ($scope, $rootScope, $location) {
 
                 // $location.path('/AddAck');
               //   $rootScope.isUserLoggedIn = false;
-$scope.user = $rootScope.newdata;
-                       $scope.update = function(user) {
-                        $rootScope.newdata = $scope.user;
+        $scope.user = $rootScope.udetails;
+         $rootScope.newdata = {};
+
+
+                       $scope.submitform = function(user) {
+                        $rootScope.newdata = $scope.guardetails;
                          $location.path('/Guard');
                          console.log("hi"+JSON.stringify($rootScope.newdata));
                        };
+
 
 
 

@@ -1,6 +1,5 @@
 <div id="wrapper">
 
-
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav ">
@@ -18,79 +17,92 @@
                 </li>
             </ul>
         </div>
+        <!-- /#sidebar-wrapper -->
 
-          <form   class="simple-from" ng-submit="update(user)">
-        <div class="row">
-
-
-        <!--First column-->
-        <div> <h1>Edit the Guard details</h1></div>
+        <!-- Page Content -->
+        <form name="newform" >
 
 
-        <div class="col-md-4">
-
-            <img src="https://s9.postimg.org/amh9hv08v/maleavatar.png" width="180" height="200" />
-
-         </div>
-
-        <div class="col-md-4">
-            <div class="md-form">
-
-                <i class="fa fa-user prefix"></i>
-                <input type="text" id="form41" ng-model="user.Fullname" class="form-control" placeholder="Fullname"required>
-            </div>
-        </div>
-
-        <!--Second column-->
-        <div class="col-md-4">
-            <div class="md-form">
-
-                <input type="text" id="form51" ng-model="user.Fraternityname" class="form-control" placeholder="Fraternityname" required>
-
-            </div>
-        </div>
-
-        <!--Third column-->
-        <div class="col-md-4">
-            <div class="md-form">
-              <i class="fa fa-envelope prefix"></i>
-                <input type="email" id="form61" ng-model="user.Email" class="form-control" placeholder="Email" required>
-
-            </div>
-        </div>
+          <div class="row">
 
 
+          <!--First column-->
+          <div> <h1>Welcome {{user.FirstName}} !!!</h1></div>
 
-        <div>
+
+          <div class="col-md-4">
+
+              <img src="https://s9.postimg.org/amh9hv08v/maleavatar.png" width="180" height="200" />
+
+           </div>
+
           <div class="col-md-4">
               <div class="md-form">
-                  <i class="fa fa-phone prefix " ></i>
-                  <input type="text" id="form41" ng-model="user.Phonenumber" class="form-control" placeholder="Phone number" required>
+
+                  <i class="fa fa-user prefix"></i>
+                  <input type="text" id="form41"  class="form-control" ng-model="user.FirstName" ng-readonly="false" >
+              </div>
+          </div>
+
+          <!--Second column-->
+          <div class="col-md-4">
+              <div class="md-form">
+                  <i class="fa fa-user prefix"></i>
+                  <input type="text" id="form51" class="form-control" ng-model="user.LastName" ng-readonly="false"  >
 
               </div>
           </div>
 
-      <button type= "submit"   <a href="/Guard" class="btn btn-warning" >Save Changes</a> </button>
-  </div>
+          <!--Third column-->
+          <div class="col-md-4">
+              <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                  <input type="email" id="form61"  class="form-control"ng-model="user.Email"  ng-readonly="true"  >
+
+              </div>
+          </div>
 
 
 
-      </div>
-      <!--/.first row-->
+          <div>
+            <div class="col-md-4">
+                <div class="md-form">
+                    <i class="fa fa-phone prefix " ></i>
+                    <input type="text" id="form41"  class="form-control" ng-model="user.PhoneNumber" -readonly="false"  >
 
-      <!--    second row-->
-      <div class="row">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="md-form">
+                    <i class="fa fa-user prefix " ></i>
+                    <input type="text" id="form41"  class="form-control" ng-model="user.Age" ng-readonly="false"  >
 
-        <!--First column-->
+                </div>
+            </div><br>
+              <a  class="btn btn-success"  ng-click ="submitform()" >Update</a>
+        <!-- <button      <i class="fa fa-edit prefix"></i>    <a href="/GuardUserEdit">Edit</a> </button> -->
+    </div>
 
-<div> </div>
 
 
-</form>
+        </div>
 
-      <!-- <pre>user = {{user | json}}</pre>
-        <pre>master = {{master | json}}</pre> -->
 
-      </div>
+  </form>
+                </div>
 
-</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+        <!-- /#page-content-wrapper -->
+
+
+
+    <!-- /#wrapper -->
