@@ -35,7 +35,7 @@ function ($scope, $rootScope, $location, $http) {
 // });
   $http({
         method: 'GET',
-        url: 'http://partyguardservices20161025060016.azurewebsites.net/api/FraternityModels',
+        url: 'https://partyguardservices20161025060016.azurewebsites.net/api/FraternityModels',
         headers: {
         'Authorization': auth
         }}).then(function(result) {
