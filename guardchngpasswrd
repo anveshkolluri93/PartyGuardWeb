@@ -1,0 +1,62 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+public class changepassword {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = new FirefoxDriver();
+		driver.get("localhost:8080");
+		driver.manage().window().maximize();
+		driver.findElement(By.xpath(".//*[@id='collapseEx2']/form/a[2]")).click();
+		
+		// old password text field
+		driver.findElement(By.xpath(".//*[@id='wrapper']/div[2]/div/div[1]/label")).click();
+		driver.findElement(By.xpath(".//*[@id='wrapper']/div[2]/div/div[1]/label")).sendKeys("srikanthch456@gmail.com");
+		//password
+		driver.findElement(By.xpath(".//*[@id='wrapper']/div[2]/div/div[2]/label")).click();
+		driver.findElement(By.xpath(".//*[@id='wrapper']/div[2]/div/div[2]/label")).sendKeys("partyguard");
+		// confirm password
+		driver.findElement(By.xpath(".//*[@id='wrapper']/div[2]/div/div[3]/label")).click();
+		driver.findElement(By.xpath(".//*[@id='wrapper']/div[2]/div/div[3]/label")).sendKeys("partyguard");
+		
+		//submit button
+		driver.findElement(By.xpath(".//*[@id='wrapper']/div[3]/div/button")).click();
+		
+		//home button
+				driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[1]/a")).click();
+				
+				//about us page
+				driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[2]/a")).click();
+				
+				//how it works page
+				driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[3]/a")).click();
+				
+				//faqs page
+				driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[4]/a")).click();
+				
+				//contact us page
+				driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[5]/a")).click();
+				
+				//contact partyguard link
+				driver.findElement(By.xpath("html/body/footer/div[1]/div/div[1]/p")).click();
+				
+				//about partyguard link
+				driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[1]/a")).click();
+				
+				//employment
+				driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[2]/a")).click();
+				
+				//maps and directions
+				driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[3]/a")).click();
+				
+				//emergency information
+				driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[4]/a")).click();
+		
+		
+
+	}
+
+}
