@@ -55,7 +55,24 @@ $http({
            $scope.currentPage = 0;
            $scope.items = finalresult.reverse();
              $scope.members = finalresult;
+
                   console.log("result fival "+JSON.stringify($scope.items));
+
+          //pending registrations
+        $scope.count= 0;
+ for (var i = 0; i < $scope.items.length; i++) {
+
+         var a = $scope.items[i].paymentStatus;
+         console.log(a)
+         if (a == "Suspended"){
+           console.log("inside loop");
+          $scope.count++;
+         }
+         console.log($scope.count);
+
+ }
+
+          //end
            var searchMatch = function (haystack, needle) {
                 if (!needle) {
                     return true;

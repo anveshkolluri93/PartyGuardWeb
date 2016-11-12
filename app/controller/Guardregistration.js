@@ -56,7 +56,7 @@ function ($scope, $rootScope, $location, $http) {
                       // callback("success");
                      }, function(error) {
                        $scope.showSuccessAlert = true;
-                       $scope.successTextAlert = "Registration failed. Click";
+                       $scope.successTextAlert = "Registration failed. Click ";
                      console.log(error);
                      });
 
