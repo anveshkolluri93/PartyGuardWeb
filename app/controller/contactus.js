@@ -1,4 +1,4 @@
-angular.controller("ContactusController", ['$scope', '$rootScope', '$location',
+angular.controller("PartyContactController", ['$scope', '$rootScope', '$location',
 function ($scope, $rootScope, $location) {
 
    $scope.master = {};

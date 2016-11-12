@@ -74,6 +74,9 @@ angular.config(function($routeProvider, $locationProvider) {
             .when("/ContactUs", {
                 templateUrl: "/public/view/Navbar/ContactUs.html",
                 controller: "ContactusController" })
+            .when("/PartyContact", {
+                    templateUrl: "/public/view/Navbar/partycontact.html",
+                    controller: "PartyContactController" })
             .when("/faq", {
                 templateUrl: "/public/view/Navbar/faq.html",
                 controller: "LoginController" })
