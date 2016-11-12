@@ -77,6 +77,9 @@ angular.config(function($routeProvider, $locationProvider) {
             .when("/PartyContact", {
                     templateUrl: "/public/view/Navbar/partycontact.html",
                     controller: "PartyContactController" })
+            .when("/Download", {
+                            templateUrl: "/public/view/Navbar/download.html",
+                            controller: "DownloadController" })
             .when("/faq", {
                 templateUrl: "/public/view/Navbar/faq.html",
                 controller: "LoginController" })
