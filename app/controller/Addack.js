@@ -38,7 +38,17 @@ var users = {
 
     var data = {};
     data['Email'] = temp;
-    data['accountDetails'] = mail;
+    data['fName'] = $rootScope.hostRegistration.firstName;
+    data['fraternityName'] = mail.fraternityName;
+    data['paymentStatus'] = mail.paymentStatus;
+    data['nickName'] = mail.nickName;
+    data['chapter'] = mail.chapter;
+    data['subscripCode'] = mail.subscripCode;
+    data['tempPass'] = mail.tempPass;
+    data['guardCode'] = mail.guardCode;
+    data['UniversityModel'] = mail.UniversityModel.univeristyName;
+    data['Location'] = mail.LocationModel.locationName;
+
 
      console.log("mail data"+data);
    //var data = $scope.user;

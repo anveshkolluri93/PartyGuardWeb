@@ -75,7 +75,7 @@
               <!--Simple table example -->
               <div class="panel panel-primary">
                   <div class="panel-heading">
-                      <i class="fa fa-bar-chart-o fa-fw"></i><Strong>Subscriptions<Strong>
+                      <i class="fa fa-bar-chart-o fa-fw"></i><Strong>Recently added customers:<Strong>
                       <div class="pull-right">
                           <!-- <div class="btn-group">
                               <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -137,8 +137,8 @@
         <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sort.sortingOrder:sort.reverse">
             <td>{{item.fraternityID}}</td>
             <td>{{item.fraternityName}}</td>
-            <td>"1-Nov-2016"</td>
-            <td>"1-Nov-2017"</td>
+            <td>1-Nov-2016</td>
+            <td>1-Nov-2017</td>
             <td> <button class="btn btn-success btn-xs" value="View Details" ng-click="ShowHide($index)">View Details</button></td>
         </tr>
     </tbody>

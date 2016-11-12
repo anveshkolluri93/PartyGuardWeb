@@ -75,8 +75,17 @@ app.get('/domail',function(res,req){
     var mailOptions={
         to : res.query.Email,
         subject : 'PartyGuard Account Details',
-        text : "Hi \n "+res.query.accountDetails
-    }
+        text : "Hi, "+res.query.fName+" \n"+"Please find your Account details below: \n"+
+        "Fraternity Name: "+res.query.fraternityName + "\n"+
+        "Subscription Status: "+res.query.paymentStatus + "\n"+
+        "Nick name: "+res.query.nickName + "\n"+
+        "Chapter: "+res.query.chapter + "\n"+
+        "Subscription Code: "+res.query.subscripCode + "\n"+
+        "Temporary Password: "+res.query.tempPass + "\n"+
+        "Guard Code: "+res.query.guardCode + "\n"+
+        "University Name: "+res.query.UniversityModel + "\n"+
+        "Address: "+res.query.Location + "\n \n \n Thanks, \n Party Guard Team"
+          }
     console.log(JSON.stringify(mailOptions));
     smtpTransport.sendMail(mailOptions, function(error, response){
      if(error){

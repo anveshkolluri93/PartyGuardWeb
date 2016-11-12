@@ -23,12 +23,12 @@ console.log("fullname"+ fullname);
 var finalresult = [];
 $rootScope.selectedItem = {};
 
-
+// https://partyguardservices20161025060016.azurewebsites.net/api/FraternityModels
         $scope.IsHidden = true;
         $scope.IsShown = true;
 $http({
       method: 'GET',
-      url: 'https://partyguardservices20161025060016.azurewebsites.net/api/FraternityModels',
+      url: 'https://partyguardservices20161025060016.azurewebsites.net/FraternityUserList',
       headers: {
       'Authorization': auth
       }}).then(function(result) {
@@ -53,7 +53,7 @@ $http({
            $scope.itemsPerPage = 25;
            $scope.pagedItems = [];
            $scope.currentPage = 0;
-           $scope.items = finalresult;
+           $scope.items = finalresult.reverse();
              $scope.members = finalresult;
                   console.log("result fival "+JSON.stringify($scope.items));
            var searchMatch = function (haystack, needle) {
