@@ -47,7 +47,7 @@ var smtpTransport = nodemailer.createTransport("SMTP",{
         pass: "Partyguard2016"
     }
 });
-
+//request a quote mail
 app.get('/dowork',function(res,req){
     console.log("request received finally");
     console.log(res.query);
@@ -66,9 +66,32 @@ app.get('/dowork',function(res,req){
         req.send("sent");
          }
 });
+});
 
+
+//contact us mail
+app.get('/docontact',function(res,req){
+    console.log(" contact us request received finally");
+    console.log(res.query);
+    var mailOptions={
+        to : res.query.email,
+        subject : 'Thank you for contacting PartyGuard',
+        text : "Hi "+res.query.lname+ ",\n" + "Thank you for writing to us. We will get back to you ASAP. \n\n Thanks,\nTeam PartyGuard"
+    }
+    console.log(JSON.stringify(mailOptions));
+    smtpTransport.sendMail(mailOptions, function(error, response){
+     if(error){
+            console.log(error);
+        req.send("error");
+     }else{
+            console.log("Message sent: " + response.message);
+        req.send("sent");
+         }
+});
 
 });
+
+
 app.get('/domail',function(res,req){
     console.log("mail request received finally");
     console.log(res.query);

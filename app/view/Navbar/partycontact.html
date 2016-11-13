@@ -27,7 +27,7 @@
 
 
 
-      <form id="contact-form" method="post" action="" role="form">
+      <form id="contact-form" method="post" ng-submit = "update(user)">
 
           <div class="messages"></div>
 
@@ -74,13 +74,17 @@
                       </div>
                   </div>
                   <div class="col-md-12">
-                      <input type="submit" class="btn btn-success btn-send" ng-click="update(user)" value="Send message">
+                      <!-- <input type="submit" class="btn btn-success btn-send"  value="Send message"> -->
+                      <button type="submit" id="send_email" class="btn btn-success btn-send" >Send message</button>
                   </div>
               </div>
               <div class="row">
                   <div class="col-md-12">
                       <p class="text-muted"><strong>*</strong> These fields are required.</p>
                   </div>
+                    <div class="col-md-12">
+                  <span  id="message" ng-model="msg">{{msg}}</span>
+                </div>
               </div>
           </div>
 
