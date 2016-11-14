@@ -53,7 +53,7 @@ function ($scope,$http, $rootScope, $location) {
                 //API call
                 $http({
                       method: 'POST',
-                      url: 'https://partyguardservices20161025060016.azurewebsites.net/api/FraternityModels',
+                      url: 'https://partyguardservices20161110094537.azurewebsites.net/api/FraternityModels',
                       data: finalrequest,
                       headers: {
                         'Content-Type': 'application/json'
@@ -82,7 +82,7 @@ function ($scope,$http, $rootScope, $location) {
                                 //host registration
                                 $http({
                                       method: 'POST',
-                                      url: 'https://partyguardservices20161025060016.azurewebsites.net/api/Account/Register',
+                                      url: 'https://partyguardservices20161110094537.azurewebsites.net/api/Account/Register',
                                       data: registerHost,
                                       headers: {
                                         'Content-Type': 'application/json'
@@ -116,7 +116,7 @@ function ($scope,$http, $rootScope, $location) {
 console.log("hi again");
   console.log("hi"+JSON.stringify($rootScope.master));
 
-      $http.get("https://partyguardservices20161025060016.azurewebsites.net/api/UniversityModels")
+      $http.get("https://partyguardservices20161110094537.azurewebsites.net/api/UniversityModels")
             .then(function(response){
           console.log("hey" + JSON.stringify(response));
           console.log("hey" + JSON.stringify(response.data));

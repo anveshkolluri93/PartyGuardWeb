@@ -76,7 +76,7 @@ app.get('/docontact',function(res,req){
     var mailOptions={
         to : res.query.email,
         subject : 'Thank you for contacting PartyGuard',
-        text : "Hi "+res.query.lname+ ",\n" + "Thank you for writing to us. We will get back to you ASAP. \n\n Thanks,\nTeam PartyGuard"
+        text : "Hi "+res.query.lname+ ",\n" + "Thank you for writing to us. We will get back to you ASAP. \n\nThanks,\nTeam PartyGuard"
     }
     console.log(JSON.stringify(mailOptions));
     smtpTransport.sendMail(mailOptions, function(error, response){

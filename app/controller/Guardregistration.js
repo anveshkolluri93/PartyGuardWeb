@@ -35,7 +35,7 @@ function ($scope, $rootScope, $location, $http) {
                //API call
                $http({
                      method: 'POST',
-                     url: 'https://partyguardservices20161025060016.azurewebsites.net/api/Account/Register',
+                     url: 'https://partyguardservices20161110094537.azurewebsites.net/api/Account/Register',
                      data: guardUser,
                      headers: {
                        'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ function ($scope, $rootScope, $location, $http) {
                       // callback("success");
                      }, function(error) {
                        $scope.showSuccessAlert = true;
-                       $scope.successTextAlert = "Registration failed. Click ";
+                       $scope.successTextAlert = "Registration failed. The username has been taken already!. Click ";
                      console.log(error);
                      });
 

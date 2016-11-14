@@ -19,7 +19,7 @@ function ($scope, $rootScope, $location, $http) {
                   if( $scope.user.newpwd == $scope.user.cnfpwd){
                     $http({
                           method: 'POST',
-                          url: 'https://partyguardservices20161025060016.azurewebsites.net/api/Account/NewPasswordSet',
+                          url: 'https://partyguardservices20161110094537.azurewebsites.net/api/Account/NewPasswordSet',
                           data: passdetails,
                           headers: {
                           'Content-Type': 'application/json'

@@ -28,7 +28,7 @@ $rootScope.selectedItem = {};
         $scope.IsShown = true;
 $http({
       method: 'GET',
-      url: 'https://partyguardservices20161025060016.azurewebsites.net/FraternityUserList',
+      url: 'https://partyguardservices20161110094537.azurewebsites.net/FraternityUserList',
       headers: {
       'Authorization': auth
       }}).then(function(result) {

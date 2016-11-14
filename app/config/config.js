@@ -8,6 +8,9 @@ angular.config(function($routeProvider, $locationProvider) {
             .when("/Login", {
                 templateUrl: "/public/view/Navbar/Login.html",
                 controller: "LoginController" })
+            .when("/forgotpwdMain", {
+                    templateUrl: "/public/view/Navbar/forgotpwdMain.html",
+                    controller: "forgotpwdMainController" })
             .when("/Dashboard", {
                 templateUrl: "/public/view/MasterUser/Dashboard.html",
                 controller: "DashboardController" })
