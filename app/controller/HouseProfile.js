@@ -22,7 +22,7 @@ console.log("Insisde Hostprofile "+ auth);
 // });
 $http({
       method: 'GET',
-      url: 'http://partyguardservices20161110094537.azurewebsites.net/API/Account/UserInfo',
+      url: 'https://partyguardservices20161110094537.azurewebsites.net/API/Account/UserInfo',
       headers: {
       'Authorization': auth
       }}).then(function(result) {
