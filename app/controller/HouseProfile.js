@@ -1,40 +1,36 @@
-angular.controller("HouseProfileController", ['$scope', '$rootScope', '$location',
-function ($scope, $rootScope, $location) {
+angular.controller("HouseProfileController", ['$scope', '$rootScope', '$location', '$http',
+function ($scope, $rootScope, $location, $http) {
 $rootScope.loginValue = "Logout";
 $rootScope.isMaster = true;
 $rootScope.isHost = false;
 $rootScope.isGuard = true;
 $rootScope.isBasic = true;
 //  $rootScope.master = {};
+var finalresult = [];
+var auth = $rootScope.Author;
 
+console.log("Insisde Hostprofile "+ auth);
 
-if($rootScope.master == null){
-console.log("Hello Man" + JSON.stringify($rootScope.master));
-  var users = {
-    "title": "SIGMA PHI EPSILON(SigEp)",
-    "img": "https://s32.postimg.org/j39r4gait/Sigmapi.jpg",
-    "chapter": "Missouri Lambda Chapter",
-    "univ": "Northwest Missouri State University",
-    "addr": "511 W 3rd St Maryville , MO ,64468",
-    "uname": "Missouri Lambda",
-    "custid": "000000001",
-    "subcode": "123-456-789",
-    "guardcode": "123-456-789",
-    "fname": "Abishai",
-    "lname": "Parise",
-    "email": "abishai@gmail.com",
-    "mbl": "925-549-1435"
-  };
-
-  $scope.users = users;
-
-
-
-$rootScope.master = $scope.users;
-}
-else{
-    $scope.users = $rootScope.master;
-}
+// $http({
+//   method: 'GET',
+//   url: 'https://partyguardservices20161110094537.azurewebsites.net/API/Account/UserInfo',
+// }).then(function(result){
+//   finalresult = result.data;
+//   console.log("result before "+JSON.stringify(finalresult));
+// },function(error){
+//   console.log(error);
+// });
+$http({
+      method: 'GET',
+      url: 'http://partyguardservices20161110094537.azurewebsites.net/API/Account/UserInfo',
+      headers: {
+      'Authorization': auth
+      }}).then(function(result) {
+        finalresult = result.data;
+      console.log("result before "+JSON.stringify(finalresult));
+    },function(error) {
+    console.log(error);
+    });
  // $scope.master = {};
  // //
  //
