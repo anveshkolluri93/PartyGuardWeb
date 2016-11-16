@@ -72,9 +72,9 @@ function ($scope,$http, $rootScope, $location) {
                                 $rootScope.hostRegistration['tempPassword'] = temppass;
                                 $rootScope.hostRegistration['firstName'] = user.fraternityName;
                                 $rootScope.hostRegistration['lastName'] = user.fraternityName;
-                                $rootScope.hostRegistration['age'] = '22';
+                                //$rootScope.hostRegistration['age'] = '22';
                                 $rootScope.hostRegistration['userType'] = 'host';
-                                $rootScope.hostRegistration['hostUserCode'] = 'subcode';
+                                $rootScope.hostRegistration['hostUserCode'] = subcode;
                                 $rootScope.hostRegistration['PhoneNumber'] = user.mbl;
                                 var registerHost = $rootScope.hostRegistration;
                               console.log("reposne"+JSON.stringify($rootScope.userResponse));
