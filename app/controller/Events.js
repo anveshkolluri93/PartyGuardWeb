@@ -6,9 +6,9 @@ $rootScope.isHost = false;
 $rootScope.isGuard = true;
 $rootScope.isBasic = true;
 var auth = $rootScope.Author;
+$scope.members =[];
 
-console.log("Auth code "+ auth);
-var members = [];
+
                 // $location.path('/HostProfile');
  $scope.isUserLoggedIn = true;
 
@@ -18,8 +18,9 @@ var members = [];
        headers: {
        'Authorization': auth
        }}).then(function(result) {
-         members = result.data;
-         console.log(members);
+         $scope.members = result.data;
+         console.log($scope.members );
+
     //   console.log("guards for this fraternity "+JSON.stringify(finalresult));
 
      },function(error) {
@@ -33,7 +34,8 @@ var members = [];
 //   {"image":"https://s16.postimg.org/4pgvq79n9/14344296_1186119868098540_2947086008923536253_n.jpg", "firstName":"Spandana", "lastName":"Velaga", "email":"spandanavelaga@gmail.com", "phone":"6184391808", "age":"24"},
 //    {"image":"https://s22.postimg.org/jwn4oo6kx/12513993_937898552966797_3549313969414062671_o.jpg","firstName":"Gopi", "lastName":"Cherupally","email":"gopicherupally@gmail.com", "phone":"6184391808", "age":"23"}
 // ];
-   $scope.members = members;
+
+
 
    $scope.selected =[];
    $scope.final = [];

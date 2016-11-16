@@ -89,7 +89,8 @@
                             <tbody>
                                 <tr ng-repeat="member in members">
                                     <td>
-                                        <img src="{{member.image}}" class="img-fluid img-circle center-block" alt="" height="100" width="100">
+                                        <!-- <h6>No Image</h6> -->
+                                        <img src="{{member.imgUrl}}" class="img-fluid img-circle center-block" alt="" height="100" width="100">
                                     </td>
                                     <td>
                                         {{member.lastName}}
@@ -106,7 +107,7 @@
                             </tbody>
                    </table>
 
-
+<h1>{{member}}</h1>
                       <button type= "submit" class="btn btn-warning-outline" ng-click="display(showSuccessAlert)">Submit</button>
                       <!-- <a href="/EventConfirmation" class="btn btn-warning-outline" ng-click="display(showSuccessAlert)">Submit</a> -->
                       <a href="#" class="btn btn-warning-outline">Reset</a>
