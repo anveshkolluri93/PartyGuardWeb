@@ -13,7 +13,7 @@ function ($scope, $rootScope, $location, AuthenticationService) {
     $scope.login = function () {
 
         $scope.dataLoading = true;
-        
+
         AuthenticationService.Login($scope.username, $scope.password, function (response) {
           console.log("response is"+ JSON.stringify(response));
             if (response) {
