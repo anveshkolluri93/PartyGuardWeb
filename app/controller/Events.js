@@ -14,7 +14,7 @@ $scope.members =[];
 
  $http({
        method: 'POST',
-       url: 'http://partyguardservices20161110094537.azurewebsites.net/api/HostUserProfile/DisplayGuardDetails',
+       url: 'https://partyguardservices20161110094537.azurewebsites.net/api/HostUserProfile/DisplayGuardDetails',
        headers: {
        'Authorization': auth
        }}).then(function(result) {
