@@ -1,0 +1,102 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package basic.user;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+/**
+ *
+ * @author S524988
+ */
+public class BasicUserlogin {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+         TODO code application logic here
+        WebDriver driver = new FirefoxDriver();
+        open partyguard website
+	driver.get("localhost:8080");
+        maximize the window
+	driver.manage().window().maximize();
+        click the login button
+	driver.findElement(By.xpath(".//*[@id='collapseEx2']/form/a")).click();
+        
+        enter the correct username and password for basic user        
+        WebElement id = driver.findElement(By.id("form41"));
+        WebElement pass = driver.findElement(By.id("form41"));
+        WebElement button = driver.findElement(By.id("Button"));
+        id.sendKeys("srikanth@gmail.com");
+        pass.sendKeys("Welcome@2");
+        button.click();
+        
+        Click the login button directly without entering username and password
+                WebElement id = driver.findElement(By.id("form41"));
+        WebElement pass = driver.findElement(By.id("form41"));
+        WebElement button = driver.findElement(By.id("Button"));
+        id.sendKeys("");
+        pass.sendKeys("");
+        button.click();
+        
+        enter the username and leave the password blank
+        WebElement id = driver.findElement(By.id("form41"));
+        WebElement pass = driver.findElement(By.id("form41"));
+        WebElement button = driver.findElement(By.id("Button"));
+        id.sendKeys("srikanth@gmail.com");
+        pass.sendKeys("");
+        button.click();
+        
+        enter the password and leave the username blank
+         WebElement id = driver.findElement(By.id("form41"));
+        WebElement pass = driver.findElement(By.id("form41"));
+        WebElement button = driver.findElement(By.id("Button"));
+        id.sendKeys("srikanth@gmail.com");
+        pass.sendKeys("");
+        button.click();
+       
+        enter the incorrect username and correct password
+         WebElement id = driver.findElement(By.id("form41"));
+        WebElement pass = driver.findElement(By.id("form41"));
+        WebElement button = driver.findElement(By.id("Button"));
+        id.sendKeys("srikanth");
+        pass.sendKeys("Welcome@2");
+        button.click();
+        
+         enter the correct username and incorrect password
+         WebElement id = driver.findElement(By.id("form41"));
+        WebElement pass = driver.findElement(By.id("form41"));
+        WebElement button = driver.findElement(By.id("Button"));
+        id.sendKeys("srikanth");
+        pass.sendKeys("Welcome");
+        button.click();
+        
+        
+        enter the incorrect username and incorrect password
+        WebElement id = driver.findElement(By.id("form41"));
+        WebElement pass = driver.findElement(By.id("form41"));
+        WebElement button = driver.findElement(By.id("Button"));
+        id.sendKeys("srikanth");
+        pass.sendKeys("Welcome");
+        button.click();
+        
+        register as a guard link
+        driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[3]/div/a")).click();
+       
+        sign up link
+        driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[5]/div/div/div/p[1]/a")).click();
+        
+        forgot password link
+        driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[5]/div/div/div/p[2]/a")).click();
+        
+        
+                                                                                                                            
+    }
+    
+}
