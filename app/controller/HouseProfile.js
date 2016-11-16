@@ -5,6 +5,7 @@ $rootScope.isMaster = true;
 $rootScope.isHost = false;
 $rootScope.isGuard = true;
 $rootScope.isBasic = true;
+
 //  $rootScope.master = {};
 $scope.users =[];
 
@@ -17,6 +18,8 @@ $http({
       'Authorization': auth
       }}).then(function(result) {
         $scope.users = result.data;
+        $rootScope.fraternityID = $scope.users['Id']
+        console.log($rootScope.fraternityID);
       console.log("result before "+JSON.stringify($scope.users));
     },function(error) {
     console.log(error);
