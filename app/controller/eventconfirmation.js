@@ -1,5 +1,5 @@
-angular.controller("eventConfirmationController", ['$scope', '$rootScope', '$filter', '$http',
-function ($scope, $rootScope, $filter, $http) {
+angular.controller("eventConfirmationController", ['$scope', '$rootScope', '$filter', '$http', '$location',
+function ($scope, $rootScope, $filter, $http, $location) {
 $rootScope.loginValue = "Logout";
 $rootScope.isMaster = true;
 $rootScope.isHost = false;
@@ -43,8 +43,8 @@ $scope.display = function(showSuccessAlertFlag){
         headers: {
         'Content-Type': 'application/json'
         }}).then(function(result) {
-      //    $scope.members = result.data;
-        //  console.log($scope.members );
+      $rootScope.eventID = result.data['eventID'];
+      console.log($rootScope.eventID);
         console.log(result);
       },function(error) {
       console.log(error);
@@ -52,6 +52,12 @@ $scope.display = function(showSuccessAlertFlag){
 
 $scope.showSuccessAlert = true;
  $scope.successTextAlert = "Your Event has been successfully created !!";
+}
+
+$scope.cancel = function(){
+
+  confirm('Are you sure to cancel?');
+  $location.path('/Events');
 }
 
 }]);
