@@ -8,6 +8,7 @@ $rootScope.isHost = false;
 $rootScope.isGuard = true;
 $rootScope.isBasic = true;
 $scope.events = {};
+$rootScope.selectedEvent = {};
 
 
 $http({
@@ -17,16 +18,17 @@ $http({
       // 'Authorization': auth
       // }
     }).then(function(result) {
-      //  console.log("Hello"+JSON.stringify(result));
-      $scope.events = result.data;
-  //  $scope.events['EventName']= result.data['eventName'];
-    // $scope.events['Date'] = result.data['eventDateTime'].substring(0,10);
-    // $scope.events['time'] = result.data['eventDateTime'].substring(11,16);
+    $scope.events = result.data;
     console.log($scope.events);
-  //  console.log(result);
     },function(error) {
     console.log(error);
     });
+
+
+    $scope.grabEvent = function(item){
+      $rootScope.selectedEvent = item;
+    
+    }
 
 
 }]);

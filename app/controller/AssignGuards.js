@@ -5,9 +5,11 @@ $rootScope.isMaster = true;
 $rootScope.isHost = false;
 $rootScope.isGuard = true;
 $rootScope.isBasic = true;
+$scope.selectedEvent = $rootScope.selectedEvent;
 var auth = $rootScope.Author;
 $scope.members =[];
 $scope.isUserLoggedIn = true;
+
 
  $http({
        method: 'POST',
@@ -16,7 +18,7 @@ $scope.isUserLoggedIn = true;
        'Authorization': auth
        }}).then(function(result) {
          $scope.members = result.data;
-         console.log($scope.members );
+         console.log($scope.members);
      },function(error) {
      console.log(error);
      });

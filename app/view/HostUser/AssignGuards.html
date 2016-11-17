@@ -32,7 +32,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                       <h1>Create an Event !!!</h1>
+                       <h1>Assign Guards !!!</h1>
                    </div>
 
                 </div>
@@ -41,8 +41,11 @@
                     <div class="col-md-3 col-lg-6">
                       <div class="md-form">
                     <i class="fa fa-beer prefix"></i>
-                    <input type="text" id="form2" placeholder="Enter event Name"class="form-control " ng-model = "user.eventname" required>
-                    <!-- <label for="form2">Event Name</label> -->
+                    <!-- <input type="text" id="form2" placeholder="Enter event Name"class="form-control " ng-model = "user.eventname" required> -->
+                    <label for="form2">{{selectedEvent.eventName}}</label>
+                    <br>
+
+                    <!-- <h6>{{}}</h6> -->
                     </div>
                    </div>
 
@@ -53,8 +56,9 @@
                   <div class="col-md-3 col-lg-6">
                     <div class="md-form">
                   <i class="fa fa-calendar prefix"></i>
-                  <input type="date" id="form2" placeholder="Enter Date" class="form-control" ng-model = "user.eventdate" required>
-                  <!-- <label for="form2">Event Date</label> -->
+                  <!-- <input type="date" id="form2" placeholder="Enter Date" class="form-control" ng-model = "user.eventdate" required> -->
+                  <label for="form2">{{selectedEvent.eventDateTime | date: "MM-dd-yyyy"}}</label>
+                  <br>
 
                   </div>
                  </div>
@@ -63,8 +67,9 @@
                   <div class="col-md-3 col-lg-6">
                     <div class="md-form">
                   <i class="fa fa-clock-o prefix"></i>
-                  <input type="time" id="form2" placeholder="Enter Time" class="form-control" ng-model = "user.eventtime" required>
-                  <!-- <label for="form2">Event Date</label> -->
+                  <!-- <input type="time" id="form2" placeholder="Enter Time" class="form-control" ng-model = "user.eventtime" required> -->
+                  <label for="form2">{{selectedEvent.eventDateTime | date: "HH:mm"}}</label>
+                  <br>
 
                   </div>
                  </div>
