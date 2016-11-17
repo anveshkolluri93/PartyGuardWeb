@@ -62,6 +62,10 @@ angular.config(function($routeProvider, $locationProvider) {
             .when("/GuardUserRegistration", {
                 templateUrl: "/public/view/GuardUser/GuardRegistration.html",
                 controller: "GuardRegistration" })
+              
+                .when("/guardevent", {
+                    templateUrl: "/public/view/GuardUser/guardevents.html",
+                    controller: "guardeventController" })
             .when("/Basic", {
                 templateUrl: "/public/view/BasicUser/BasicProfile.html",
                 controller: "BasicUserController" })
