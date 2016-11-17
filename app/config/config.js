@@ -35,7 +35,7 @@ angular.config(function($routeProvider, $locationProvider) {
             .when("/EditEvents", {
                 templateUrl: "/public/view/HostUser/EditEvents.html",
                 controller: "EditEventsController" })
-            .when("/EditEvents", {
+            .when("/AssignGuards", {
                 templateUrl: "/public/view/HostUser/AssignGuards.html",
                 controller: "AssignGuardsController" })
             .when("/EventConfirmation", {
@@ -62,7 +62,7 @@ angular.config(function($routeProvider, $locationProvider) {
             .when("/GuardUserRegistration", {
                 templateUrl: "/public/view/GuardUser/GuardRegistration.html",
                 controller: "GuardRegistration" })
-              
+
                 .when("/guardevent", {
                     templateUrl: "/public/view/GuardUser/guardevents.html",
                     controller: "guardeventController" })
