@@ -35,6 +35,9 @@ angular.config(function($routeProvider, $locationProvider) {
             .when("/EditEvents", {
                 templateUrl: "/public/view/HostUser/EditEvents.html",
                 controller: "EditEventsController" })
+            .when("/EditEvents", {
+                templateUrl: "/public/view/HostUser/AssignGuards.html",
+                controller: "AssignGuardsController" })
             .when("/EventConfirmation", {
                 templateUrl: "/public/view/HostUser/EventConfirmation.html",
                 controller: "eventConfirmationController" })

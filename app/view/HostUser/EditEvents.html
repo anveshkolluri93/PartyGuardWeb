@@ -27,7 +27,7 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper" ng-controller="EditEventsController">
+        <div id="page-content-wrapper" >
             <div class="container-fluid">
                  <!--Page heading-->
             <div class="row">
@@ -51,11 +51,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="event in events">
-                      <td>{{event.EventName}}</td>
-                      <td>{{event.Date}}</td>
-                      <td>{{event.time}}</td>
-                      <td><a href="/Events" class="btn btn-warning">Assign Guards</td>
+                    <tr >
+                      <!-- ng-repeat="event in events" -->
+                      <td>{{events.EventName}}</td>
+                      <td>{{events.Date}}</td>
+                      <td>{{events.time}}</td>
+                      <td><a href="/AssignGuards" class="btn btn-warning">Assign Guards</td>
                     </tr>
                   </tbody>
               </table>
