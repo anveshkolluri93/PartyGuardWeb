@@ -70,7 +70,7 @@ $scope.selectedGuardID.push({'id':$scope.selected[i].guardProfileID});
 
     $http({
           method: 'POST',
-          url: 'http://partyguardservices20161110094537.azurewebsites.net/AssignGuards',
+          url: 'https://partyguardservices20161110094537.azurewebsites.net/AssignGuards',
           data: $scope.dataToSend,
           headers: {
     //      'Content-Type': 'application/json'
