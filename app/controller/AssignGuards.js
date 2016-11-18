@@ -9,6 +9,8 @@ $scope.selectedEvent = $rootScope.selectedEvent;
 var auth = $rootScope.Author;
 $scope.members =[];
 $scope.isUserLoggedIn = true;
+$scope.dataToSend ={};
+$scope.selectedGuardID =[];
 
 
  $http({
@@ -38,7 +40,6 @@ $scope.isUserLoggedIn = true;
      var idx = $scope.selected.indexOf(item);
      if(idx > -1){
        $scope.selected.splice(idx,1);
-
      }else{
        $scope.selected.push(item);
      }
@@ -48,9 +49,36 @@ $scope.isUserLoggedIn = true;
 
 
    $scope.display = function(showSuccessAlertFlag){
-    $scope.user['selectedMembers'] = $scope.selected;
-    $rootScope.eventCreated = $scope.user;
-      $location.path('/EventConfirmation');
+//console.log("selected guards");
+
+for(var i=0;i<$scope.selected.length; i++){
+//  $scope.selectedGuardID.push($scope.selected[i].guardProfileID);
+//$scope.selectedGuardID[i].id = $scope.selected[i].guardProfileID;
+$scope.selectedGuardID.push({'id':$scope.selected[i].guardProfileID});
+}
+// $scope.selectedGuardID.push({
+//   key : "id",
+//   value : $scope.selected.guardProfileID;
+// })
+
+  // console.log($scope.selected);
+  // console.log($scope.selectedGuardID);
+  $scope.dataToSend['guards'] = $scope.selectedGuardID;
+  $scope.dataToSend['eventId'] = $scope.selectedEvent.eventID;
+ console.log($scope.dataToSend);
+
+    // $http({
+    //       method: 'POST',
+    //       url: 'http://partyguardservices20161110094537.azurewebsites.net/AssignGuards',
+    //       data: $scope.dataToSend,
+    //       headers: {
+    //       'Content-Type': 'application/json'
+    //       'Authorization': auth
+    //       }}).then(function(result) {
+    //         console.log(result);
+    //     },function(error) {
+    //     console.log(error);
+    //     });
    }
 
 

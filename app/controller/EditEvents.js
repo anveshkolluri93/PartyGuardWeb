@@ -27,7 +27,9 @@ $http({
 
     $scope.grabEvent = function(item){
       $rootScope.selectedEvent = item;
-    
+
+      console.log($rootScope.selectedEvent);
+
     }
 
 
