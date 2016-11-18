@@ -10,7 +10,7 @@ $rootScope.isBasic = true;
 $scope.events = {};
 $rootScope.selectedEvent = {};
 $scope.fratID = $rootScope.fraternityID;
-var getUrlConstructed = 'http://partyguardservices20161110094537.azurewebsites.net/FraternityEvents/' + $scope.fratID;
+var getUrlConstructed = 'https://partyguardservices20161110094537.azurewebsites.net/FraternityEvents/' + $scope.fratID;
 
 
 console.log(getUrlConstructed);
