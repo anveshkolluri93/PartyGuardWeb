@@ -9,11 +9,16 @@ $rootScope.isGuard = true;
 $rootScope.isBasic = true;
 $scope.events = {};
 $rootScope.selectedEvent = {};
+$scope.fratID = $rootScope.fraternityID;
+var getUrlConstructed = 'http://partyguardservices20161110094537.azurewebsites.net/FraternityEvents/' + $scope.fratID;
 
+
+console.log(getUrlConstructed);
+//$scope.refresh();
 
 $http({
       method: 'GET',
-      url: 'http://partyguardservices20161110094537.azurewebsites.net/FraternityEvents/2',
+      url: getUrlConstructed,
       // headers: {
       // 'Authorization': auth
       // }
@@ -31,6 +36,39 @@ $http({
       console.log($rootScope.selectedEvent);
 
     }
+
+    $scope.deleteEvent = function(item){
+      var postUrlConstructed = 'http://partyguardservices20161110094537.azurewebsites.net/api/EventsModels/' + item.eventID;
+      console.log(postUrlConstructed);
+      $http({
+            method: 'DELETE',
+            url: postUrlConstructed,
+            // headers: {
+            // 'Authorization': auth
+            // }
+          }).then(function(result) {
+          alert("Successfully Deleted");
+          $scope.refresh();
+          },function(error) {
+          console.log(error);
+          alert("Sorry please try again at a later point of time");
+          });
+
+    }
+    $scope.refresh = function(){
+      $http({
+            method: 'GET',
+            url: getUrlConstructed,
+            // headers: {
+            // 'Authorization': auth
+            // }
+          }).then(function(result) {
+          $scope.events = result.data;
+          console.log($scope.events);
+          },function(error) {
+          console.log(error);
+          });
+}
 
 
 }]);

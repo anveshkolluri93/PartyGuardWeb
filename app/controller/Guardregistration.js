@@ -18,7 +18,7 @@ function ($scope, $rootScope, $location, $http) {
               $scope.guardreg['lastName'] = user.lastName;
               $scope.guardreg['userType'] = user.userType;
               $scope.guardreg['age'] = user.age;
-              $scope.guardreg['imgUrl'] = "guardimage";
+              $scope.guardreg['imgUrl'] = null;
               $scope.guardreg['guardUserCode'] = user.guardUserCode;
               $scope.guardreg['PhoneNumber'] = user.PhoneNumber;
 

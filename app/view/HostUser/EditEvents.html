@@ -57,7 +57,7 @@
                       <td>{{event.eventDateTime | date: "MM-dd-yyyy"}}</td>
                       <td>{{event.eventDateTime  | date: "HH:mm:ss"}}</td>
                       <td><a href="/AssignGuards" class="btn btn-success" ng-click="grabEvent(event)">Assign Guards</td>
-                        <td><a href="#" class="btn btn-warning">Delete</td>
+                        <td><a href="#" class="btn btn-warning" ng-click="deleteEvent(event)">Delete</td>
                     </tr>
                   </tbody>
               </table>

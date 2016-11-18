@@ -46,12 +46,14 @@ $scope.display = function(showSuccessAlertFlag){
       $rootScope.eventID = result.data['eventID'];
       console.log($rootScope.eventID);
         console.log(result);
+        $scope.showSuccessAlert = true;
+         $scope.successTextAlert = "Your Event has been successfully created !!";
+         $location.path('/EditEvents');
       },function(error) {
       console.log(error);
       });
 
-$scope.showSuccessAlert = true;
- $scope.successTextAlert = "Your Event has been successfully created !!";
+
 }
 
 $scope.cancel = function(){

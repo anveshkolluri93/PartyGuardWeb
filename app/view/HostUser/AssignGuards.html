@@ -44,7 +44,7 @@
                     <!-- <input type="text" id="form2" placeholder="Enter event Name"class="form-control " ng-model = "user.eventname" required> -->
                     <label for="form2">{{selectedEvent.eventName}}</label>
                     <br>
-                    <label for="form2">{{selectedEvent.eventID}}</label>
+
 
                     <!-- <h6>{{}}</h6> -->
                     </div>
@@ -95,8 +95,10 @@
                             <tbody>
                                 <tr ng-repeat="member in members">
                                     <td>
-                                        <h6>No Image</h6>
-                                        <img src="{{member.imgUrl}}" class="img-fluid img-circle center-block" alt="" height="100" width="100">
+
+                                          <img src="https://s22.postimg.org/egnt38z0d/765_default_avatar.png"  height="100" width="100"/>
+
+                                        <!-- <img src="{{member.imgUrl}}" class="img-fluid img-circle center-block" alt="" height="100" width="100"> -->
                                     </td>
                                     <td>
                                         {{member.lastName}}
