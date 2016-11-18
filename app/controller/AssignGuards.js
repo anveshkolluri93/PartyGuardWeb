@@ -67,18 +67,18 @@ $scope.selectedGuardID.push({'id':$scope.selected[i].guardProfileID});
   $scope.dataToSend['eventId'] = $scope.selectedEvent.eventID;
  console.log($scope.dataToSend);
 
-    // $http({
-    //       method: 'POST',
-    //       url: 'http://partyguardservices20161110094537.azurewebsites.net/AssignGuards',
-    //       data: $scope.dataToSend,
-    //       headers: {
-    //       'Content-Type': 'application/json'
-    //       'Authorization': auth
-    //       }}).then(function(result) {
-    //         console.log(result);
-    //     },function(error) {
-    //     console.log(error);
-    //     });
+    $http({
+          method: 'POST',
+          url: 'http://partyguardservices20161110094537.azurewebsites.net/AssignGuards',
+          data: $scope.dataToSend,
+          headers: {
+    //      'Content-Type': 'application/json'
+          'Authorization': auth
+          }}).then(function(result) {
+            console.log(result);
+        },function(error) {
+        console.log(error);
+        });
    }
 
 
