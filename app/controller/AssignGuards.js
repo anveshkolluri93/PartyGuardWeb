@@ -11,6 +11,7 @@ $scope.members =[];
 $scope.isUserLoggedIn = true;
 $scope.dataToSend ={};
 $scope.selectedGuardID =[];
+$scope.showSuccessAlert = false;
 
 
  $http({
@@ -75,9 +76,13 @@ $scope.selectedGuardID.push({'id':$scope.selected[i].guardProfileID});
     //      'Content-Type': 'application/json'
           'Authorization': auth
           }}).then(function(result) {
-            console.log(result);
+            $scope.showSuccessAlert = true;
+            $scope.successTextAlert = "Your have successfully assigned Guards to your event !!";
         },function(error) {
+          $scope.showSuccessAlert = true;
+          $scope.successTextAlert = "Your have already assigned Guards to your event !!";
         console.log(error);
+
         });
    }
 
