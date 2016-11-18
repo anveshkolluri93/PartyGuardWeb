@@ -38,7 +38,7 @@ $http({
     }
 
     $scope.deleteEvent = function(item){
-      var postUrlConstructed = 'http://partyguardservices20161110094537.azurewebsites.net/api/EventsModels/' + item.eventID;
+      var postUrlConstructed = 'https://partyguardservices20161110094537.azurewebsites.net/api/EventsModels/' + item.eventID;
       console.log(postUrlConstructed);
       $http({
             method: 'DELETE',
