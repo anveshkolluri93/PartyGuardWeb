@@ -18,10 +18,11 @@ function ($scope, $rootScope, $location, $http) {
               $scope.guardreg['lastName'] = user.lastName;
               $scope.guardreg['userType'] = user.userType;
               $scope.guardreg['age'] = user.age;
-              $scope.guardreg['imgUrl'] = "guardimage";
+              $scope.guardreg['imgUrl'] = null;
               $scope.guardreg['guardUserCode'] = user.guardUserCode;
               $scope.guardreg['PhoneNumber'] = user.PhoneNumber;
 
+              $rootScope.first = user.firstName;
               var guardUser = $scope.guardreg;
                console.log("hey"+JSON.stringify(guardUser ));
            //Api call
@@ -43,10 +44,21 @@ function ($scope, $rootScope, $location, $http) {
                      // console.log(result.data.UserType);
 
                          //var response = { success: type === userType};
-                              $scope.showSuccessAlert = true;
-                              $scope.successTextAlert = "Registration Succesful.Click ";
+
 
                          console.log("success"+result.data);
+                        var guarddata = result.data;
+
+                         $http({method: 'GET',
+                                url: 'http://localhost:8080/domailGuard',
+                                params: guardUser,
+                                headers: {
+                                'Content-Type': 'application/json'
+                                }
+                            });
+
+                            $scope.showSuccessAlert = true;
+                            $scope.successTextAlert = "Registration Succesful.Click ";
                          //console.log(response.access_token);
                                     // store username and token in local storage to keep user logged in between page refreshes
                      //    $localStorage.currentUser = { username: username, token: token };

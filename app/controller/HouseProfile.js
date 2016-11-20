@@ -18,7 +18,7 @@ $http({
       'Authorization': auth
       }}).then(function(result) {
         $scope.users = result.data;
-        $rootScope.fraternityID = $scope.users['Id']
+        $rootScope.fraternityID = $scope.users['FraternityId']
         console.log($rootScope.fraternityID);
       console.log("result before "+JSON.stringify($scope.users));
     },function(error) {

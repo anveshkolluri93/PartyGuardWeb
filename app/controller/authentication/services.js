@@ -75,7 +75,8 @@ angular.factory('AuthenticationService',
                               //var response = { success: type === userType};
                               console.log(result.data);
                               $rootScope.udetails = result.data;
-                              //console.log(response.access_token);
+
+
                                          // store username and token in local storage to keep user logged in between page refreshes
                         //  $localStorage.currentUser = { username: username, token: token };
 
