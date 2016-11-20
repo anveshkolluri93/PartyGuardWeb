@@ -22,7 +22,7 @@ function ($scope, $rootScope, $location, $http) {
                       }}).then(function(result) {
 
                          console.log(result);
-                         
+
                          $http({method: 'GET',
                                 url: 'http://localhost:8080/dosuccess',
                                 params: resetpwd,
