@@ -119,8 +119,51 @@ app.get('/domail',function(res,req){
         req.send("sent");
          }
 });
+});
 
 
+app.get('/domailGuard',function(res,req){
+    console.log("mail request received finally");
+    console.log(res.query);
+    var mailOptions={
+        to : res.query.Email,
+        subject : 'PartyGuard Guard Registration Details',
+        text : "Hi, "+res.query.firstName+" \n"+"Please find your Account details below: \n"+
+        "First Name: "+res.query.firstName + "\n"+
+        "Last Name: "+res.query.lastName + "\n"+
+        "Age: "+res.query.age + "\n"+
+        "Phone number: "+res.query.PhoneNumber + "\n \n \n \n Thanks, \n Party Guard Team"
+          }
+    console.log(JSON.stringify(mailOptions));
+    smtpTransport.sendMail(mailOptions, function(error, response){
+     if(error){
+            console.log(error);
+        req.send("error");
+     }else{
+            console.log("Message sent: " + response.message);
+        req.send("sent");
+         }
+});
+});
+
+app.get('/dosuccess',function(res,req){
+    console.log("mail request received finally");
+    console.log(res.query);
+    var mailOptions={
+        to : res.query.Email,
+        subject : 'Password reset',
+        text : "Hi, your password has been successfully changed. \n\n\n Thanks,\nPartyGuard Team"
+          }
+    console.log(JSON.stringify(mailOptions));
+    smtpTransport.sendMail(mailOptions, function(error, response){
+     if(error){
+            console.log(error);
+        req.send("error");
+     }else{
+            console.log("Message sent: " + response.message);
+        req.send("sent");
+         }
+});
 });
 /*------------------SMTP Over-----------------------------*/
 // for all public requests try to use /app folder

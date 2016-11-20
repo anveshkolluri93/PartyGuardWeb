@@ -43,10 +43,21 @@ function ($scope, $rootScope, $location, $http) {
                      // console.log(result.data.UserType);
 
                          //var response = { success: type === userType};
-                              $scope.showSuccessAlert = true;
-                              $scope.successTextAlert = "Registration Succesful.Click ";
+
 
                          console.log("success"+result.data);
+                        var guarddata = result.data;
+
+                         $http({method: 'GET',
+                                url: 'http://localhost:8080/domailGuard',
+                                params: guardUser,
+                                headers: {
+                                'Content-Type': 'application/json'
+                                }
+                            });
+
+                            $scope.showSuccessAlert = true;
+                            $scope.successTextAlert = "Registration Succesful.Click ";
                          //console.log(response.access_token);
                                     // store username and token in local storage to keep user logged in between page refreshes
                      //    $localStorage.currentUser = { username: username, token: token };
