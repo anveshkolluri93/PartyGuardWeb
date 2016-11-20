@@ -1,0 +1,76 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package partyguard;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+/**
+ *
+ * @author S524988
+ */
+public class loginpage {
+    
+     WebDriver driver = new FirefoxDriver();
+//        open partyguard website
+	driver.get("localhost:8080");
+//        maximize the window
+	driver.manage().window().maximize();
+//        click the login button
+	driver.findElement(By.xpath(".//*[@id='collapseEx2']/form/a")).click();
+        
+// click login button directly 
+	driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[3]/div[1]/button")).click();
+		
+		
+//with username and empty password
+	driver.findElement(By.id("form41")).sendKeys("basic");
+        driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[3]/div[1]/button")).click();
+
+//with empty username and  password
+	driver.findElement(By.id("form41")).sendKeys("basic");
+        driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[3]/div[1]/button")).click();
+//with username and password
+	driver.findElement(By.id("form41")).sendKeys("basic");
+	driver.findElement(By.id("form41")).sendKeys("basic");
+	driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[3]/div[1]/button")).click();
+        
+//home button
+	driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[1]/a")).click();
+		
+//about us page
+	driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[2]/a")).click();
+		
+//how it works page
+	driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[3]/a")).click();
+		
+//faqs page
+	driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[4]/a")).click();
+		
+//contact us page
+	driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[5]/a")).click();
+		
+//contact partyguard link
+	driver.findElement(By.xpath("html/body/footer/div[1]/div/div[1]/p")).click();
+		
+//about partyguard link
+	driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[1]/a")).click();
+		
+//employment
+	driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[2]/a")).click();
+		
+//maps and directions
+	driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[3]/a")).click();
+		
+//emergency information
+	driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[4]/a")).click();
+        
+//register as a guard button
+        driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[3]/div/a")).click();
+
+
+}
