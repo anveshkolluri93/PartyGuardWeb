@@ -22,10 +22,19 @@ function ($scope, $rootScope, $location, $http) {
                       }}).then(function(result) {
 
                          console.log(result);
+
+                         $http({method: 'GET',
+                                url: 'http://localhost:8080/dosuccess',
+                                params: resetpwd,
+                                headers: {
+                                'Content-Type': 'application/json'
+                                }
+                            });
+
                          $scope.showSuccessAlert = true;
                          $scope.successTextAlert = "Reset has been succesful.";
                       }, function(error) {
-                        e.showSuccessAlert = true;
+                        $scope.showSuccessAlert = true;
                         $scope.successTextAlert = "Reset unsuccesful.";
                       console.log(error);
                       });

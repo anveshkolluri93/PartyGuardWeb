@@ -27,7 +27,7 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper" ng-controller="EditEventsController">
+        <div id="page-content-wrapper" >
             <div class="container-fluid">
                  <!--Page heading-->
             <div class="row">
@@ -52,10 +52,12 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="event in events">
-                      <td>{{event.EventName}}</td>
-                      <td>{{event.Date}}</td>
-                      <td>{{event.time}}</td>
-                      <td><a href="/Events" class="btn btn-warning">Assign Guards</td>
+                      <!-- ng-repeat="event in events" -->
+                      <td>{{event.eventName}}</td>
+                      <td>{{event.eventDateTime | date: "MM-dd-yyyy"}}</td>
+                      <td>{{event.eventDateTime  | date: "HH:mm:ss"}}</td>
+                      <td><a href="/AssignGuards" class="btn btn-success" ng-click="grabEvent(event)">Assign Guards</td>
+                        <td><a href="#" class="btn btn-warning" ng-click="deleteEvent(event)">Delete</td>
                     </tr>
                   </tbody>
               </table>
