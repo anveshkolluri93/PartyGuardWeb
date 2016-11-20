@@ -22,6 +22,7 @@ function ($scope, $rootScope, $location, $http) {
               $scope.guardreg['guardUserCode'] = user.guardUserCode;
               $scope.guardreg['PhoneNumber'] = user.PhoneNumber;
 
+              $rootScope.first = user.firstName;
               var guardUser = $scope.guardreg;
                console.log("hey"+JSON.stringify(guardUser ));
            //Api call
