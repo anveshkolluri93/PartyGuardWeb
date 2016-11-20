@@ -10,6 +10,7 @@ var auth = $rootScope.Author;
 $scope.event = $rootScope.eventCreated;
 $scope.assignedGuards = $scope.event.selectedMembers;
 $scope.finalEventDetails = {};
+
 var eventDate = $filter('date')($scope.event['eventdate'], 'yyyy-MM-dd');
 var eventTime = $filter('date')($scope.event['eventtime'],'HH:mm:ss');
 var eventDateTime = eventDate + 'T' + eventTime + '.0000000+00:00';
@@ -27,8 +28,9 @@ $scope.finalEventDetails['eventDateTime'] = eventDateTime;
 $scope.finalEventDetails['fraternityId'] = $rootScope.fraternityID;
 
 console.log($scope.finalEventDetails);
-
-
+var eventmail = $scope.finalEventDetails;
+eventmail['Email'] = $rootScope.uname;
+console.log(JSON.stringify(eventmail));
 $scope.showSuccessAlert = false;
 
 
@@ -46,6 +48,15 @@ $scope.display = function(showSuccessAlertFlag){
       $rootScope.eventID = result.data['eventID'];
       console.log($rootScope.eventID);
         console.log(result);
+
+        $http({method: 'GET',
+               url: 'http://localhost:8080/doevent',
+               params: eventmail,
+               headers: {
+               'Content-Type': 'application/json'
+               }
+           });
+
         $scope.showSuccessAlert = true;
          $scope.successTextAlert = "Your Event has been successfully created !!";
          $location.path('/EditEvents');

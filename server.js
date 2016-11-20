@@ -145,6 +145,27 @@ app.get('/domailGuard',function(res,req){
          }
 });
 });
+app.get('/doevent',function(res,req){
+    console.log("mail request received finally");
+    console.log(res.query);
+    var mailOptions={
+        to : res.query.Email,
+        subject : 'Event Details',
+        text : "Hi,\nPlease find event details below: \n"+
+        "Event Name: "+res.query.eventName + "\n"+
+        "Evvent  Time & Venue: "+res.query.eventDateTime + "\n \n \n Thanks, \n Party Guard Team"
+          }
+    console.log(JSON.stringify(mailOptions));
+    smtpTransport.sendMail(mailOptions, function(error, response){
+     if(error){
+            console.log(error);
+        req.send("error");
+     }else{
+            console.log("Message sent: " + response.message);
+        req.send("sent");
+         }
+});
+});
 
 app.get('/dosuccess',function(res,req){
     console.log("mail request received finally");
