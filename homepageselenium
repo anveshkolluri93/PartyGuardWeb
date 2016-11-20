@@ -1,0 +1,84 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package partyguard;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+/**
+ *
+ * @author S524988
+ */
+public class Partyguard {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        WebDriver driver = new FirefoxDriver();
+//        open partyguard website
+	driver.get("localhost:8080");
+//        maximize the window
+	driver.manage().window().maximize();
+//        click the login button
+	driver.findElement(By.xpath(".//*[@id='collapseEx2']/form/a")).click();
+        
+        //click the home button
+        driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[1]/a")).click();
+        //click the aboutus button
+        driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[1]/a")).click();
+        //click the howitworks button
+        driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[1]/a")).click();
+        //click the faqs button
+        driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[1]/a")).click();
+        //click the contact us button
+        driver.findElement(By.xpath(".//*[@id='collapseEx2']/ul/li[1]/a")).click();
+        
+        //click the submit button without entering details
+        driver.findElement(By.xpath(".//*[@id='send_email']")).click();
+        
+        //click the submit button by entering name without email
+        driver.findElement(By.xpath(".//*[@id='form1']")).sendKeys("Gopinadh");
+        driver.findElement(By.xpath(".//*[@id='send_email']")).click();
+        
+        //click the submit button by entering email without name
+        driver.findElement(By.xpath(".//*[@id='to']")).sendKeys("cherupallygopi@gmail.com");
+        driver.findElement(By.xpath(".//*[@id='send_email']")).click();
+        
+        //click the submit butoon by entering details
+        driver.findElement(By.xpath(".//*[@id='form1']")).sendKeys("Gopinadh");
+        driver.findElement(By.xpath(".//*[@id='to']")).sendKeys("cherupallygopi@gmail.com");
+        driver.findElement(By.xpath(".//*[@id='send_email']")).click();
+        
+        //click on download mobile app link
+        driver.findElement(By.xpath("html/body/main/div/div/div/div[3]/div[1]/div/div")).click();
+        
+        //click on host link
+        driver.findElement(By.xpath("html/body/main/div/div/div/div[3]/div[1]/div/div/div[2]/p/a")).click();
+        
+        //click on guard link
+        driver.findElement(By.xpath("html/body/main/div/div/div/div[3]/div[2]/div/div/div[2]/p/a")).click();
+        
+        //contact partyguard link
+	driver.findElement(By.xpath("html/body/footer/div[1]/div/div[1]/p")).click();
+		
+	//about partyguard link
+	driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[1]/a")).click();
+		
+	//employment
+	driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[2]/a")).click();
+		
+	//maps and directions
+	driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[3]/a")).click();
+		
+	//emergency information
+	driver.findElement(By.xpath("html/body/footer/div[1]/div/div[2]/ul/li[4]/a")).click();
+
+}
+}
