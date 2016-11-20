@@ -1,0 +1,50 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package basic.user;
+
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+/**
+ *
+ * @author S524988
+ */
+public class basicuserprofile {
+     WebDriver driver = new FirefoxDriver();
+        open partyguard website
+	driver.get("localhost:8080");
+        maximize the window
+	driver.manage().window().maximize();
+        click the login button
+	driver.findElement(By.xpath(".//*[@id='collapseEx2']/form/a")).click();
+        enter the correct username and password for basic user        
+        WebElement id = driver.findElement(By.id("form41"));
+        WebElement pass = driver.findElement(By.id("form41"));
+        WebElement button = driver.findElement(By.id("Button"));
+        id.sendKeys("srikanth@gmail.com");
+        pass.sendKeys("Welcome@2");
+        button.click();
+        
+driver.findElement(By.xpath(".//*[@id='collapseEx2']/form/a")).click();
+
+String[] textToInput = {"Welcome@,loki123,loki123"};
+
+List<WebElement> elements =  driver.findElements(By.xpath(".//*[@id='form41']"));
+
+System.out.println("size is "+elements.size());
+
+for(int i = 0; i < elements.size(); i++){
+        elements.get(i).sendKeys(textToInput[i]);
+    }
+        driver.findElement(By.xpath(".//*[@id='page-content-wrapper']/div/div[3]/div/button")).click();
+
+    }
+
+
+    
+}
