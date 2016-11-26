@@ -5,10 +5,6 @@ function ($scope, $rootScope, $location, $http) {
   $rootScope.isHost = true;
   $rootScope.isGuard = false;
   $rootScope.isBasic = true;
-    // reset login status
-
-                // $location.path('/AddAck');
-                // $rootScope.isUserLoggedIn = false;
         var passdetails = {};
                 $scope.submit = function(user){
                   console.log(JSON.stringify($scope.user));
@@ -27,13 +23,13 @@ function ($scope, $rootScope, $location, $http) {
                           }}).then(function(result) {
 
                           console.log(result);
- $location.path('/Login');
-                          //  callback(response);
+                          $location.path('/Login');
+
                           }, function(error) {
                           console.log("shit"+JSON.stringify(error));
 
                           });
-alert('Password changed succesfully');
+                    alert('Password changed succesfully');
                   }else {
                     $location.path('/Guardpass');
                     alert("passwords did not match");

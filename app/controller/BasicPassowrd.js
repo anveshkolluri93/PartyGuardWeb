@@ -10,6 +10,7 @@ $rootScope.loginValue = "Logout";
         var basicreq ={};
           $scope.submit=function(rootlocaldetails){
 
+console.log("confirm is" , $scope.password.ConfirmPassword);
                $rootScope.test=$scope.password;
 $rootScope.Basicemail = $rootScope.udetails.Email;
 console.log("email is" + $rootScope.Basicemail);
