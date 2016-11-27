@@ -65,7 +65,7 @@
                 <input name = "email" type="email" id="form61" ng-model="rootlocaldetails.Email" class="form-control" placeholder="Email" required>
                 <span style="color:red"ng-show="newform.email.$touched && newform.email.$error.required" >
 
-                  Please enter FirstName </span>
+                  Please email adress </span>
                   <span style = "color:red" ng-show="newform.email.$touched && newform.email.$error.email">
                     email address format is not valid.</span>
             </div>
@@ -77,7 +77,7 @@
                   <i class="fa fa-phone prefix " ></i>
                   <input  name="phone" ng-minlength="10"
            ng-maxlength="10" type="text" id="form41" ng-model="rootlocaldetails.PhoneNumber" class="form-control" placeholder="PhoneNumber" required>
-           <span style = "color:red"  ng-show="newform.phone.$touched && newform.phone.$error.required"
+           <span style = "color:red"  ng-show="newform.phone.$touched && newform.phone.$error.required">
                                Valid phone number is required
                 </span>
 
