@@ -20,7 +20,7 @@
   <!-- //ng-submit="update(rootlocaldetails)" -->
               <!-- <form   class="simple-from" ng-submit="submit()"> -->
 
-<form   class="simple-from"  >
+<form   name="newform"  ng-submit="submitForm()" novalidate>
 
         <div class="row">
 
@@ -39,9 +39,11 @@
             <div class="md-form">
 
                 <i class="fa fa-user prefix"></i>
-                <input type="text" id="form41" ng-model="rootlocaldetails.FirstName" class="form-control" placeholder="FirstName" required>
+                <input name="fn"  type="text" id="form41" ng-model="rootlocaldetails.FirstName" class="form-control" placeholder="FirstName" required>
 
+                <span style="color:red"ng-show="newform.fn.$touched && newform.fn.$error.required" >
 
+                  Please enter FirstName </span>
             </div>
         </div>
 
@@ -49,8 +51,10 @@
         <div class="col-md-4">
             <div class="md-form">
                 <i class="fa fa-user prefix"></i>
-                <input type="text" id="form51" ng-model="rootlocaldetails.LastName" class="form-control" placeholder="LastName" required>
-
+                <input name="ln" type="text" id="form51" ng-model="rootlocaldetails.LastName" class="form-control" placeholder="LastName" required>
+                <span style="color:red"ng-show="newform.ln.$touched && newform.ln.$error.required" >
+                  Please enter lastname
+               </span>
             </div>
         </div>
 
@@ -58,8 +62,12 @@
         <div class="col-md-4">
             <div class="md-form">
               <i class="fa fa-envelope prefix"></i>
-                <input type="text" id="form61" ng-model="rootlocaldetails.Email" class="form-control" placeholder="Email" required>
+                <input name = "email" type="email" id="form61" ng-model="rootlocaldetails.Email" class="form-control" placeholder="Email" required>
+                <span style="color:red"ng-show="newform.email.$touched && newform.email.$error.required" >
 
+                  Please enter FirstName </span>
+                  <span style = "color:red" ng-show="newform.email.$touched && newform.email.$error.email">
+                    email address format is not valid.</span>
             </div>
         </div>
 
@@ -67,14 +75,26 @@
           <div class="col-md-4">
               <div class="md-form">
                   <i class="fa fa-phone prefix " ></i>
-                  <input type="text" id="form41" ng-model="rootlocaldetails.PhoneNumber" class="form-control" placeholder="PhoneNumber" required>
+                  <input  name="phone" ng-minlength="10"
+           ng-maxlength="10" type="text" id="form41" ng-model="rootlocaldetails.PhoneNumber" class="form-control" placeholder="PhoneNumber" required>
+           <span style = "color:red"  ng-show="newform.phone.$touched && newform.phone.$error.required"
+                               Valid phone number is required
+                </span>
 
+                <span style = "color:red"
+                      ng-show="((newform.phone.$error.minlength ||
+                                newform.phone.$error.maxlength) &&
+                                (newform.phone.$dirty) )">
+                                phone number should be 10 digits
+                 </span>
               </div>
           </div>
-    <a href="/Basic"><input type="submit" class="btn btn-success" name="simple-from"  value="Update"> </a>
+
+
+    <!-- <a href="/Basic"><input type="submit" class="btn btn-success" name="simple-from"  value="Update"> </a> -->
   </div>
       </div>
-
+  <button type="submit" class="btn btn-success" ng-disabled="newform.$invalid">Submit</button>
 </form>
       <!-- <pre>form = {{newuser | json}}</pre>
         <pre>master = {{master | json}}</pre> -->
