@@ -22,8 +22,6 @@ $scope.isUserLoggedIn = true;
      });
 
 
-
-
    $scope.selected =[];
    $scope.final = [];
 
@@ -50,6 +48,8 @@ $scope.isUserLoggedIn = true;
     $rootScope.eventCreated = $scope.user;
       $location.path('/EventConfirmation');
    }
+
+
 
 
 }]);
