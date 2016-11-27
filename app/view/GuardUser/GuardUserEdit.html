@@ -20,9 +20,9 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <form name="newform" >
+        <form name="newform"  ng-submit="submitForm()" novalidate>
 
-
+<div class = "col-md-12">
           <div class="row">
 
 
@@ -40,7 +40,10 @@
               <div class="md-form">
 
                   <i class="fa fa-user prefix"></i>
-                  <input type="text" id="form41"  class="form-control" ng-model="user.FirstName" ng-readonly="false" >
+                  <input name="fn" type="text" id="form41"  class="form-control" ng-model="user.FirstName" ng-readonly="false" required>
+                  <span style="color:red"ng-show="newform.fn.$touched && newform.fn.$error.required" >
+
+                    Please enter FirstName </span>
               </div>
           </div>
 
@@ -48,8 +51,10 @@
           <div class="col-md-4">
               <div class="md-form">
                   <i class="fa fa-user prefix"></i>
-                  <input type="text" id="form51" class="form-control" ng-model="user.LastName" ng-readonly="false"  >
-
+                  <input name="ln" type="text" id="form51" class="form-control" ng-model="user.LastName" ng-readonly="false"  required>
+                  <span style="color:red"ng-show="newform.ln.$touched && newform.ln.$error.required" >
+                    Please enter lastname
+                 </span>
               </div>
           </div>
 
@@ -57,8 +62,13 @@
           <div class="col-md-4">
               <div class="md-form">
                 <i class="fa fa-envelope prefix"></i>
-                  <input type="email" id="form61"  class="form-control"ng-model="user.Email"  ng-readonly="true"  >
+                  <input name = "email" type="email" id="form61"  class="form-control"ng-model="user.Email"  ng-readonly="true" required >
+                  <span style="color:red"ng-show="newform.email.$touched && newform.email.$error.required" >
 
+                    Please enter FirstName </span>
+                    <span style = "color:red" ng-show="newform.email.$touched && newform.email.$error.email">
+                      email address format is not valid.</span>
+</p>
               </div>
           </div>
 
@@ -67,22 +77,51 @@
           <div>
             <div class="col-md-4">
                 <div class="md-form">
-                    <i class="fa fa-phone prefix " ></i>
-                    <input type="text" id="form41"  class="form-control" ng-model="user.PhoneNumber" ng-readonly="false"  >
-
+                    <i class="fa fa-age prefix " ></i>
+                    <input  name="phone" ng-minlength="10"
+             ng-maxlength="10" type="text" id="form41"  class="form-control" ng-model="user.PhoneNumber" ng-readonly="false" required >
+             <span style = "color:red"  ng-show="newform.phone.$touched && newform.phone.$error.required"
+                                 Valid phone number is required
+                  </span>
+                  {{user.PhoneNumber}}
+                  <span style = "color:red"
+                        ng-show="((newform.phone.$error.minlength ||
+                                  newform.phone.$error.maxlength) &&
+                                  (newform.phone.$dirty) )">
+                                  phone number should be 10 digits
+                   </span>
                 </div>
             </div>
+
+
             <div class="col-md-4">
                 <div class="md-form">
                     <i class="fa fa-user prefix " ></i>
-                    <input type="text" id="form41"  class="form-control" ng-model="user.Age" ng-readonly="false"  >
+                    <input  min = "0" ng-minlength="1"
+             ng-maxlength="3" name="age" type="text" id="form41"  class="form-control" ng-model="user.Age" ng-readonly="false"  required>
 
+
+             <span style = "color:red"  ng-show=" newform.age.$error.min">
+                                Negative age is not invalid!!
+                  </span>
+
+                  <span style = "color:red"  ng-show="newform.age.$touched && (newform.age.$error.required ||
+                                 newform.age.$error.number)">
+                                Enter a  Valid age
+                  </span>
+                  <span style = "color:red"
+                        ng-show="((newform.age.$error.minlength ||
+                                  newform.age.$error.maxlength) &&
+                                  (newform.age.$dirty) )">
+                                  Enter a valid age!!
+                   </span>
                 </div>
             </div><br>
-              <a  class="btn btn-success"  ng-click ="submitform()" >Update</a>
+        <!-- <input type="submit"  class="btn btn-success"    > -->
+
         <!-- <button      <i class="fa fa-edit prefix"></i>    <a href="/GuardUserEdit">Edit</a> </button> -->
     </div>
-
+  </div>
+  <button type="submit" class="btn btn-success" ng-disabled="newform.$invalid">Submit</button>
 </form>
-
-        </div>
+</div>

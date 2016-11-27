@@ -15,11 +15,34 @@ function ($scope, $rootScope, $location) {
          $rootScope.newdata = {};
 
 
-                       $scope.submitform = function(user) {
-                        $rootScope.newdata = $scope.guardetails;
-                         $location.path('/Guard');
-                         console.log("hi"+JSON.stringify($rootScope.newdata));
-                       };
+
+
+         $scope.submitForm = function(isValid) {
+
+            // check to make sure the form is completely valid
+            if ($scope.newform.$valid) {
+              // console.log(
+              //   "hi isvalid value is",isValid);
+              //   alert('Please fill the details before sumitting');
+                alert('our form is amazing');
+                // console.log('hey im true');
+
+                 $rootScope.newdata = $scope.guardetails;
+                  $location.path('/Guard');
+                  console.log("hi"+JSON.stringify($rootScope.newdata));
+
+}
+else if ($scope.newform.$invalid) {
+
+              alert('our form is not amazing');
+          };
+    //         else {
+    // console.log('hey im not true');
+    //          alert('Please fill the details before sumitting');
+    //         }
+
+          };
+
 
 
 
