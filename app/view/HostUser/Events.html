@@ -58,7 +58,7 @@
                   <div class="col-md-3 col-lg-6">
                     <div class="md-form">
                   <i class="fa fa-calendar prefix"></i>
-                  <input name="datee" type="date" id="form2" placeholder="Enter Date" class="form-control" ng-model = "user.eventdate" required>
+                  <input name="datee" type="date" id="form2" placeholder="Enter Date" class="form-control" min="{{currentDateFormatted}}" ng-model = "user.eventdate" required>
                   <!-- <label for="form2">Event Date</label> -->
                   <span  style="color:red" ng-show="simplefrom.datee.$touched && simplefrom.datee.$error.required">
          Required!</span>
@@ -72,7 +72,7 @@
                   <div class="col-md-3 col-lg-6">
                     <div class="md-form">
                   <i class="fa fa-clock-o prefix"></i>
-                  <input name = "tim" type="time" id="form2" placeholder="Enter Time" class="form-control" ng-model = "user.eventtime" required>
+                  <input name = "tim" type="time" id="form2" placeholder="Enter Time" class="form-control" min="{{currentTimeFormatted}}" ng-model = "user.eventtime" required>
                   <!-- <label for="form2">Event Date</label> -->
                   <span  style="color:red" ng-show="simplefrom.tim.$touched && simplefrom.tim.$error.required">
       Please enter time!</span>
@@ -90,7 +90,8 @@
                       <!-- <button type= "submit" class="btn btn-warning-outline"  ng-disabled="simple-from.$invalid" ng-click="display(showSuccessAlert)">Submit</button> -->
   <button type= "submit" class="btn btn-success"  ng-disabled="simplefrom.$invalid" ng-click="display(showSuccessAlert)">Submit</button>
                       <!-- <a href="/EventConfirmation" class="btn btn-warning-outline" ng-click="display(showSuccessAlert)">Submit</a> -->
-                      <a href="#" class="btn btn-warning-outline">Reset</a>
+                      <!-- <a href="#" class="btn btn-warning-outline">Reset</a> -->
+                      <button type= "submit" class="btn btn-warning-outline" ng-click="reset(showSuccessAlert)">Reset</button>
                       <div class="alert alert-success" role="alert" ng-show="showSuccessAlert"><h4>{{successTextAlert}}</h4></div>
                     </div>
                 </div>

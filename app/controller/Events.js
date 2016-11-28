@@ -1,5 +1,5 @@
-angular.controller("eventsController", ['$scope', '$rootScope', '$location', '$http',
-function ($scope, $rootScope, $location, $http) {
+angular.controller("eventsController", ['$scope', '$rootScope', '$location', '$http', '$filter',
+function ($scope, $rootScope, $location, $http, $filter) {
 $rootScope.loginValue = "Logout";
 $rootScope.isMaster = true;
 $rootScope.isHost = false;
@@ -8,6 +8,13 @@ $rootScope.isBasic = true;
 var auth = $rootScope.Author;
 $scope.members =[];
 $scope.isUserLoggedIn = true;
+$scope.currentDate = new Date();
+//console.log($scope.currentDate);
+
+$scope.currentDateFormatted = $filter('date')($scope.currentDate, 'yyyy-MM-dd');
+$scope.currentTimeFormatted = $filter('date')($scope.currentDate,'HH:mm');
+console.log($scope.currentDateFormatted);
+console.log($scope.currentTimeFormatted);
 
  $http({
        method: 'POST',
@@ -22,11 +29,7 @@ $scope.isUserLoggedIn = true;
      });
 
 
-<<<<<<< HEAD
-// console.log('entered date is',$scope.user.eventtime);
 
-=======
->>>>>>> b442483fc69f674ede7b1fcaeb7b78d5375f248d
    $scope.selected =[];
    $scope.final = [];
 
@@ -86,12 +89,12 @@ $scope.isUserLoggedIn = true;
 // alert('hey you are right');
 //}
 
-<<<<<<< HEAD
+
+
+}
+$scope.reset = function(showSuccessAlertFlag){
+//  alert("reset");
+  $scope.user = {};
 }
 }
 ]);
-=======
-
-
-}]);
->>>>>>> b442483fc69f674ede7b1fcaeb7b78d5375f248d
