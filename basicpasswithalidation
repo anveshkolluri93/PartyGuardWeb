@@ -1,0 +1,82 @@
+<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav ">
+                <li class="sidebar-brand">
+                  <a href="/Basic">
+                      Profile
+                  </a>
+                </li>
+
+                <li>
+                    <a href="/Basicpass">Change Password</a>
+                </li>
+            </ul>
+        </div>
+  <form   name="simplefrom"  ng-submit="submit()" novalidate>
+
+<div class = "col-md-12">
+              <!--/.first row-->
+      <div class="row">
+
+
+      <!--First column-->
+      <div> <h1>Change your Password</h1></div>
+</div>
+<!--
+      <div class="col-md-4">
+
+          <img src="https://s9.postimg.org/amh9hv08v/maleavatar.png" width="180" height="200" />
+
+       </div> -->
+<div class="row">
+      <div class="col-md-4">
+          <div class="md-form">
+
+          <i class="fa fa-key" aria-hidden="true"></i>
+            <input name = "oldpass" type="password" id="form41"  ng-model = "password.Oldpassword"class="form-control" placeholder="Old Password" required>
+
+            <span style="color:red"ng-show="simplefrom.oldpass.$touched && simplefrom.oldpass.$error.required" >
+
+              Please enter the old password </span>
+          </div>
+      </div>
+</div>
+      <!--Second column-->
+      <div class="row">
+      <div class="col-md-4">
+          <div class="md-form">
+
+            <i class="fa fa-key" aria-hidden="true"></i>
+              <input name="newpass" type="password" id="form41"  ng-model = "password.NewPassword" class="form-control" placeholder="New Password" required>
+              <span style="color:red" ng-show="simplefrom.newpass.$touched && simplefrom.newpass.$error.required" >
+
+                Please enter New password </span>
+
+          </div>
+      </div>
+</div>
+      <!--second row-->
+      <div class="row">
+      <div class="col-md-4">
+          <div class="md-form">
+            <i class="fa fa-key" aria-hidden="true"></i>
+              <input name="confirmpass" type="password" id="form41"  ng-model="password.ConfirmPassword" class="form-control" placeholder="Re-enter Password" required>
+              <span style="color:red" ng-show="simplefrom.confirmpass.$touched && simplefrom.confirmpass.$error.required" >
+
+                Please Re-enter Password</span>
+          </div>
+      </div></div>
+
+      <div class="row">
+
+       <input type="submit"   class="btn btn-success"  ng-disabled="simplefrom.$invalid">
+
+
+      </div>
+
+
+</div>
+</form>
+</div>
