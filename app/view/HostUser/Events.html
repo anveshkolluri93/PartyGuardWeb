@@ -27,8 +27,9 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-           <form   class="simple-from" >
+
+           <form   name="simplefrom"  novalidate>
+                 <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -41,8 +42,12 @@
                     <div class="col-md-3 col-lg-6">
                       <div class="md-form">
                     <i class="fa fa-beer prefix"></i>
-                    <input type="text" id="form2" placeholder="Enter event Name"class="form-control " ng-model = "user.eventname" required>
+                    <input name = "event" type="text" id="form2" placeholder="Enter event Name"class="form-control " ng-model = "user.eventname" required>
                     <!-- <label for="form2">Event Name</label> -->
+
+                    <span style="color:red" ng-show="simplefrom.event.$touched && simplefrom.event.$error.required" >
+                      Please enter event name
+                   </span>
                     </div>
                    </div>
 
@@ -53,8 +58,12 @@
                   <div class="col-md-3 col-lg-6">
                     <div class="md-form">
                   <i class="fa fa-calendar prefix"></i>
-                  <input type="date" id="somedate" placeholder="Enter Date" class="form-control" ng-model = "user.eventdate" required>
+                  <input name="datee" type="date" id="form2" placeholder="Enter Date" class="form-control" ng-model = "user.eventdate" required>
                   <!-- <label for="form2">Event Date</label> -->
+                  <span  style="color:red" ng-show="simplefrom.datee.$touched && simplefrom.datee.$error.required">
+         Required!</span>
+     <span  style="color:red" ng-show= "simplefrom.datee.$error.date"> Not a valid date!</span>
+
 
                   </div>
                  </div>
@@ -63,8 +72,11 @@
                   <div class="col-md-3 col-lg-6">
                     <div class="md-form">
                   <i class="fa fa-clock-o prefix"></i>
-                  <input type="time" id="form2" placeholder="Enter Time" class="form-control" ng-model = "user.eventtime" required>
+                  <input name = "tim" type="time" id="form2" placeholder="Enter Time" class="form-control" ng-model = "user.eventtime" required>
                   <!-- <label for="form2">Event Date</label> -->
+                  <span  style="color:red" ng-show="simplefrom.tim.$touched && simplefrom.tim.$error.required">
+      Please enter time!</span>
+     <span style= "color:red" ng-show="simplefrom.tim.$error.time"> Not a valid time!</span>
 
                   </div>
                  </div>
@@ -74,14 +86,18 @@
                     <div class="col-md-12">
 
                    </div>
-                      <button type= "submit" class="btn btn-warning-outline" ng-click="display(showSuccessAlert)">Submit</button>
+
+                      <!-- <button type= "submit" class="btn btn-warning-outline"  ng-disabled="simple-from.$invalid" ng-click="display(showSuccessAlert)">Submit</button> -->
+  <button type= "submit" class="btn btn-success"  ng-disabled="simplefrom.$invalid" ng-click="display(showSuccessAlert)">Submit</button>
                       <!-- <a href="/EventConfirmation" class="btn btn-warning-outline" ng-click="display(showSuccessAlert)">Submit</a> -->
                       <a href="#" class="btn btn-warning-outline">Reset</a>
                       <div class="alert alert-success" role="alert" ng-show="showSuccessAlert"><h4>{{successTextAlert}}</h4></div>
                     </div>
                 </div>
+                  </div>
+
               </form>
-            </div>
+
         </div>
         <!-- /#page-content-wrapper -->
 
