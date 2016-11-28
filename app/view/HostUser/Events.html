@@ -58,7 +58,11 @@
                   <div class="col-md-3 col-lg-6">
                     <div class="md-form">
                   <i class="fa fa-calendar prefix"></i>
+<<<<<<< HEAD
                   <input name="datee" type="date" id="form2" placeholder="Enter Date" class="form-control" ng-model = "user.eventdate" required>
+=======
+                  <input type="date" id="somedate" placeholder="Enter Date" class="form-control" ng-model = "user.eventdate" required>
+>>>>>>> b442483fc69f674ede7b1fcaeb7b78d5375f248d
                   <!-- <label for="form2">Event Date</label> -->
                   <span  style="color:red" ng-show="simplefrom.datee.$touched && simplefrom.datee.$error.required">
          Required!</span>
@@ -86,39 +90,6 @@
                     <div class="col-md-12">
 
                    </div>
-
-                   <!-- <table class="table table-striped">
-
-                            <thead>
-                                <tr>
-                                <th><b>Profile Image</b></th>
-                                <th><b>Last Name</b></th>
-                                <th><b>First Name</b></th>
-                                <th><b>Alerts On/Off</b></th>
-                                </tr>
-
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="member in members">
-                                    <td>
-                                        <h6>No Image</h6>
-                                        <img src="{{member.imgUrl}}" class="img-fluid img-circle center-block" alt="" height="100" width="100">
-                                    </td>
-                                    <td>
-                                        {{member.lastName}}
-                                    </td>
-                                    <td>
-                                        {{member.firstName}}
-                                    </td>
-                                    <td>
-                                        <input name="group2" type="checkbox" id="checkbox1" ng-model="selected" ng-checked="exist(member)"
-                                        ng-click="toggleSelection(member)">
-                                    </td>
-
-                                </tr>
-                            </tbody>
-                   </table> -->
-
 
                       <!-- <button type= "submit" class="btn btn-warning-outline"  ng-disabled="simple-from.$invalid" ng-click="display(showSuccessAlert)">Submit</button> -->
   <button type= "submit" class="btn btn-success"  ng-disabled="simplefrom.$invalid" ng-click="display(showSuccessAlert)">Submit</button>

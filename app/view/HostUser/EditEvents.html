@@ -47,17 +47,18 @@
                     <th>Event Name</th>
                     <th>Event Date</th>
                     <th>Event Time</th>
-                    <th>Modify Event</th>
+                    <!-- <th>Modify Event</th> -->
                   </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="event in events">
                       <!-- ng-repeat="event in events" -->
-                      <td>{{event.eventName}}</td>
+                      <td><a href="#" ng-click="editEvent(event)">{{event.eventName}}</a></td>
                       <td>{{event.eventDateTime | date: "MM-dd-yyyy"}}</td>
                       <td>{{event.eventDateTime  | date: "HH:mm:ss"}}</td>
                       <td><a href="/AssignGuards" class="btn btn-success" ng-click="grabEvent(event)">Assign Guards</td>
                         <td><a href="#" class="btn btn-warning" ng-click="deleteEvent(event)">Delete</td>
+                        <!-- <td><a href="#" class="btn btn-warning" ng-click="editEvent(event)">Edit</td> -->
                     </tr>
                   </tbody>
               </table>

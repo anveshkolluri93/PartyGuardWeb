@@ -22,8 +22,11 @@ $scope.isUserLoggedIn = true;
      });
 
 
+<<<<<<< HEAD
 // console.log('entered date is',$scope.user.eventtime);
 
+=======
+>>>>>>> b442483fc69f674ede7b1fcaeb7b78d5375f248d
    $scope.selected =[];
    $scope.final = [];
 
@@ -83,6 +86,12 @@ $scope.isUserLoggedIn = true;
 // alert('hey you are right');
 //}
 
+<<<<<<< HEAD
 }
 }
 ]);
+=======
+
+
+}]);
+>>>>>>> b442483fc69f674ede7b1fcaeb7b78d5375f248d

@@ -70,5 +70,9 @@ $http({
           });
 }
 
+$scope.editEvent = function(item){
+  alert("Edit Event Service is not yet provided");
+}
+
 
 }]);
