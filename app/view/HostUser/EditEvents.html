@@ -41,18 +41,17 @@
             <hr>
             <!--/.Content-->
             <div id="page-content-wrapper">
+              <!-- Edit events -->
               <table class="table table-striped">
                 <thead>
                   <tr>
                     <th>Event Name</th>
                     <th>Event Date</th>
                     <th>Event Time</th>
-                    <!-- <th>Modify Event</th> -->
                   </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="event in events">
-                      <!-- ng-repeat="event in events" -->
                       <td><a href="#" ng-click="editEvent(event)">{{event.eventName}}</a></td>
                       <td>{{event.eventDateTime | date: "MM-dd-yyyy"}}</td>
                       <td>{{event.eventDateTime  | date: "HH:mm:ss"}}</td>
@@ -62,6 +61,7 @@
                     </tr>
                   </tbody>
               </table>
+              <!-- End of Edit events -->
             </div>
 
             <hr>

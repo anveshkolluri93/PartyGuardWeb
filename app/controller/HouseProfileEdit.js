@@ -1,3 +1,4 @@
+// This controller can be enabled in future to enable edit functionality in host profile page as of its not in use
 angular.controller("HouseProfileEditController", ['$scope', '$rootScope', '$location',
 function ($scope, $rootScope, $location) {
   $rootScope.loginValue = "Logout";

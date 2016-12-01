@@ -1,3 +1,4 @@
+//Start of Event Confirmation Controller
 angular.controller("eventConfirmationController", ['$scope', '$rootScope', '$filter', '$http', '$location',
 function ($scope, $rootScope, $filter, $http, $location) {
 $rootScope.loginValue = "Logout";
@@ -6,38 +7,25 @@ $rootScope.isHost = false;
 $rootScope.isGuard = true;
 $rootScope.isBasic = true;
 var auth = $rootScope.Author;
-
 $scope.event = $rootScope.eventCreated;
 $scope.assignedGuards = $scope.event.selectedMembers;
 $scope.finalEventDetails = {};
 
+//Date formatted to desired format
 var eventDate = $filter('date')($scope.event['eventdate'], 'yyyy-MM-dd');
 var eventTime = $filter('date')($scope.event['eventtime'],'HH:mm:ss');
 var eventDateTime = eventDate + 'T' + eventTime + '.0000000+00:00';
 
-
-
-console.log("Event details are");
-console.log($scope.event);
-console.log(eventDate);
-console.log(eventTime);
-console.log(eventDateTime);
-
 $scope.finalEventDetails['eventName'] = $scope.event['eventname'];
 $scope.finalEventDetails['eventDateTime'] = eventDateTime;
 $scope.finalEventDetails['fraternityId'] = $rootScope.fraternityID;
-
-console.log($scope.finalEventDetails);
 var eventmail = $scope.finalEventDetails;
 eventmail['Email'] = $rootScope.uname;
-console.log(JSON.stringify(eventmail));
 $scope.showSuccessAlert = false;
 
 
+// Function that handles submit event creation
 $scope.display = function(showSuccessAlertFlag){
-
-  console.log("inside");
-
   $http({
         method: 'POST',
         url: 'https://partyguardservices20161110094537.azurewebsites.net/api/EventsModels',
@@ -67,6 +55,7 @@ $scope.display = function(showSuccessAlertFlag){
 
 }
 
+//Fucntion to handle click of cancel button
 $scope.cancel = function(){
 
   confirm('Are you sure to cancel?');

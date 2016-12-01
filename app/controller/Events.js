@@ -1,3 +1,4 @@
+//Events Controller
 angular.controller("eventsController", ['$scope', '$rootScope', '$location', '$http', '$filter',
 function ($scope, $rootScope, $location, $http, $filter) {
 $rootScope.loginValue = "Logout";
@@ -9,12 +10,9 @@ var auth = $rootScope.Author;
 $scope.members =[];
 $scope.isUserLoggedIn = true;
 $scope.currentDate = new Date();
-//console.log($scope.currentDate);
-
 $scope.currentDateFormatted = $filter('date')($scope.currentDate, 'yyyy-MM-dd');
 $scope.currentTimeFormatted = $filter('date')($scope.currentDate,'HH:mm');
-console.log($scope.currentDateFormatted);
-console.log($scope.currentTimeFormatted);
+
 
  $http({
        method: 'POST',
@@ -48,53 +46,15 @@ console.log($scope.currentTimeFormatted);
      }
    }
 
-
- //  $scope.submitForm = function($scope.user.eventdate) {
- //
- //
- // }
- // else {
- //
- //
- //  }
- // var datetest = $scope.user.eventdate;
- //
-
-
-  //  console.log('entered month is',datetest.getMonth()+1);
-  //  console.log('entered year is',datetest.getFullYear());
-  //  console.log('entered day is',datetest.getDate());
-   //
-  //  console.log('today month is',today.getMonth()+1);
-  //  console.log('today year is',today.getFullYear());
-  //  console.log('today day is',today.getDate());
-
+// Function to handle Submit button click
    $scope.display = function(showSuccessAlertFlag){
     $scope.user['selectedMembers'] = $scope.selected;
     $rootScope.eventCreated = $scope.user;
     $location.path('/EventConfirmation');
-// var datetest = $scope.user.eventdate;
-// $scope.date = new  Date();
-// console.log('today date is' , $scope.date);
-//    console.log('entered month is',datetest.getMonth()+1);
-//    console.log('entered year is',datetest.getFullYear());
-//    console.log('entered day is',datetest.getDate());
-//
-//
-//     console.log('today month is',$scope.date.getMonth()+1);
-//     console.log('today year is',$scope.date.getFullYear());
-//     console.log('today day is',$scope.date.getDate());
-//     if(((datetest.getMonth())+1) >= (($scope.date.getMonth())+1) && (datetest.getFullYear()) >=
-//     ($scope.date.getFullYear()) && (datetest.getDate()) >= ($scope.date.getDate())) {
-// alert('hey you are right');
-//}
-
-
-
 }
+//Fucntion to handle reset button click
 $scope.reset = function(showSuccessAlertFlag){
-//  alert("reset");
   $scope.user = {};
 }
-}
-]);
+
+}]);
