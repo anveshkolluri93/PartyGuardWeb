@@ -1,3 +1,4 @@
+// This controller loads memebers details
 angular.controller("membersController", ['$scope', '$rootScope', '$location',
 function ($scope, $rootScope, $location) {
 

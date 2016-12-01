@@ -28,6 +28,8 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
+
+          <!-- Event details -->
            <form   class="simple-from" >
             <div class="container-fluid">
                 <div class="row">
@@ -44,9 +46,6 @@
                     <!-- <input type="text" id="form2" placeholder="Enter event Name"class="form-control " ng-model = "user.eventname" required> -->
                     <label for="form2">{{selectedEvent.eventName}}</label>
                     <br>
-
-
-                    <!-- <h6>{{}}</h6> -->
                     </div>
                    </div>
 
@@ -76,11 +75,11 @@
                  </div>
                 </div>
 
+                <!-- End of event details -->
+
+                <!-- Guards list -->
+
                 <div class="row">
-                    <div class="col-md-12">
-
-                   </div>
-
                    <table class="table table-striped">
 
                             <thead>
@@ -115,10 +114,9 @@
                             </tbody>
                    </table>
 
+                    <!-- End of Guards List -->
 
                       <button type= "submit" class="btn btn-warning-outline" ng-click="display(showSuccessAlert)">Submit</button>
-                      <!-- <a href="/EventConfirmation" class="btn btn-warning-outline" ng-click="display(showSuccessAlert)">Submit</a> -->
-                      <!-- <a href="#" class="btn btn-warning-outline">Reset</a> -->
                       <div class="alert alert-success" role="alert" ng-show="showSuccessAlert"><h4>{{successTextAlert}}</h4></div>
                     </div>
                 </div>
