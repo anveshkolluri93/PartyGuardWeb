@@ -1,3 +1,4 @@
+//creating GuardRegistration with in built angular services such as scope,rootscope,location,http
 angular.controller("GuardRegistration", ['$scope', '$rootScope', '$location','$http',
 function ($scope, $rootScope, $location, $http) {
 
@@ -6,12 +7,10 @@ function ($scope, $rootScope, $location, $http) {
   $scope.showSuccessAlert = false;
         $scope.update = function(user) {
 
-            // $scope.showSuccessAlert = true;
-            // $scope.successTextAlert = "Registration Succesful.Click ";
             $scope.master = $scope.user;
             $scope.user['userType'] = "guard";
 
-
+//Constructing json guardreg objrct
               $scope.guardreg['Email'] = user.Email;
               $scope.guardreg['Password'] = user.Password;
               $scope.guardreg['firstName'] = user.firstName;
@@ -21,19 +20,12 @@ function ($scope, $rootScope, $location, $http) {
               $scope.guardreg['imgUrl'] = null;
               $scope.guardreg['guardUserCode'] = user.guardUserCode;
               $scope.guardreg['PhoneNumber'] = user.PhoneNumber;
-
+//storing firstname in rootscope so that any controller can acess it
               $rootScope.first = user.firstName;
               var guardUser = $scope.guardreg;
                console.log("hey"+JSON.stringify(guardUser ));
-           //Api call
-            // $http.post('/api/authenticate', user)
-            //    .success(function (response) {
-            //      $scope.showSuccessAlert = true;
-            //      $scope.successTextAlert = "Registration Succesful.Click ";
-            //        callback(response);
-            //    });
 
-               //API call
+      //API call to post the above constrcuted JSON object
                $http({
                      method: 'POST',
                      url: 'https://partyguardservices20161110094537.azurewebsites.net/api/Account/Register',
@@ -41,14 +33,11 @@ function ($scope, $rootScope, $location, $http) {
                      headers: {
                        'Content-Type': 'application/json'
                      }}).then(function(result) {
-                     // console.log(result.data.UserType);
-
-                         //var response = { success: type === userType};
-
 
                          console.log("success"+result.data);
                         var guarddata = result.data;
 
+//getting data
                          $http({method: 'GET',
                                 url: 'http://localhost:8080/domailGuard',
                                 params: guardUser,
@@ -76,7 +65,7 @@ function ($scope, $rootScope, $location, $http) {
 
 
         };
-
+//Reset function
         $scope.reset = function() {
 
           $scope.user = null;
@@ -86,11 +75,6 @@ function ($scope, $rootScope, $location, $http) {
             $scope[value] = !$scope[value];
         };
 
-        // $scope.reset = function() {
-        //   $scope.user = angular.copy($scope.master);
-        // };
-        //
-        // $scope.reset();
 
 
   }]);

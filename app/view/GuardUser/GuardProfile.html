@@ -17,45 +17,37 @@
                 </li>
             </ul>
         </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
+          <!--Form  simple-from-->
         <form name="newform" >
-
-
+    <!--First Row-->
           <div class="row">
-
-
-          <!--First column-->
           <div> <h1>Welcome {{guardetails.FirstName}} !!!</h1></div>
-
-
           <div class="col-md-4">
-
               <img src="https://s9.postimg.org/amh9hv08v/maleavatar.png" width="180" height="200" />
-
            </div>
 
           <div class="col-md-4">
               <div class="md-form">
-
+<!-- user icon from font awesome -->
                   <i class="fa fa-user prefix"></i>
                   <input type="text" id="form41" value = "{{guardetails.FirstName}}" class="form-control" ng-readonly="true" >
               </div>
           </div>
 
-          <!--Second column-->
+
           <div class="col-md-4">
               <div class="md-form">
+                <!-- user icon from font awesome -->
                   <i class="fa fa-user prefix"></i>
                   <input type="text" id="form51" value = "{{guardetails.LastName}}" class="form-control" ng-readonly="true"  >
 
               </div>
           </div>
 
-          <!--Third column-->
+
           <div class="col-md-4">
               <div class="md-form">
+                    <!-- email icon from font awesome -->
                 <i class="fa fa-envelope prefix"></i>
                   <input type="email" id="form61" value = "{{guardetails.Email}}" class="form-control" ng-readonly="true"  >
 
@@ -67,6 +59,7 @@
           <div>
             <div class="col-md-4">
                 <div class="md-form">
+                      <!-- phone icon from font awesome -->
                     <i class="fa fa-phone prefix " ></i>
                     <input type="text" id="form41" value = "{{guardetails.PhoneNumber}}" class="form-control" ng-readonly="true"  >
 
@@ -79,22 +72,9 @@
 
                 </div>
             </div><br>
+            <!-- after clicking edit button you will be redirected to Guarduseredit html page -->
               <a  class="btn btn-success"  ng-click ="editform()" name="simple-from">Edit details</a>
-        <!-- <button      <i class="fa fa-edit prefix"></i>    <a href="/GuardUserEdit">Edit</a> </button> -->
     </div>
-
-
-
-        </div>
-
-
+    </div>
   </form>
-                </div>
-
-
-
-        <!-- /#page-content-wrapper -->
-
-
-
-    <!-- /#wrapper -->
+</div>

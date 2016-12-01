@@ -17,16 +17,11 @@
                 </li>
             </ul>
         </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
+          <!-- preventing default angularjs validations for this form named newform using novalidate -->
         <form name="newform"  ng-submit="submitForm()" novalidate>
-
-<!-- <div class = "col-md-12"> -->
+                  <!--First Row-->
           <div class="row">
 
-
-          <!--First column-->
           <div> <h1>Welcome {{user.FirstName}} !!!</h1></div>
 
 </div>
@@ -35,12 +30,14 @@
               <img src="https://s9.postimg.org/amh9hv08v/maleavatar.png" width="180" height="200" />
 
            </div>
-
+    <!--First column-->
           <div class="col-md-4">
               <div class="md-form">
 
                   <i class="fa fa-user prefix"></i>
+
                   <input name="fn" type="text" id="form41"  class="form-control" ng-model="user.FirstName" ng-readonly="false" required>
+<!-- Custom validations are done -->
                   <span style="color:red"ng-show="newform.fn.$touched && newform.fn.$error.required" >
 
                     Please enter FirstName </span>
@@ -52,6 +49,7 @@
               <div class="md-form">
                   <i class="fa fa-user prefix"></i>
                   <input name="ln" type="text" id="form51" class="form-control" ng-model="user.LastName" ng-readonly="false"  required>
+<!-- Custom validations are done -->
                   <span style="color:red"ng-show="newform.ln.$touched && newform.ln.$error.required" >
                     Please enter lastname
                  </span>
@@ -63,9 +61,10 @@
               <div class="md-form">
                 <i class="fa fa-envelope prefix"></i>
                   <input name = "email" type="email" id="form61"  class="form-control"ng-model="user.Email"  ng-readonly="true" required >
+<!-- Custom validations are done -->
                   <span style="color:red"ng-show="newform.email.$touched && newform.email.$error.required" >
-
                     Please enter FirstName </span>
+<!-- Custom validations are done -->
                     <span style = "color:red" ng-show="newform.email.$touched && newform.email.$error.email">
                       email address format is not valid.</span>
 
@@ -73,17 +72,18 @@
           </div>
 
 
-
+    <!--Fourth column-->
           <div>
             <div class="col-md-4">
                 <div class="md-form">
                     <i class="fa fa-age prefix " ></i>
                     <input  name="phone" ng-minlength="10"
              ng-maxlength="10" type="text" id="form41"  class="form-control" ng-model="user.PhoneNumber" ng-readonly="false" required >
+<!-- Custom validations are done -->
              <span style = "color:red"  ng-show="newform.phone.$touched && newform.phone.$error.required">
                                  Valid phone number is required
                   </span>
-
+<!-- Custom validations are done -->
                   <span style = "color:red"
                         ng-show="((newform.phone.$error.minlength ||
                                   newform.phone.$error.maxlength) &&
@@ -97,18 +97,20 @@
             <div class="col-md-4">
                 <div class="md-form">
                     <i class="fa fa-user prefix " ></i>
+<!-- Custom validations are done -->
                     <input  min = "18" ng-minlength="1"
              ng-maxlength="3" name="age" type="text" id="form41"  class="form-control" ng-model="user.Age" ng-readonly="false"  required>
 
-
+<!-- Custom validations are done -->
              <span style = "color:red"  ng-show=" newform.age.$error.min">
                                 Negative age is not invalid!!
                   </span>
-
+<!-- Custom validations are done -->
                   <span style = "color:red"  ng-show="newform.age.$touched && (newform.age.$error.required ||
                                  newform.age.$error.number)">
                                 Enter a  Valid age
                   </span>
+<!-- Custom validations are done -->
                   <span style = "color:red"
                         ng-show="((newform.age.$error.minlength ||
                                   newform.age.$error.maxlength) &&
@@ -117,11 +119,9 @@
                    </span>
                 </div>
             </div><br>
-        <!-- <input type="submit"  class="btn btn-success"    > -->
 
-        <!-- <button      <i class="fa fa-edit prefix"></i>    <a href="/GuardUserEdit">Edit</a> </button> -->
     </div>
-  <!-- </div> -->
+  <!-- Submit button will be disabled if any of the above fields are not according to custom validations. -->
   <button type="submit" class="btn btn-success" ng-disabled="newform.$invalid">Submit</button>
 </form>
 </div>

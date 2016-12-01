@@ -13,32 +13,27 @@
                 </li>
             </ul>
         </div>
-        <!-- /#sidebar-wrapper -->
+        <!--Form  simple-from-->
         <form   class="simple-from" >
+                <!--First Row-->
       <div class="row">
-
-
-      <!--First column-->
       <div> <h1>Welcome {{udetails.FirstName}} !!!</h1></div>
-
-
       <div class="col-md-4">
-
           <img src="https://s14.postimg.org/ix27apndt/female.jpg" width="180" height="200" />
-
        </div>
 
       <div class="col-md-4">
           <div class="md-form">
-
+<!-- user icon from font awesome -->
               <i class="fa fa-user prefix"></i>
               <input type="text" id="form41"  class="form-control" value="{{udetails.FirstName}}" ng-readonly="true">
           </div>
       </div>
 
-      <!--Second column-->
+
       <div class="col-md-4">
           <div class="md-form">
+            <!-- user icon from font awesome -->
               <i class="fa fa-user prefix"></i>
               <input type="text" id="form51"  class="form-control" value="{{udetails.LastName}}" ng-readonly="true">
 
@@ -46,9 +41,10 @@
       </div>
 
 
-      <!--Third column-->
+
       <div class="col-md-4">
           <div class="md-form">
+            <!-- email icon from font awesome -->
             <i class="fa fa-envelope prefix"></i>
               <input type="text" id="form61"  class="form-control" value="{{udetails.Email}}" ng-readonly="true">
 
@@ -57,12 +53,13 @@
       <div>
         <div class="col-md-4">
             <div class="md-form">
+              <!-- phone icon from font awesome -->
                 <i class="fa fa-phone prefix " ></i>
                 <input type="text" id="form41"  class="form-control" value="{{udetails.PhoneNumber}}" ng-readonly="true">
 
             </div>
         </div>
-
+<!-- after clicking edit button you will be redirected to basicuseredit html page -->
       <a href="/BasicUserEdit"> <input type="button"  class="btn btn-success" name="simple-from" value="Edit"></a>
       </div>
       </div>

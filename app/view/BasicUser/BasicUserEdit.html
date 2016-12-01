@@ -16,19 +16,13 @@
             </ul>
         </div>
 
-          <!-- <form   class="simple-from" ng-submit="update(use)"> -->
-  <!-- //ng-submit="update(rootlocaldetails)" -->
-              <!-- <form   class="simple-from" ng-submit="submit()"> -->
+    <!-- preventing default angularjs validations for this form named newform using novalidate -->
 
 <form   name="newform"   novalidate>
 
+          <!--First Row-->
         <div class="row">
-
-
-        <!--First column-->
         <div> <h1>Edit profile details</h1></div>
-
-
         <div class="col-md-4">
 
             <img src="https://s14.postimg.org/ix27apndt/female.jpg" width="180" height="200" />
@@ -40,18 +34,19 @@
 
                 <i class="fa fa-user prefix"></i>
                 <input name="fn"  type="text" id="form41" ng-model="rootlocaldetails.FirstName" class="form-control" placeholder="FirstName" required>
-
+<!-- Custom validations are done -->
                 <span style="color:red"ng-show="newform.fn.$touched && newform.fn.$error.required" >
 
                   Please enter FirstName </span>
             </div>
         </div>
 
-        <!--Second column-->
+
         <div class="col-md-4">
             <div class="md-form">
                 <i class="fa fa-user prefix"></i>
                 <input name="ln" type="text" id="form51" ng-model="rootlocaldetails.LastName" class="form-control" placeholder="LastName" required>
+<!-- Custom validations are done -->
                 <span style="color:red"ng-show="newform.ln.$touched && newform.ln.$error.required" >
                   Please enter lastname
                </span>
@@ -63,6 +58,7 @@
             <div class="md-form">
               <i class="fa fa-envelope prefix"></i>
                 <input name = "email" type="email" id="form61" ng-model="rootlocaldetails.Email" class="form-control" placeholder="Email" required>
+<!-- Custom validations are done -->
                 <span style="color:red"ng-show="newform.email.$touched && newform.email.$error.required" >
 
                   Please email adress </span>
@@ -75,6 +71,7 @@
           <div class="col-md-4">
               <div class="md-form">
                   <i class="fa fa-phone prefix " ></i>
+<!-- Custom validations are done -->
                   <input  name="phone" ng-minlength="10"
            ng-maxlength="10" type="text" id="form41" ng-model="rootlocaldetails.PhoneNumber" class="form-control" placeholder="PhoneNumber" required>
            <span style = "color:red"  ng-show="newform.phone.$touched && newform.phone.$error.required">
@@ -89,15 +86,11 @@
                  </span>
               </div>
           </div>
-
-
-    <!-- <a href="/Basic"><input type="submit" class="btn btn-success" name="simple-from"  value="Update"> </a> -->
   </div>
       </div>
+
+      <!-- Submit button will be disabled if any of the above fields are not according to custom validations. -->
   <button type="submit" class="btn btn-success" ng-disabled="newform.$invalid">Submit</button>
 </form>
-      <!-- <pre>form = {{newuser | json}}</pre>
-        <pre>master = {{master | json}}</pre> -->
-
 
     </div>
