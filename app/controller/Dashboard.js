@@ -165,7 +165,8 @@ $scope.ShowHide = function (index) {
     $scope.activity = false ;
     $scope.buttonClass = 'btn btn-warning';
     $scope.active = "Activated";
-    $scope.suspend = "Suspend"
+    $scope.suspend = "Suspend";
+
   }else {
       console.log("heyy am suspended");
   //  $scope.suspend = true;
@@ -189,13 +190,15 @@ $scope.activate = function (){
     $scope.active = "Activate";
   $scope.activeClass = 'btn btn-success ';
   $scope.suspendClass = 'btn btn-warning disabled';
-  $scope.suspend = "Suspended"
+  $scope.suspend = "Suspended";
+    $rootScope.selectedItem.paymentStatus = "Suspended";
 }
 $scope.suspended = function (){
   $scope.activeClass = 'btn btn-success  disabled';
   $scope.active = "Activated";
   $scope.suspendClass = 'btn btn-warning';
-  $scope.suspend = "Suspend"
+  $scope.suspend = "Suspend";
+    $rootScope.selectedItem.paymentStatus = "Active";
 }
 
 $scope.delete_task = function(index) {

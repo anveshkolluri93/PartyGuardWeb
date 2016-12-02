@@ -166,7 +166,8 @@ function ($scope, $rootScope, $location, $http) {
         $scope.activity = true ;
           $scope.buttonClass = 'btn btn-success';
             $scope.active = "Activate";
-            $scope.suspend = "Suspended"
+            $scope.suspend = "Suspended";
+
           }
             console.log($rootScope.selectedItem);
 
@@ -181,13 +182,15 @@ function ($scope, $rootScope, $location, $http) {
             $scope.active = "Activate";
           $scope.activeClass = 'btn btn-success ';
           $scope.suspendClass = 'btn btn-warning disabled';
-          $scope.suspend = "Suspended"
+          $scope.suspend = "Suspended";
+            $rootScope.selectedItem.paymentStatus = "Suspended";
         }
         $scope.suspended = function (){
           $scope.activeClass = 'btn btn-success  disabled';
           $scope.active = "Activated";
           $scope.suspendClass = 'btn btn-warning';
           $scope.suspend = "Suspend"
+          $rootScope.selectedItem.paymentStatus = "Active";
         }
 
         $scope.delete_task = function(index) {

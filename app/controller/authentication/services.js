@@ -47,7 +47,7 @@ angular.factory('AuthenticationService',
             var req = "username="+username+"&password="+password+"&grant_type=password";
             var token = "";
             var userType = "";
-
+          //API call to get login token
             console.log("hello"+req);
             $http({
                   method: 'POST',
@@ -64,6 +64,7 @@ angular.factory('AuthenticationService',
                     $rootScope.uname = username;
                     console.log("Authorization"+auth)
                     console.log("Authorization"+$rootScope.Author);
+                    //API call get get userinfo
                     $http({
                           method: 'GET',
                           url: 'https://partyguardservices20161110094537.azurewebsites.net/API/Account/UserInfo',

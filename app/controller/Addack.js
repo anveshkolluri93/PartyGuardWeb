@@ -35,7 +35,7 @@ var users = {
  $scope.display = function(showSuccessAlertFlag){
    var temp = $rootScope.hostRegistration.Email;
     var mail = $rootScope.userResponse;
-
+//building JSON
     var data = {};
     data['Email'] = temp;
     data['fName'] = $rootScope.hostRegistration.firstName;
