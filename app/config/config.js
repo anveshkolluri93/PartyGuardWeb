@@ -44,7 +44,7 @@ angular.config(function($routeProvider, $locationProvider) {
             .when("/Events", {
                 templateUrl: "/public/view/HostUser/Events.html",
                 controller: "eventsController" })
-                .when("/AssignGuards", {
+            .when("/AssignGuards", {
                     templateUrl: "/public/view/HostUser/AssignGuards.html",
                     controller: "AssignGuardsController" })
             .when("/Members", {
